@@ -10,8 +10,8 @@ function bridgeCalculate(){
 	 p5 = paper.text(x-6,y+159,"");
 	
 //	var p1,p2,p3,p4,p5;
-	console.log("secondVal"+secondVal);
-	console.log("thirdVal"+thirdVal);
+//	console.log("secondVal"+secondVal);
+//	console.log("thirdVal"+thirdVal);
 	
 	 wheatStone = paper.image("images/wheatStoneBridgeE.png",(x-50), (y-100),700, 600);
 	  r1 = paper.circle(x+327,y+160,35).attr({'stroke' : '#000' , 'stroke-width' : 3,"fill":"#fff" });

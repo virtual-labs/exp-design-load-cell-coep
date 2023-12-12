@@ -16,10 +16,10 @@ function tableReading(masterJson)
       $("#centerText1").html('WHEATSTONE BRIDGE');
       
       let iterator = masterJson.demo.values();
-      console.log(iterator.next().value);
+//      console.log(iterator.next().value);
       var htm = '<img src="images/wheatStoneBridgeE.png " class="img-fluid" width = 90% height = 90%>'
       $("#main-div-conf").html(htm);
-      console.log("Value of ax1 : "+ax1);
+//      console.log("Value of ax1 : "+ax1);
       
       var firstLoad = 0, secondLoad = 0, thirdLoad = 0, forthLoad = 0, fifthLoad = 0 ;
       
@@ -169,7 +169,7 @@ function tableReading(masterJson)
 				//		    +'      <td>'+masterJson.weight[i].totalWeight+'</td>'
 							+'    </tr>'
 						}
-				console.log(masterJson.demo[0].text1);
+//				console.log(masterJson.demo[0].text1);
 
 				$("#canvas-div").html(tableMainDiv);
 				$("#canvas-div").append(calculatePanel);
@@ -249,7 +249,7 @@ function tableReading(masterJson)
 						$("#submit_selLoad").prop("disabled",true);
 						$("#guageFact").prop("hidden",false);
 						selLoad = parseInt($("#text4").val());
-						console.log("selLoad"+selLoad);
+//						console.log("selLoad"+selLoad);
 //					}
 //					else{
 //						alert("Select one of the calculated load value");
@@ -447,7 +447,7 @@ function tableReading(masterJson)
 	 tempJson.outputVoltage = outVolt;
 	 arrayJson.push(tempJson);
 	 masterJson.demo=arrayJson;
-	 console.log(masterJson);
+//	 console.log(masterJson);
 				}
 				
 }			
