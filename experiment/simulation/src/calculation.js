@@ -132,8 +132,11 @@ function columnType(){
 
 					if(hasDuplicate == true){
 						dupFlg = 0;
-						
-					   alert("Avoid Duplicates");
+						$(".modal-header").html("Error Message");
+			$(".modal-header").css("background","#9c1203b0");
+			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
+			$("#MsgModal").html("Avoid Duplicates");
+//					   alert("Avoid Duplicates");
 					  arrWeight.splice(index,1);
 					  $("#submit_load1").prop('disabled',false);
 						$("#text1").prop('disabled',false);
@@ -333,7 +336,7 @@ function columnType(){
 				$(".modal-header").html("Error Message");
 			$(".modal-header").css("background","#23435c");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("<b>Formula : Transverse Strain = -P*Pos / AE where, <br> Pos = Poison's Ratio</b>");
+			$("#MsgModal").html("<b>Formula : Transverse Strain = -P &times; Pos / AE where, <br> Pos = Poison's Ratio</b>");
 //				alert("formula : Transverse Strain = -P*Pos / AE");
 				
 //				 $("#modelMsg").html("<b class='boldTextBlue'>formula : Area = "+unescape('%u220F')+" r"+unescape('%B2')+"</b> ");
