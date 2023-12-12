@@ -129,7 +129,7 @@ $( "#typeCell" ).on( "change", function() {
 						}
 						dataQues.corrAns = ansCount;
 						 data.corrAns = dataQues;
-						 console.log(data);
+//						 console.log(data);
 						 
 						 $("#btnModal").removeClass("btn-danger").addClass("btn-success");
 	        $(".modal-header").html("Success Message");
