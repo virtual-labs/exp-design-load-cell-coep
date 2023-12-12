@@ -4,7 +4,8 @@ var secondVal = 0;
 var thirdVal = 0;
 var idCal = 1;
 var flg = 0;
-
+var p1,p2,p3,p4,p5;
+var r1,r2,r3,txt;
 function tableReading(masterJson)
 {
 	
@@ -141,8 +142,21 @@ function tableReading(masterJson)
 				   +'<div class="col-sm-3"  id="submitCal">'
 				   +'<br><button type="submit" class="btn btn-danger"  id="submit_selLoad2" data-toggle="modal" data-target="#myModal" style="width:100%;margin-top: -6px;" >Submit</input>'
 				   +'</div>'
-				   +'</div>'				
-			
+				   
+				   +'</div>'				   
+				   +'<div class="row" >'
+				   +'<div class="col-sm-12">'	
+				   +'<button type="button" style="padding: 10px; "  class="btn btn-danger btnStyle" id="anotherReading" hidden><b>SELECT ANOTHER LOAD </b></button>'
+		           +'</div>'	
+			       +'</div>'
+			       +'<br>'
+			       +'</div>'				   
+				   +'<div class="row" >'
+				   +'<div class="col-sm-12">'	
+				   +'<button type="button" style="padding: 10px; "  class="btn btn-danger btnStyle" id="finishReading" data-toggle="modal" data-target="#myModal" hidden><b>COMPLETED </b></button>'
+		           +'</div>'	
+			       +'</div>'	
+			           
 				for(i=0,p=1;i<masterJson.demo.length;i++,p++)
 						{
 						tableMainDiv+='    <tr>'
@@ -163,26 +177,36 @@ function tableReading(masterJson)
 				var loadCheck1=0;
 				
 				$("#text4").change(function(){
-					   loadCheck1 = $("#text4").val();
-					   loadCheck = parseFloat(loadCheck1);
-					   console.log(" loadCheck "+loadCheck);
+					
+					loadCheck1 = $("#text4").val();
+			 loadCheck = parseInt(loadCheck1);			 
+			 pressureValue =$("#text4").children(":selected").attr("value");			 
+			 $("#text4").children('option[value="' + pressureValue + '"]').attr('disabled', true);
+					
+//					   loadCheck1 = $("#text4").val();
+//					   loadCheck = parseFloat(loadCheck1);
+//					   console.log(" loadCheck "+loadCheck);
 					    });
+				
+				var selLoadOut = 0;
 				
 				$("#submit_selLoad").click(function(){
 								
-					 
+
 				if(loadCheck!=0)	
 					{
 				for(i=0 ,flag=0; i<masterJson.demo.length;i++){
 //					var temp=parseInt(masterJson.demo[i].text1);
 					if(loadCheck ==1){
 						flag = 1;
+						selLoadOut = firstLoad;
 								secondVal = masterJson.demo[0].text2;
 								thirdVal = masterJson.demo[0].text3;
 								break;
 					}else if(loadCheck==2)
 					  {
 						flag = 1;
+						selLoadOut = secondLoad;
 								secondVal = masterJson.demo[1].text2;
 								thirdVal = masterJson.demo[1].text3;
 								break;
@@ -190,16 +214,19 @@ function tableReading(masterJson)
 					}else if(loadCheck==3)
 					 {
 						flag = 1;
+						selLoadOut = thirdLoad;
 								secondVal = masterJson.demo[2].text2;
 								thirdVal = masterJson.demo[2].text3;
 								break;
 					}else if(loadCheck==4){
 						flag = 1;
+						selLoadOut = forthLoad;
 								secondVal = masterJson.demo[3].text2;
 								thirdVal = masterJson.demo[3].text3;
 								break;
 					}else if(loadCheck==5){
 						flag = 1;
+						selLoadOut = fifthLoad;
 								secondVal = masterJson.demo[4].text2;
 								thirdVal = masterJson.demo[4].text3;
 								break;
@@ -286,10 +313,15 @@ function tableReading(masterJson)
                      $("#submit_selLoad2").prop("disabled",true);
                      $("#text6").prop("disabled",true);
                      additionToJson();
-                      $("#btnModal").removeClass("btn-danger").addClass("btn-success");
-	        $(".modal-header").html("Success Message");
-            $(".modal-header").css("background","#5cb85c");
-			$("#MsgModal").html(" Experiment Completed Successfully!!" );
+                     if(iter1<4){
+					 $("#anotherReading").prop("hidden",false);
+                     $("#finishReading").prop("hidden",false);	
+					}else{
+						$("#anotherReading").prop("disabled",true);
+                     $("#finishReading").prop("hidden",false);
+					}
+                     
+                      
 	
 				} else if (corrOut != outVolt) {
 				 $(".modal-header").html("Error Message");
@@ -310,7 +342,7 @@ function tableReading(masterJson)
 				$(".modal-header").html("Error Message");
 			$(".modal-header").css("background","#23435c");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("<b>Output voltage = Eb*f[E2+E4-E1-E3]/4</b>");
+			$("#MsgModal").html("<b>Output voltage = Eb &times; f[E2+E4-E1-E3]/4</b>");
 //				alert("formula : Output voltage = Eb*f[E2+E4-E1-E3]/4");
 				
 //				 $("#modelMsg").html("<b class='boldTextBlue'>formula : Area = "+unescape('%u220F')+" r"+unescape('%B2')+"</b> ");
@@ -326,10 +358,18 @@ function tableReading(masterJson)
 					 additionToJson();
                      $("#submit_selLoad2").prop("disabled",true);
 					 $("#text6").prop("disabled",true);
-					 $("#btnModal").removeClass("btn-danger").addClass("btn-success");
-	        $(".modal-header").html("Success Message");
-            $(".modal-header").css("background","#5cb85c");
-			$("#MsgModal").html(" Experiment Completed Successfully!!" );
+					 if(iter1<4){
+					 $("#anotherReading").prop("hidden",false);
+                     $("#finishReading").prop("hidden",false);	
+					}else{
+						$("#anotherReading").prop("disabled",true);
+                     $("#finishReading").prop("hidden",false);
+					}
+					  
+//					 $("#btnModal").removeClass("btn-danger").addClass("btn-success");
+//	        $(".modal-header").html("Success Message");
+//            $(".modal-header").css("background","#5cb85c");
+//			$("#MsgModal").html(" Experiment Completed Successfully!!" );
 	
 				} else {
 					checkAns = 0;
@@ -348,10 +388,61 @@ function tableReading(masterJson)
 			idCal++;
 			}	
 				});
+		
+		$("#finishReading").click(function(){
+			complete();
+			$("#anotherReading").prop("disabled",true);	
+			$("#finishReading").prop("disabled",true);
+			
+		
+			
+		});
+			
+			function complete(){
+				
+				alert("Experiment Completed Successfully!");
+//				$("#btnModal").removeClass("btn-danger").addClass("btn-success");
+//	        $(".modal-header").html("Success Message");
+//            $(".modal-header").css("background","#5cb85c");
+//			$("#MsgModal").html("Experiment Completed Successfully!");
+			}
+			
+			var iter1 = 0;
+			$("#anotherReading").click(function(){
+				clear();
+				idCal = 1;
+				$("#text4").val(0);
+				$("#text4").prop("disabled",false);
+				$("#submit_selLoad").prop("disabled",false);
+				$("#guageFact").prop("hidden",true);
+				$("#ebVal").prop("hidden",true);
+				$("#outVal").prop("hidden",true);
+				$("#text5").val(0);
+				$("#text6").val('');
+				$("#anotherReading").prop("hidden",true);
+				$("#finishReading").prop("hidden",true);
+				$("#text5").prop("disabled",false);
+				$("#submit_selLoad1").prop("disabled",false);
+				$("#submit_selLoad2").prop("disabled",false);
+				$("#text6").prop("disabled",false);
+				iter1++;
+			});
+			
+			
+			function clear(){
+				p1.remove();
+				p2.remove();
+				p3.remove();
+				p4.remove();
+				p5.remove();
+				txt.remove();
+//				var txt = paper.text(x+328,y+159," ").attr({'stroke' : '#000' , "font-size":"20px","font-weight": "bold"});
+     r1.attr({"fill":"#fff"});
+			}
 				
 				function additionToJson(){
 					tempJson = {};
-	 tempJson.selectedLoad = selLoad ;
+	 tempJson.selectedLoad = selLoadOut ;
 	 tempJson.ebValue = eb;
 	 tempJson.outputVoltage = outVolt;
 	 arrayJson.push(tempJson);
