@@ -15,11 +15,11 @@ var num;
 function columnType(){
 	
 	var area = parseInt(areaSelect);
-	console.log("areaSelect"+areaSelect);
+//	console.log("areaSelect"+areaSelect);
 	var mod = parseInt(modSelelect);
-	console.log("modSelelect"+modSelelect);
+//	console.log("modSelelect"+modSelelect);
 	var pos = parseInt(poisonSelect);
-	console.log("poisonSelect"+poisonSelect);
+//	console.log("poisonSelect"+poisonSelect);
 	
 	
 	 $("#main-div-conf").html('');	
@@ -191,7 +191,7 @@ function columnType(){
 					axialCal = (ax)*Math.pow(10,-6);
 //					var axialCalConvert = ax+" &times; 10<sup>-6</sup>";
 //					axialCal = axialCal123.toFixed(3);
-					console.log("ax"+ax);
+//					console.log("ax"+ax);
 						$("#nextLevel").prop('hidden',true);	
   
 								if (id1 <= 3) {
@@ -283,7 +283,7 @@ function columnType(){
 							}else{
 								text3 = parseFloat($("#text3").val());
 							
-							console.log("Value of axial cal"+axialCal);
+//							console.log("Value of axial cal"+axialCal);
 						trans1 = parseFloat(trans);
 					            
 					            mulT = trans1*pos;
@@ -293,7 +293,7 @@ function columnType(){
 					            transCal12 = transCal1*Math.pow(10,6);
 //					         var transCal123 = transCal12*Math.pow(10,6);
 					         transCal = -transCal12.toFixed(3);
-					            console.log("transCal"+transCal);
+//					            console.log("transCal"+transCal);
 					            
 							 if (id2 <= 3) {
 				
@@ -415,11 +415,11 @@ function columnType(){
 							 tempJson.text2 = ax;
 							 tempJson.text3 = transCal;
 							   arrayJson.push(tempJson);
-							   console.log(arrayJson);
+//							   console.log(arrayJson);
 							   masterJson.demo=arrayJson;
 							    
 							   tableReadingAdded();
-							   console.log(masterJson);
+//							   console.log(masterJson);
 							   
 							   
 			}

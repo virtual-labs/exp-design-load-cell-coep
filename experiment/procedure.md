@@ -15,3 +15,5 @@
 - Select one of the load to calculate output voltage and click on submit. 
 - Select supply voltage Eb and click on submit.
 - Calculate the output voltage and enter it's value if the value is correct further calculations will be enabled and if the value is Incorrect then formula followed by correct answer will be displayed after 3 attempts.
+- At this stage either complete the experiment by 'COMPLETED' button click or 'SELECT ANOTHER LOAD' click and calculate the output voltage for other loads. 
+- After calculating all the readings experiment is completed.

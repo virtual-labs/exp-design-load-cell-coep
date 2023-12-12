@@ -129,15 +129,15 @@ function columnTypeConfig(){
 	 $("#main-div-conf").html(loadVal);
 	 $("#diaSel").change(function(){
 	   areaSelect = $("#diaSel").val();
-	   console.log(" area "+diaSel);
+//	   console.log(" area "+diaSel);
 	    });
 	    $("#modSel").change(function(){
 		   modSelelect = $("#modSel").val();
-		   console.log(" modulus "+modSelelect);
+//		   console.log(" modulus "+modSelelect);
 	     });
 	    $("#poisonSel").change(function(){
 	   poisonSelect = $("#poisonSel").val();	   	   
-	   console.log("poisonSel"+poisonSelect);
+//	   console.log("poisonSel"+poisonSelect);
 	   });
 	   
       
@@ -185,7 +185,7 @@ function columnTypeConfig(){
 					 $("body").css("padding","0px 0px 0px 0px");
 	}else{	
 		 radius = diam/2;
-	 console.log("radius"+radius);
+//	 console.log("radius"+radius);
 //	 mathFun = Math.pow(10,-3);
 //	 mulPow = mathFun*radius;
      mulPow = radius;
@@ -195,7 +195,7 @@ function columnTypeConfig(){
       areaRound = areaRound1; 
 //	 areaRound = (3.14*radius*radius).toFixed(2);
 	 areaVal = parseFloat(areaRound);
-	 console.log("areaVal"+areaVal);
+//	 console.log("areaVal"+areaVal);
 	 var areaSelValue = $("#areaSel").val();
 	if(areaSelValue==""){
 		 $(".modal-header").html("Error Message");
@@ -496,22 +496,22 @@ function cantileverConfig(){
       
        $("#lengthSel").change(function(){
 	   lengthVal = $("#lengthSel").val();
-	   console.log(" length "+lengthVal);
+//	   console.log(" length "+lengthVal);
 	    });
 	    
 	     $("#widthSel").change(function(){
 	   widthVal = $("#widthSel").val();
-	   console.log(" width "+widthVal);
+//	   console.log(" width "+widthVal);
 	    });
 	    
 	    $("#heightSel").change(function(){
 	   heightVal = $("#heightSel").val();
-	   console.log(" width "+heightVal);
+//	   console.log(" width "+heightVal);
 	    });
 	    
 	    $("#modSelcanti").change(function(){
 	   modSelcantiVal = $("#modSelcanti").val();
-	   console.log(" width "+modSelcantiVal);
+//	   console.log(" width "+modSelcantiVal);
 	    });
       
       $("#checkConfgCanti").click(function() {
