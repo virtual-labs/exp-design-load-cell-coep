@@ -4,7 +4,7 @@ var secondVal = 0;
 var thirdVal = 0;
 var idCal = 1;
 var flg = 0;
-var p1,p2,p3,p4,p5;
+var p1,p2,p3,p4,p5,p11,p22,p33,p44;
 var r1,r2,r3,txt;
 function tableReading(masterJson)
 {
@@ -435,6 +435,10 @@ function tableReading(masterJson)
 				p3.remove();
 				p4.remove();
 				p5.remove();
+				p11.remove();
+				p22.remove();
+				p33.remove();
+				p44.remove();
 				txt.remove();
 //				var txt = paper.text(x+328,y+159," ").attr({'stroke' : '#000' , "font-size":"20px","font-weight": "bold"});
      r1.attr({"fill":"#fff"});
