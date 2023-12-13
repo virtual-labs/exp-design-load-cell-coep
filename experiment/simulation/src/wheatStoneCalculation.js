@@ -25,10 +25,10 @@ function bridgeCalculate(){
 	  paper.text(x+508,y+227,"-6").attr({'stroke' : '#084373' , "font-size":"12px","fill":"#0ee8e5"});
 
  	  paper.text(x+465,y+95,secondVal+" X 10").attr({'stroke' : '#084373' , "font-size":"14px","fill":"#0ee8e5"});
- 	  paper.text(x+507,y+90,"-6").attr({'stroke' : '#084373' , "font-size":"12px","fill":"#0ee8e5"});
+ 	  paper.text(x+510,y+90,"-6").attr({'stroke' : '#084373' , "font-size":"12px","fill":"#0ee8e5"});
       
       paper.text(x+180,y+230,secondVal+" X 10").attr({'stroke' : '#084373' , "font-size":"14px","fill":"#0ee8e5"});
-      paper.text(x+220,y+225,"-6").attr({'stroke' : '#084373' , "font-size":"12px","fill":"#0ee8e5"});
+      paper.text(x+224,y+225,"-6").attr({'stroke' : '#084373' , "font-size":"12px","fill":"#0ee8e5"});
 
 //	  paper.text(x+280,y+100,secondVal).attr({'stroke' : '#000' , "font-size":"20px","font-weight": "bold","fill":"#0ee8e5"});
 //	 paper.text(x+385,y+212,secondVal).attr({'stroke' : '#000' , "font-size":"20px","font-weight": "bold","fill":"#0ee8e5"});
@@ -45,10 +45,10 @@ function bridgeCalculate(){
 	  paper.text(x+508,y+227,"-6").attr({'stroke' : '#084373' , "font-size":"12px","fill":"#0ee8e5"});
 
  	  paper.text(x+465,y+95,secondVal+" X 10").attr({'stroke' : '#084373' , "font-size":"14px","fill":"#0ee8e5"});
- 	  paper.text(x+507,y+90,"-6").attr({'stroke' : '#084373' , "font-size":"12px","fill":"#0ee8e5"});
+ 	  paper.text(x+510,y+90,"-6").attr({'stroke' : '#084373' , "font-size":"12px","fill":"#0ee8e5"});
       
       paper.text(x+180,y+230,secondVal+" X 10").attr({'stroke' : '#084373' , "font-size":"14px","fill":"#0ee8e5"});
-      paper.text(x+220,y+225,"-6").attr({'stroke' : '#084373' , "font-size":"12px","fill":"#0ee8e5"});
+      paper.text(x+224,y+225,"-6").attr({'stroke' : '#084373' , "font-size":"12px","fill":"#0ee8e5"});
       
       paper.text(x-6,y+159,eb+"v").attr({'stroke' : '#000' , "font-size":"20px","font-weight": "bold","fill":"red"});
 
@@ -63,10 +63,10 @@ function bridgeCalculate(){
 	p22=  paper.text(x+508,y+227,"-6").attr({'stroke' : '#084373' , "font-size":"12px","fill":"#0ee8e5"});
 
  	p3 =  paper.text(x+465,y+95,secondVal+" X 10").attr({'stroke' : '#084373' , "font-size":"14px","fill":"#0ee8e5"});
- 	p33=  paper.text(x+507,y+90,"-6").attr({'stroke' : '#084373' , "font-size":"12px","fill":"#0ee8e5"});
+ 	p33=  paper.text(x+510,y+90,"-6").attr({'stroke' : '#084373' , "font-size":"12px","fill":"#0ee8e5"});
       
     p4=  paper.text(x+180,y+230,secondVal+" X 10").attr({'stroke' : '#084373' , "font-size":"14px","fill":"#0ee8e5"});
-     p44 = paper.text(x+220,y+225,"-6").attr({'stroke' : '#084373' , "font-size":"12px","fill":"#0ee8e5"});
+     p44 = paper.text(x+224,y+225,"-6").attr({'stroke' : '#084373' , "font-size":"12px","fill":"#0ee8e5"});
       
      p5= paper.text(x-6,y+159,eb+"v").attr({'stroke' : '#000' , "font-size":"20px","font-weight": "bold","fill":"red"});
      if (corrOut == outVolt){

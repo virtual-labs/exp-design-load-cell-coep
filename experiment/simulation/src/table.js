@@ -176,60 +176,68 @@ function tableReading(masterJson)
 				var loadCheck=0;
 				var loadCheck1=0;
 				
-				$("#text4").change(function(){
-					
-					loadCheck1 = $("#text4").val();
-			 loadCheck = parseInt(loadCheck1);			 
-			 pressureValue =$("#text4").children(":selected").attr("value");			 
-			 $("#text4").children('option[value="' + pressureValue + '"]').attr('disabled', true);
-					
-//					   loadCheck1 = $("#text4").val();
-//					   loadCheck = parseFloat(loadCheck1);
-//					   console.log(" loadCheck "+loadCheck);
-					    });
+				
 				
 				var selLoadOut = 0;
 				
+					$("#text4").change(function(){
+					
+					loadCheck1 = $("#text4").val();
+			 loadCheck = parseInt(loadCheck1);	
+			 		 
+			 pressureValue =$("#text4").children(":selected").attr("value");			 
+			 $("#text4").children('option[value="' + pressureValue + '"]').attr('disabled', true);
+					
+					    });	
+				
+				
 				$("#submit_selLoad").click(function(){
-								
-
-				if(loadCheck!=0)	
+						
+//                loadCheck = $("#text4").val();
+				if(loadCheck1==0)	
 					{
-				for(i=0 ,flag=0; i<masterJson.demo.length;i++){
+						$(".modal-header").html("Error Message");
+			$(".modal-header").css("background","#9c1203b0");
+			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
+			$("#MsgModal").html("Select Appropriate Value");
+					}else{
+						
+						
+//				for(i=0 ,flag=0; i<masterJson.demo.length;i++){
 //					var temp=parseInt(masterJson.demo[i].text1);
-					if(loadCheck ==1){
+					if(loadCheck1 ==1){
 						flag = 1;
 						selLoadOut = firstLoad;
 								secondVal = masterJson.demo[0].text2;
 								thirdVal = masterJson.demo[0].text3;
-								break;
-					}else if(loadCheck==2)
+//								break;
+					}else if(loadCheck1==2)
 					  {
 						flag = 1;
 						selLoadOut = secondLoad;
 								secondVal = masterJson.demo[1].text2;
 								thirdVal = masterJson.demo[1].text3;
-								break;
+//								break;
 						
-					}else if(loadCheck==3)
+					}else if(loadCheck1==3)
 					 {
 						flag = 1;
 						selLoadOut = thirdLoad;
 								secondVal = masterJson.demo[2].text2;
 								thirdVal = masterJson.demo[2].text3;
-								break;
-					}else if(loadCheck==4){
+//								break;
+					}else if(loadCheck1==4){
 						flag = 1;
 						selLoadOut = forthLoad;
 								secondVal = masterJson.demo[3].text2;
 								thirdVal = masterJson.demo[3].text3;
-								break;
-					}else if(loadCheck==5){
+//								break;
+					}else if(loadCheck1==5){
 						flag = 1;
 						selLoadOut = fifthLoad;
 								secondVal = masterJson.demo[4].text2;
 								thirdVal = masterJson.demo[4].text3;
-								break;
+//								break;
 					}
 //							if(firstLoad ==temp || secondLoad==temp||thirdLoad==temp||forthLoad==temp||fifthLoad){
 //								flag = 1;
@@ -239,7 +247,7 @@ function tableReading(masterJson)
 //								console.log("thirdVal"+thirdVal);
 //								break;
 //							}
-					}
+//					}
 //					if(loadCheck!=0)
 //					{
 						flg = 1;
@@ -254,12 +262,6 @@ function tableReading(masterJson)
 //					else{
 //						alert("Select one of the calculated load value");
 //					}
-					}else{
-						$(".modal-header").html("Error Message");
-			$(".modal-header").css("background","#9c1203b0");
-			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("Select Appropriate Value");
-//						alert("Select Appropriate Value");
 					}
 					
 				});
@@ -411,6 +413,7 @@ function tableReading(masterJson)
 			$("#anotherReading").click(function(){
 				clear();
 				idCal = 1;
+				loadCheck1 = 0;
 				$("#text4").val(0);
 				$("#text4").prop("disabled",false);
 				$("#submit_selLoad").prop("disabled",false);
