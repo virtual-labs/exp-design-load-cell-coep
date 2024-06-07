@@ -539,3 +539,445 @@ function calculateOutput(){
 //	console.log("outVolt"+outVolt);
 	
 }
+
+//var tableMainDiv1;
+
+function tableReadingAdded1(){
+	$("#centerText2").html('');
+      $("#centerText1").html('');
+      
+      $("#centerText2").html('CALCULATION');
+      $("#centerText1").html('OBSERVATIONS');
+      
+      
+	var tableMainDiv1 = '<div class="row ">'
+					+'<div class="col-sm-12">'
+			        + '<table class=" table table-bordered " style="margin:10px; text-align: center">'
+					+ ' <thead>'
+					+ '  <tr style = "BACKGROUND-COLOR: #072647; color:#fff; ">'
+					+ '  <th><center>Sr.No</center></th>'
+					+ '  <th><center>Load Applied (N)</center></th>'
+					+ '   <th><center>Tensile Strain </center></th>'
+					+ '  <th><center>Compressive Strain</center> </th>'
+
+					+ '   </tr>'
+					+ '  </thead>'
+					+ '   <tbody>'
+	
+	for(i=0,p=1;i<masterJson.demo.length;i++,p++)
+						{
+						tableMainDiv1+='    <tr>'
+							+'		<td>'+p+'</td>'
+							+'      <td>'+masterJson.demo[i].text1+'</td>'
+							+'      <td>'+masterJson.demo[i].text2+"&times;10<sup>-6</sup>"+'</td>'
+							+'      <td>'+masterJson.demo[i].text3+"&times;10<sup>-6</sup>"+'</td>'
+			
+							+'    </tr>'
+						}
+
+
+					 
+				$("#main-div-conf").html(tableMainDiv1);
+				
+}
+
+var oneLoad,twoLoad,threeLoad,fourLoad,fiveLoad;
+
+function tableWheatStone(){
+	$("#main-div-conf").html('');	
+     $("#canvas-div").html('');	
+     
+      $("#centerText2").html('CALCULATION');
+      $("#centerText1").html('WHEATSTONE BRIDGE');
+      
+      let iterator = masterJson.demo.values();
+//      console.log(iterator.next().value);
+      var htm = '<img src="images/wheatStoneBridgeE.png " class="img-fluid" width = 90% height = 90%>'
+      $("#main-div-conf").html(htm);
+      
+      
+      var tableMainDiv1 = '<div class="row ">'
+					+'<div class="col-sm-12">'
+			        + '<table class=" table table-bordered " style="margin:10px; text-align: center">'
+					+ ' <thead>'
+					+ '  <tr style = "BACKGROUND-COLOR: #072647; color:#fff; ">'
+					+ '  <th><center>Sr.No</center></th>'
+					+ '  <th><center>Load Applied (N)</center></th>'
+					+ '   <th><center>Tensile Strain </center></th>'
+					+ '  <th><center>Compressive Strain</center> </th>'
+
+					+ '   </tr>'
+					+ '  </thead>'
+					+ '   <tbody>'
+					
+					
+					for(i=0,p=1;i<masterJson.demo.length;i++,p++)
+						{
+						tableMainDiv1+='    <tr>'
+							+'		<td>'+p+'</td>'
+							+'      <td>'+masterJson.demo[i].text1+'</td>'
+							+'      <td>'+masterJson.demo[i].text2+"&times;10<sup>-6</sup>"+'</td>'
+							+'      <td>'+masterJson.demo[i].text3+"&times;10<sup>-6</sup>"+'</td>'
+							+'    </tr>'
+							
+					
+							oneLoad = masterJson.demo[0].text1;
+							twoLoad = masterJson.demo[1].text1;
+							threeLoad = masterJson.demo[2].text1;
+							fourLoad = masterJson.demo[3].text1;
+							fiveLoad = masterJson.demo[4].text1;
+							
+						}
+					
+	var calculatePanel = '<div class="row" id="calVoltage" >'
+									   +'<div class="col-sm-5">'
+									   +'<label  id=""  class="" style="font-size:16px;margin:15px 10px ;">Select load(N):  </label>'
+									   +'</div>'
+									    +'<div class="col-sm-4">'
+						   +'<select  class="form-control " id="text4" " style="height:auto;  margin-top: 9px;">'
+						   +'<option value="0">--- Select load --- </option>'
+						   +'<option value= "1">'+oneLoad+ '</option>'
+						   +'<option value="2" >'+twoLoad+ ' </option>'
+						   +'<option value="3" > '+threeLoad+ ' </option>'
+						   +'<option value="4" > '+fourLoad+ ' </option>'
+						   +'<option value="5" > '+fiveLoad+ ' </option>'						  
+						  
+						   +'</select>'
+						   +'</div>'
+						   +'<div class="col-sm-3"  id="submitCal">'
+				   +'<button type="submit" class="btn btn-danger"  id="submit_selLoad" data-toggle="modal" data-target="#myModal" style="width:100%;margin-top: 10px;" >Submit</input>'
+				   
+						   +'</div>'
+				           +'</div>'
+				   
+				   +'<div class="row" id="guageFact" hidden>'
+				   +'<div class="col-sm-12">'
+				   +'<label  id=""  class="" style="font-size:16px;margin:15px 10px ;"> Guage factor (f) : 2  </label>'
+				   +'</div>'
+				   +'</div>'				
+					+'<div class="row" id="ebVal" hidden>'
+				   +'<div class="col-sm-5">'
+				   +'<label  id=""  class="" style="font-size:16px;margin:15px 10px ;">Select the value of E<sub>b</sub>:  </label>'
+				   +'</div>'
+				    +'<div class="col-sm-4">'
+	   +'<select  class="form-control " id="text5" " style="height:auto;  margin-top: 9px;">'
+	   +'<option value="0">--- Select modulus --- </option>'
+	   +'<option value="6" > 6 </option>'
+	   +'<option value="7" > 7 </option>'
+	   +'<option value="8" > 8 </option>'
+	   +'<option value="9" > 9 </option>'
+	   +'<option value="10" > 10 </option>'
+	  
+	  
+	   +'</select>'
+	   +'</div>'
+				   +'<div class="col-sm-3"  id="submitCal">'
+				   +'<button type="submit" class="btn btn-danger"  id="submit_selLoad1" data-toggle="modal" data-target="#myModal" style="width:100%;margin-top: 10px;" >Submit</input>'
+				   
+				   +'</div>'
+				   +'</div>'
+				   
+				    +'<div class="row" id="outVal" hidden>'
+				   +'<div class="col-sm-5">'
+				   +'<label  id=""  class="" style="font-size:16px;margin:15px 10px ;">Calculate output voltage (mV):  </label>'
+				   +'</div>'
+				   +'<div class="col-sm-4" id="valueStep2">'
+				   +'<input type="text"  value="" id="text6"  style="height:auto;  margin-top: 15px;" class=" form-control" />'
+				   +'</div>'
+				   +'<div class="col-sm-3"  id="submitCal">'
+				   +'<br><button type="submit" class="btn btn-danger"  id="submit_selLoad2"  style="width:100%;margin-top: -6px;" >Submit</input>'
+				   +'</div>'
+				   
+				   +'</div>'				   
+				   +'<div class="row" >'
+				   +'<div class="col-sm-12">'	
+				   +'<button type="button" style="padding: 10px; "  class="btn btn-danger btnStyle" id="anotherReading" hidden><b>SELECT ANOTHER LOAD </b></button>'
+		           +'</div>'	
+			       +'</div>'
+			       +'<br>'
+			       +'</div>'				   
+				   +'<div class="row" >'
+				   +'<div class="col-sm-12">'	
+				   +'<button type="button" style="padding: 10px; "  class="btn btn-danger btnStyle" id="finishReading" data-toggle="modal" data-target="#myModal" hidden><b>COMPLETED </b></button>'
+		           +'</div>'	
+			       +'</div>'
+	
+				$("#canvas-div").html(tableMainDiv1);
+               $("#canvas-div").append(calculatePanel);
+               
+      $("#text4").change(function(){
+					
+					loadCheck1 = $("#text4").val();
+			 loadCheck = parseInt(loadCheck1);	
+			 		 
+			 pressureValue =$("#text4").children(":selected").attr("value");			 
+			 $("#text4").children('option[value="' + pressureValue + '"]').attr('disabled', true);
+					
+					    });	
+      
+    $("#submit_selLoad").click(function(){
+						
+
+				if(loadCheck1==0)	
+					{
+						$(".modal-header").html("Error Message");
+			$(".modal-header").css("background","#9c1203b0");
+			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
+			$("#MsgModal").html("Select Appropriate Value");
+					}else{
+						
+						
+
+					if(loadCheck1 ==1){
+						flag = 1;
+						selLoadOut = oneLoad;
+								secondVal = masterJson.demo[0].text2;
+								thirdVal = masterJson.demo[0].text3;
+//								break;
+					}else if(loadCheck1==2)
+					  {
+						flag = 1;
+						selLoadOut = twoLoad;
+								secondVal = masterJson.demo[1].text2;
+								thirdVal = masterJson.demo[1].text3;
+//								break;
+						
+					}else if(loadCheck1==3)
+					 {
+						flag = 1;
+						selLoadOut = threeLoad;
+								secondVal = masterJson.demo[2].text2;
+								thirdVal = masterJson.demo[2].text3;
+//								break;
+					}else if(loadCheck1==4){
+						flag = 1;
+						selLoadOut = fourLoad;
+								secondVal = masterJson.demo[3].text2;
+								thirdVal = masterJson.demo[3].text3;
+//								break;
+					}else if(loadCheck1==5){
+						flag = 1;
+						selLoadOut = fiveLoad;
+								secondVal = masterJson.demo[4].text2;
+								thirdVal = masterJson.demo[4].text3;
+//								break;
+					}
+
+						flg = 1;
+					bridgeCalculate();
+						$("#ebVal").prop("hidden",false);
+						$("#text4").prop("disabled",true);
+						$("#submit_selLoad").prop("disabled",true);
+						$("#guageFact").prop("hidden",false);
+						selLoad = parseInt($("#text4").val());
+
+					}
+					
+				});
+			
+			$("#submit_selLoad1").click(function(){	
+				
+				
+				eb = parseInt($("#text5").val())
+				
+				  if(eb!=0){
+					$("#outVal").prop("hidden",false);
+					$("#submit_selLoad1").prop("disabled",true);
+					$("#text5").prop("disabled",true);
+					flg = 2;
+					bridgeCalculate();
+					
+				
+					
+				}else{
+					$("#outVal").prop("hidden",true);
+					$(".modal-header").html("Error Message");
+			$(".modal-header").css("background","#9c1203b0");
+			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
+			$("#MsgModal").html("Select Appropriate Value");
+//					alert("Select the appropriate value.");
+				}
+				});
+				
+				
+				$("#submit_selLoad2").click(function(){	
+                corrOut = $("#text6").val();
+					flg = 3;
+				calculateOutput1();
+				bridgeCalculate();
+				if(corrOut==""){
+					$(".modal-header").html("Error Message");
+			$(".modal-header").css("background","#9c1203b0");
+			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
+			$("#MsgModal").html("Enter the value");
+				}else{
+					corrOut = parseFloat($("#text6").val());
+				
+				if (idCal <= 3) {
+				
+				if (corrOut == outVolt) {
+					checkAns = 0;
+                     
+                     $("#submit_selLoad2").prop("disabled",true);
+                     $("#text6").prop("disabled",true);
+                     additionToJson1();
+                     if(iter1<4){
+					 $("#anotherReading").prop("hidden",false);
+                     $("#finishReading").prop("hidden",false);	
+					}else{
+						$("#anotherReading").prop("disabled",true);
+                     $("#finishReading").prop("hidden",false);
+					}
+                     
+                      
+	
+				} else if (corrOut != outVolt) {
+//				 $(".modal-header").html("Error Message");
+//			$(".modal-header").css("background","#9c1203b0");
+//			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
+//			$("#MsgModal").html("Entered value is Incorrect.<br>Try again");	
+				alert("Entered value is incorrect.Try it again.");
+				
+				
+//				 $("#modelMsg").html("<b class='boldTextRed'>Entered value is incorrect.Try again . </b>");
+//				 $("body").css("padding","0px 0px 0px 0px");
+//				console.log("wrong");
+//				wrong_cnt++;
+				}
+	
+	
+			} else if (idCal == 4) {
+//				$(".modal-header").html("Error Message");
+//			$(".modal-header").css("background","#23435c");
+//			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
+//			$("#MsgModal").html("<b>Output voltage = Eb &times; f[E2+E4-E1-E3]/4</b>");
+				alert("formula : Output voltage = Eb*f[E2+E4-E1-E3]/4");
+				
+//				 $("#modelMsg").html("<b class='boldTextBlue'>formula : Area = "+unescape('%u220F')+" r"+unescape('%B2')+"</b> ");
+//				 $("body").css("padding","0px 0px 0px 0px");
+//				 wrong_cnt++;
+				
+			} else {
+//				ax1 = $("#text2").val().trim();
+	
+				if (corrOut == outVolt) {
+					checkAns = 0;
+//					correct_cnt++;
+					 additionToJson1();
+                     $("#submit_selLoad2").prop("disabled",true);
+					 $("#text6").prop("disabled",true);
+					 if(iter1<4){
+					 $("#anotherReading").prop("hidden",false);
+                     $("#finishReading").prop("hidden",false);	
+					}else{
+						$("#anotherReading").prop("disabled",true);
+                     $("#finishReading").prop("hidden",false);
+					}
+					  
+
+	
+				} else {
+					checkAns = 0;
+//					$("#btnModal").removeClass("btn-danger").addClass("btn-success");
+//	        $(".modal-header").html("Success Message");
+//            $(".modal-header").css("background","#5cb85c");
+//			$("#MsgModal").html("Correct Answer is " + outVolt);
+					alert("correct answer is " + outVolt );
+					
+
+	
+				}
+			}
+			idCal++;
+       }
+    
+                });
+      
+      function calculateOutput1(){
+	var axialConvert = secondVal*Math.pow(10,-6);
+	var transConvert = thirdVal*Math.pow(10,-6);
+		forMul=eb*2;
+
+//	forMul=eb*selLoad;
+	var forDiv = forMul/4;
+	var forDivRound = forDiv; 
+//	console.log("forMul"+forMul);
+    addSub = (axialConvert+axialConvert-transConvert-transConvert);
+
+	var outVolt12 = addSub*forDivRound;
+	var outVolt123 = outVolt12*Math.pow(10,6);
+	var outVolt1234 = outVolt123.toFixed(2); 
+	var outp12 = (outVolt1234/1000).toFixed(2);
+	outVolt = parseFloat(outp12);
+
+}
+
+	function additionToJson1(){
+					tempJson = {};
+	 tempJson.selectedLoad = selLoadOut ;
+	 tempJson.ebValue = eb;
+	 tempJson.outputVoltage = outVolt;
+	 arrayJson.push(tempJson);
+	 masterJson.demo=arrayJson;
+//	 console.log(masterJson);
+				}
+      
+      
+      	$("#finishReading").click(function(){
+			complete();
+			$("#anotherReading").prop("disabled",true);	
+			$("#finishReading").prop("disabled",true);
+			
+		
+			
+		});
+			
+			function complete(){
+				
+				alert("Experiment Completed Successfully!");
+//				$("#btnModal").removeClass("btn-danger").addClass("btn-success");
+//	        $(".modal-header").html("Success Message");
+//            $(".modal-header").css("background","#5cb85c");
+//			$("#MsgModal").html("Experiment Completed Successfully!");
+			}
+			
+			var iter1 = 0;
+			$("#anotherReading").click(function(){
+				clear();
+				idCal = 1;
+				loadCheck1 = 0;
+				$("#text4").val(0);
+				$("#text4").prop("disabled",false);
+				$("#submit_selLoad").prop("disabled",false);
+				$("#guageFact").prop("hidden",true);
+				$("#ebVal").prop("hidden",true);
+				$("#outVal").prop("hidden",true);
+				$("#text5").val(0);
+				$("#text6").val('');
+				$("#anotherReading").prop("hidden",true);
+				$("#finishReading").prop("hidden",true);
+				$("#text5").prop("disabled",false);
+				$("#submit_selLoad1").prop("disabled",false);
+				$("#submit_selLoad2").prop("disabled",false);
+				$("#text6").prop("disabled",false);
+				iter1++;
+			});
+			
+			
+			function clear(){
+				p1.remove();
+				p2.remove();
+				p3.remove();
+				p4.remove();
+				p5.remove();
+				p11.remove();
+				p22.remove();
+				p33.remove();
+				p44.remove();
+				txt.remove();
+     r1.attr({"fill":"#fff"});
+			}
+      
+}
+
+

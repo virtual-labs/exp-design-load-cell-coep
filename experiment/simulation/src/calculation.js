@@ -11,6 +11,7 @@ var id2 = 1;
 var itr = 1;
 var num;
 
+var iterate = 1;
 
 function columnType(){
 	
@@ -416,12 +417,10 @@ function columnType(){
 							 tempJson.text3 = transCal;
 							   arrayJson.push(tempJson);
 //							   console.log(arrayJson);
-							   masterJson.demo=arrayJson;
-							    
+							   masterJson.demo=arrayJson;							    
 							   tableReadingAdded();
 //							   console.log(masterJson);
-							   
-							   
+							   							   
 			}
 			
 			
@@ -449,4 +448,270 @@ function cantilever(){
       var htm = '<img src="images/cantiForCalculate.png" class="img-fluid"  width=95% height=100% ">'
       $("#main-div-conf").html(htm);
       
+    var labels2 = ''
+                   + '<div class="row"  >'
+//                    + '<div class="col-sm-1">'
+//	               
+//	               +'</div>'
+                   + '<div class="col-sm-2" id="labelSelected">'
+	               +'<label class="labelstyle" style="margin-left:10px;"> <center>Length : '+lengthVal+'</center> </label>'
+	               +'</div>'
+	              
+	               
+	              
+	               + '<div class="col-sm-2" id="labelSelected">'
+	    	       +'<label class="labelstyle" style="margin-left:10px;"><center>Width : '+widthVal+'</center> </label>'
+	               +'</div>'
+	               
+	               + '<div class="col-sm-3" id="labelSelected">'
+	    	       +'<label class="labelstyle" style="margin-left:10px;"><center>Height : '+heightVal+'</center> </label>'
+	               +'</div>'
+	               
+	               + '<div class="col-sm-4" id="labelSelected">'
+	               +'<label class="labelstyle" style="margin-left:10px;"> <center>Modulus : 2.07 &times 10 &#x2075 </center> </label>'
+	               +'</div>'
+	               
+	                + '<div class="col-sm-1">'
+	               
+	               +'</div>'
+	               +'</div>'
+	               
+	               +'<div class="row" id="appliedLoad" >'
+				   +'<div class="col-sm-5">'
+				   +'<label  id="enterLoad"  class="" style="font-size:16px;margin:15px 10px ;">Enter load applied (N):  </label>'
+				   +'</div>'
+				   +'<div class="col-sm-3" id="valueStep1">'
+				   +'<input type="text"  value="" id="text1"  style=margin:15px 10px;width:150%;height:50%;" class=" form-control" />'
+				   +'</div>'
+				   +'<div class="col-sm-3"  id="submitStep1">'
+				   +'<br><button type="submit" class="btn btn-danger"  id="submit_load1"  style="width:100%;height:50%;margin-top: -6px;margin-left: 55px;" >Submit</input>'
+				   +'</div>'
+				   +'</div>'
+				 
+				   +'<div class="row" id="axialCalculation" hidden>'
+				   +'<div class="col-sm-5">'
+				   +'<label  id=""  class="" style="font-size:16px;margin:15px 10px ;">Calculate Tensile Strain :  </label>'
+				   +'</div>'
+				   +'<div class="col-sm-2">'
+				   +'<input type="text" value="" id="text2"  style=margin:15px 10px;width:150%;height:50%;"  class=" form-control" />'
+				   +'</div>'
+				   +'<div class="col-sm-2">'
+				   +'<label  id=""  class="" style="font-size:18px;margin:15px 10px ;margin-left:-8px;"> &times;10<sup>-6</sup>  </label>'
+				   +'</div>'
+				   +'<div class="col-sm-3">'
+				   +'<br><button type="submit" class="btn btn-danger"  id="submit_load2"  style="width:100%;height:50%;margin-top: -6px;"  data-toggle="modal" data-target="#myModalError">Submit</input>'
+				   +'</div>'
+					+'</div>'
+				   +'<div class="row" id="transverseCalculation" hidden>'
+				   +'<div class="col-sm-5">'
+				   +'<label  id=""  class="" style="font-size:16px;margin:15px 10px ;">Calculate Compressive Strain :  </label>'
+				   +'</div>'
+				   +'<div class="col-sm-2">'
+					+'<input type="text" value="" id="text3"  style=margin:15px 10px;width:150%;height:50%;"  class=" form-control" />'
+				   +'</div>'
+				   +'<div class="col-sm-2">'
+				   +'<label  id=""  class="" style="font-size:18px;margin:15px 10px ;margin-left:-8px;"> &times;10<sup>-6</sup> </label>'
+				   +'</div>'
+				    +'<div class="col-sm-3">'
+				   +'<br><button type="submit" class="btn btn-danger"  id="submit_load3"  style="width:100%;height:50%;margin-top: -6px;" >Submit</input>'
+				   +'</div>'
+				   +'</div>'
+	                +'<div class="col-sm-12">'
+	    +'<button type="button" style="padding: 10px; "  class="btn btn-danger btnStyle" id="nextReading" data-toggle="modal" data-target="#selectCheck" hidden><b>NEXT READING </b></button>'
+	    +'<button type="button" style="padding: 10px; "  class="btn btn-danger btnStyle" id="nextLevel" data-toggle="modal" data-target="#selectCheck" hidden><b>NEXT LEVEL</b></button>'
+        +'</div>'
+	     +'<br>'  
+				   
+				   
+      $("#canvas-div").html(labels2);
+      
+      var arrWeight = [];
+      var tensile, tx1;
+      
+      
+      $("#submit_load1").click(function(){
+						id1 = 1;
+                        id2 = 1;
+                        tensile=$("#text1").val();
+						tx1 = parseFloat(tensile);
+						
+						if(tensile==""){
+							 $(".modal-header").html("Error Message");
+			$(".modal-header").css("background","#9c1203b0");
+			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
+			$("#MsgModal").html("Enter the value ");
+						}else{	
+						if(tx1 >=10 && tx1<=100)
+						 {
+						   if(ax1%2==0){
+                        const index = arrWeight.indexOf(tx1);
+                   arrWeight.push(tx1);
+					var hasDuplicate = arrWeight.some((tx1, i) => arrWeight.indexOf(tx1) !== i);
+					
+//					console.log("hasDuplicate"+hasDuplicate);
+
+					if(hasDuplicate == true){
+						dupFlg = 0;
+//						$(".modal-header").html("Error Message");
+//			$(".modal-header").css("background","#9c1203b0");
+//			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
+//			$("#MsgModal").html("Avoid Duplicates");
+					   alert("Avoid Duplicates");
+					  arrWeight.splice(index,1);
+					  $("#submit_load1").prop('disabled',false);
+						$("#text1").prop('disabled',false);
+					}else{
+						$("#nextLevel").prop('hidden',true); 
+						$("#nextReading").prop('hidden',true);
+						$("#submit_load1").prop('disabled',true);
+						$("#text1").prop('disabled',true);
+						$("#axialCalculation").prop('hidden',false);
+						$("#text2").prop('disabled',false);
+					    $("#submit_load2").prop('disabled',false);
+					    
+					     }
+					  }else{
+//						$(".modal-header").html("Error Message");
+//			$(".modal-header").css("background","#9c1203b0");
+//			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
+//			$("#MsgModal").html("Enter Integer Value");
+							alert("Enter Integer Value");
+						}
+						}else{
+//							$(".modal-header").html("Error Message");
+//			$(".modal-header").css("background","#9c1203b0");
+//			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
+//			$("#MsgModal").html("Enter the value between 10N to 100N");
+							alert("Enter the value between 10N to 100N");
+						}
+						}
+						});
+      
+      
+
+
+
+var finalDiv,finalVal, finalAns;
+
+$("#submit_load2").click(function(){
+  var tenStrain = $("#text2").val();
+	
+	if(tenStrain==""){
+		alert("Enter the Value");
+	}else{
+	var numMul = 6*tx1*lengthVal;
+	var denoMul = 207000*widthVal*heightVal*heightVal;
+	finalDiv = numMul/denoMul;
+	finalVal = finalDiv* Math.pow(10,6);
+	finalAns = finalVal.toFixed(3);
+	if (id1 <= 3) {
+		if (tenStrain == finalAns) {
+	 $("#transverseCalculation").prop('hidden',false);
+	 $("#text2").prop('disabled',true);
+	 $("#submit_load2").prop('disabled',true);
+	 $("#text3").prop('disabled',false);
+	 $("#submit_load3").prop('disabled',false);
+	 }else if (tenStrain != finalAns){
+		alert("Entered value is incorrect.Try again.");
+	}
+	 }else if (id1 == 4){
+	    alert("formula :Tensile Strain = 6.Px / Ewh*h");
+
+	}else{
+		if (tenStrain == finalAns) {
+			$("#transverseCalculation").prop('hidden',false);
+	 $("#text2").prop('disabled',true);
+	 $("#submit_load2").prop('disabled',true);
+	 $("#text3").prop('disabled',false);
+	 $("#submit_load3").prop('disabled',false);
+		}else{
+			alert("Correct Answer is "+finalAns);
+		}
+	}
+	id1++;
+	 }
+});
+   
+ 
+   
+   var compresVal = 0, id2 =1;   
+   var compresEnter;
+   
+$("#submit_load3").click(function(){
+	compresVal = -finalAns;
+	compresEnter = $("#text3").val();
+	
+	if(compresEnter==""){
+		alert("Enter the Value");
+	}else{
+		
+			if (id2 <= 3) {
+		if (compresEnter == compresVal) {
+	 	       if(iterate<=4){
+					$("#nextReading").prop('hidden',false);
+					$("#nextLevel").prop('hidden',true); 	
+					}else{
+					$("#nextReading").prop('hidden',true);
+					$("#nextLevel").prop('hidden',false); 	
+					}
+	 }else if (compresEnter != compresVal){
+		alert("Entered value is incorrect.Try again.");
+	}
+	 }else if (id2 == 4){
+	    alert("formula :Tensile Strain = -6.Px / Ewh*h");
+
+	}else{
+		if (compresEnter == compresVal) {
+			if(iterate<=4){
+					$("#nextReading").prop('hidden',false);
+					$("#nextLevel").prop('hidden',true); 	
+					}else{
+					$("#nextReading").prop('hidden',true);
+					$("#nextLevel").prop('hidden',false); 	
+					}
+		}else{
+			alert("Correct Answer is "+compresVal);
+		}
+	}
+	id2++;
+		
+   }           				
+});
+     
+   $("#nextReading").click(function(){ 
+	        id1 =1;
+	        id2 = 1;
+	        $("#text1").prop('disabled',false);
+			$("#submit_load1").prop('disabled',false);
+			$("#axialCalculation").prop('hidden',true);
+            $("#transverseCalculation").prop('hidden',true);
+            $("#nextReading").prop('hidden',true);
+            addFun();
+            $("#text1").val('');
+	        $("#text2").val('');
+	        $("#text3").val('');
+	        iterate++;
+   }); 
+   
+   
+   $("#nextLevel").click(function(){
+	addFun(); 
+	tableWheatStone();
+	     
+	     
+     }); 
+     
+   function addFun(){				
+				             tempJson={};
+							 tempJson.text1 = tx1;							 
+							 tempJson.text2 = finalAns;
+							 tempJson.text3 = compresEnter;
+							   arrayJson.push(tempJson);
+//							   console.log(arrayJson);
+							   masterJson.demo=arrayJson;							    
+							   tableReadingAdded1();
+							   console.log(masterJson);
+							   							   
+			}
+     
 }
