@@ -391,13 +391,18 @@ function cantileverConfig(){
       $("#canvas-div").html(htm);
       
       var loadVal ='<div class="row"><div class="col-sm-6" id="lengthVal" >'
-                  +'<label class="labelstyle">Select Length (cm): </label>'   
+                  +'<label class="labelstyle">Select Length (mm): </label>'   
                   +'</div>'
                   +'<div class="col-sm-6">'
 	   +'<select  class="form-control selectConf" id="lengthSel"  style="height:auto;">'
 	   +'<option value="0">--- Select length --- </option>'
-	   +'<option value="10" >10 </option>'
-	   +'<option value="20">20</option>'
+	   +'<option value="250" >250 </option>'
+	   +'<option value="300">300</option>'
+	   +'<option value="350">350</option>'
+	   +'<option value="400">400</option>'
+	   +'<option value="400">450</option>'
+	   +'<option value="500">500</option>'
+	   
 	  
 	  
          +'</select>'          
@@ -407,14 +412,18 @@ function cantileverConfig(){
          
       +'<div class="row">'
 	   +'<div class="col-sm-6">'
-	   +'<label class="labelstyle">Select Width(cm) </label>'
+	   +'<label class="labelstyle">Select Width(mm) </label>'
 	   +'</div>'
 	   
 	   +'<div class="col-sm-6">'
 	   +'<select  class="form-control selectConf" id="widthSel" " style="height:auto;">'
 	   +'<option value="0">--- Select Width --- </option>'
 	   +'<option value="10" > 10 </option>'
+	   +'<option value="15" > 15 </option>'
 	   +'<option value="20" > 20 </option>'
+	   +'<option value="25" > 25 </option>'
+	   +'<option value="30" > 30 </option>'
+	   
 	  
 	  
 	   +'</select>'
@@ -424,14 +433,16 @@ function cantileverConfig(){
 	   
 	   +'<div class="row">'
 	   +'<div class="col-sm-6">'
-	   +'<label class="labelstyle">Select Height(cm) </label>'
+	   +'<label class="labelstyle">Select Height(mm) </label>'
 	   +'</div>'
 	   
 	   +'<div class="col-sm-6">'
 	   +'<select  class="form-control selectConf" id="heightSel" " style="height:auto;">'
 	   +'<option value="0">--- Select Height --- </option>'
-	   +'<option value="10" > 10 </option>'
-	   +'<option value="20" > 20 </option>'
+	   +'<option value="2" > 2 </option>'
+	   +'<option value="3" > 3 </option>'
+	   +'<option value="4" > 4 </option>'
+	   +'<option value="5" > 5 </option>'
 	  
 	  
 	   +'</select>'
@@ -462,7 +473,7 @@ function cantileverConfig(){
         
 //        +'<button type="button" style="padding: 10px; "  class="btn btn-danger btnStyle" id="checkConfg" data-toggle="modal" data-target="#selectCheck" ><b>SUBMIT </b></button>'
 	    +'<button type="button" style="padding: 10px; "  class="btn btn-danger btnStyle" id="checkConfgCanti" data-toggle="modal" data-target="#myModal" ><b>CONFIGURE </b></button>'
-	    +'<button type="button" style="padding: 10px; "  class="btn btn-danger btnStyle" id="nextLevelForConfigCanti" data-toggle="modal" data-target="#selectCheck" hidden><b>NEXT LEVEL</b></button>'
+	    +'<button type="button" style="padding: 10px; "  class="btn btn-danger btnStyle" id="nextLevelForConfigCanti"  hidden><b>NEXT LEVEL</b></button>'
 
 	    +'<br>'  
         + ' <!-- Modal -->'
@@ -540,6 +551,7 @@ function cantileverConfig(){
             $(".modal-header").css("background","#5cb85c");
 			$(".modal-body").html("Configured Successfully");
 			$("#btnModal").removeClass("btn-danger").addClass("btn-success");
+			
             $("#lengthSel").prop("disabled",true);
             $("#widthSel").prop("disabled",true);
             $("#heightSel").prop("disabled",true);
