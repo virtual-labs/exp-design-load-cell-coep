@@ -34,7 +34,7 @@ hr.new3 {
 			margin: 5px;
 }
 
-#calVoltage,#ebVal,#outVal,#guageFact{
+#calVoltage,#ebVal,#outVal,#guageFact,#errCal,#selLoadErr,#senCheck{
 	background-color: #2c3c4c;
 			color:#fff;
 			padding:5px 20px 5px 5px;
