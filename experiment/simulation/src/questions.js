@@ -1,4 +1,7 @@
 	
+   counterMasterJson = {};
+   var ansCount = 0;	
+	
 	
 $( "#typeCell" ).on( "change", function() {
  $("#typeCell").prop('disabled', true);
@@ -127,8 +130,12 @@ $( "#typeCell" ).on( "change", function() {
 								ansCount++;
 							}
 						}
-						dataQues.corrAns = ansCount;
-						 data.corrAns = dataQues;
+						 var wrongAns = 6-ansCount;
+                         var tempCountJson ={};
+						tempCountJson.correctAnswer = ansCount; 
+						tempCountJson.wrongAnswer = wrongAns; 
+						counterMasterJson.questionary = tempCountJson;
+						 console.log(counterMasterJson);
 //						 console.log(data);
 						 
 						 $("#btnModal").removeClass("btn-danger").addClass("btn-success");
@@ -151,8 +158,10 @@ $( "#typeCell" ).on( "change", function() {
 
 				   typeCell = $("#typeCell").val();
 				   if(typeCell==15){
+//					wheatStoneCon();
 					columnTypeConfig();
 				}else if(typeCell==25){
+//					wheatStoneCon();
 					cantileverConfig();
 				}else{
 					ringCellConfig();

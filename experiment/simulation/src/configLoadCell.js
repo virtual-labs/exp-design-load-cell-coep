@@ -1,15 +1,26 @@
 var areaSelect = 0 ,modSelelect = 0,poisonSelect;
 var flgSec = 0;
+var areaVal = 0;
+var diam = 0;
+
+
+wrongAreaCnt = 0;
+
+
 
 function columnTypeConfig(){
-
+     
     
+     
+     
     $("#main-div-conf").html('');	
      $("#canvas-div").html('');	
      
+     
+     
       $("#centerText2").html('DIAGRAM');
       $("#centerText1").html('CONFIGURATION');
-      var htm = '<img src="images/columnDraw.png" class="img-fluid" width = 90% height = 80% style="margin-left:50px;" >'
+      var htm = '<img src="images/columnDraw.png" class="img-fluid"  style="margin-left:50px;width:70%; height:85%;" >'
       $("#canvas-div").html(htm);
       var loadVal ='<div class="row"><div class="col-sm-6" id="loadValue" >'
                   +'<label class="labelstyle">Select Diameter (mm): </label>'   
@@ -75,7 +86,7 @@ function columnTypeConfig(){
 	    
        +'<div class="row">'
 	   +'<div class="col-sm-6">'
-	   +'<label class="labelstyle">Calculate Area (sq mm): </label>'
+	   +'<label class="labelstyle">Calculate cross Sectional area (sq mm): </label>'
 	   +'</div>'
 		+'<div class="col-sm-3">'
 	+'<input type="text" id="areaSel" style= 10px;width:100%;"  class=" form-control" />'
@@ -129,6 +140,7 @@ function columnTypeConfig(){
 	 $("#main-div-conf").html(loadVal);
 	 $("#diaSel").change(function(){
 	   areaSelect = $("#diaSel").val();
+	   columnSize();
 //	   console.log(" area "+diaSel);
 	    });
 	    $("#modSel").change(function(){
@@ -152,8 +164,8 @@ function columnTypeConfig(){
       }
      
      var radius = 0;
-     var areaVal = 0;
-     var diam = 0;
+     
+     
      
      var id = 1; 
      var areaRound = 0;
@@ -206,13 +218,14 @@ function columnTypeConfig(){
 	 if (id <= 3) {
 				
 				if (areaSelect == areaVal) {
+					
 					checkAns = 0;
 					$("#checkConfg").prop("disabled",false);
 //					$("#nextLevelForConfig").prop("hidden",false);
                     
                     $("#checkArea").prop("disabled",true);
 					$("#errorPanel").prop("hidden",true);
-		
+		            areaEnter();
 //		$("#modelMsg").html("<b class='boldTextGreen'>Configured Successfully</b>");		
 		
 		$("#diaSel").prop('disabled',true);
@@ -225,7 +238,7 @@ function columnTypeConfig(){
             $(".modal-header").css("background","#5cb85c");
 			$("#MsgModal").html("Configured Successfully");
 				} else if (areaSelect != areaVal) {
-					
+					wrongAreaCnt++;
 					$(".modal-header").html("Error Message");
 			$(".modal-header").css("background","#9c1203b0");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
@@ -245,6 +258,7 @@ function columnTypeConfig(){
 			$(".modal-header").css("background","#23435c");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
 			$("#MsgModal").html("<b>Formula : Area = &prod;&times; r <sup>2</sup> </b>");
+			wrongAreaCnt++;
 //				 $("#modelMsg").html("<b class='boldTextBlue'>formula : Area = (radius &times; 10<sup>-3</sup>)<sup>2</sup> &times; &prod;</b> ");
 //				 $("body").css("padding","0px 0px 0px 0px");
 //				 wrong_cnt++;
@@ -260,7 +274,7 @@ function columnTypeConfig(){
                     
                     $("#checkArea").prop("disabled",true);
 					$("#errorPanel").prop("hidden",true);
-		
+		            areaEnter();
 //		$("#modelMsg").html("<b class='boldTextGreen'>Configured Successfully</b>");		
 		
 		$("#diaSel").prop('disabled',true);
@@ -286,7 +300,7 @@ function columnTypeConfig(){
 				} else {
 					checkAns = 0;
 //					alert("correct answer is " + axialCal );
-					
+					wrongAreaCnt++;
 					$("#btnModal").removeClass("btn-danger").addClass("btn-success");
 	        $(".modal-header").html("Success Message");
             $(".modal-header").css("background","#5cb85c");
@@ -320,8 +334,10 @@ function columnTypeConfig(){
 	 $("#checkConfg").prop('hidden',true);
 	 $("#nextLevelForConfig").prop('hidden',false);
 	 
-	 
-	 
+	
+                        var tempCountJson ={};
+						tempCountJson.wrongAreaConfig = wrongAreaCnt; 						
+						counterMasterJson.columnTypeConfig = tempCountJson;
 	 
 	 
 	 
@@ -360,7 +376,8 @@ function columnTypeConfig(){
 	
 	$("#nextLevelForConfig").click(function() {
 //		if(flgSec==1){
-			columnType();
+	    wheatStoneCon();
+//			columnType();
 //		}else{
 //			$("#modelMsg").html("<b class='boldTextRed'>Select appropriate values</b>");
 //		}
@@ -376,16 +393,22 @@ var lengthVal, widthVal, heightVal, modSelcantiVal;
 var cantiFlg = 0;
 
 function cantileverConfig(){
-	$("#main-div-conf").html('');	
+	
+     $("#main-div-conf").html('');	
      $("#canvas-div").html('');	
+     
+     
      
       $("#centerText2").html('DIAGRAM');
       $("#centerText1").html('CONFIGURATION');
      
-
-  var htm = '<video width="95%" height="95%" autoplay muted loop>'
-            +'<source src="images/cantilevelVideo.mp4" type="video/mp4">'
-            +'</video>'
+     
+      var htm = '<img src="images/cantilever.jpeg" class="" style="width:80%;height:600px; margin-left:50px;" >'
+      $("#canvas-div").html(htm);
+     
+//  var htm = '<video width="95%" height="95%" autoplay muted loop>'
+//            +'<source src="images/cantilevelVideo.mp4" type="video/mp4">'
+//            +'</video>'
             
 
       $("#canvas-div").html(htm);
@@ -433,12 +456,12 @@ function cantileverConfig(){
 	   
 	   +'<div class="row">'
 	   +'<div class="col-sm-6">'
-	   +'<label class="labelstyle">Select Height(mm) </label>'
+	   +'<label class="labelstyle">Select thickness(mm) </label>'
 	   +'</div>'
 	   
 	   +'<div class="col-sm-6">'
 	   +'<select  class="form-control selectConf" id="heightSel" " style="height:auto;">'
-	   +'<option value="0">--- Select Height --- </option>'
+	   +'<option value="0">--- Select thickness --- </option>'
 	   +'<option value="2" > 2 </option>'
 	   +'<option value="3" > 3 </option>'
 	   +'<option value="4" > 4 </option>'
@@ -506,23 +529,22 @@ function cantileverConfig(){
       modSelcantiVal =parseInt($("#modSelcanti").val());
       
        $("#lengthSel").change(function(){
-	   lengthVal = $("#lengthSel").val();
-//	   console.log(" length "+lengthVal);
+	   lengthVal = parseInt($("#lengthSel").val());
+          length();
 	    });
 	    
 	     $("#widthSel").change(function(){
-	   widthVal = $("#widthSel").val();
-//	   console.log(" width "+widthVal);
+	   widthVal = parseInt($("#widthSel").val());
+         width();
 	    });
 	    
 	    $("#heightSel").change(function(){
-	   heightVal = $("#heightSel").val();
-//	   console.log(" width "+heightVal);
+	   heightVal = parseInt($("#heightSel").val());
+       height();
 	    });
 	    
 	    $("#modSelcanti").change(function(){
 	   modSelcantiVal = $("#modSelcanti").val();
-//	   console.log(" width "+modSelcantiVal);
 	    });
       
       $("#checkConfgCanti").click(function() {
@@ -544,12 +566,12 @@ function cantileverConfig(){
 		if(lengthVal==0 || widthVal==0 || heightVal==0 || modSelcantiVal==0){
 	        $(".modal-title").html("Error Message");
 			$(".modal-header").css("background","#d9534f");
-			$(".modal-body").html("Select Appropriate Values");
+			$("#MsgModal").html("Select Appropriate Values");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
         }else{
 	        $(".modal-title").html("Success Message");
             $(".modal-header").css("background","#5cb85c");
-			$(".modal-body").html("Configured Successfully");
+			$("#MsgModal").html("Configured Successfully");
 			$("#btnModal").removeClass("btn-danger").addClass("btn-success");
 			
             $("#lengthSel").prop("disabled",true);
@@ -572,7 +594,8 @@ function cantileverConfig(){
 });
 
    $("#nextLevelForConfigCanti").click(function() {
-	  cantilever();
+	   wheatStoneCon();
+//	  cantilever();
 	});
 //	   if(diaSel == 0){
 //		$("#errorPanel").prop("hidden",false);
