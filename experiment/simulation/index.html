@@ -16,9 +16,15 @@
 	<link rel="stylesheet" href="css/mainPage.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/loadCellType.css">
-
+    <link rel="stylesheet" href="css/analysis.css">
 </head>
 
+<style>
+@font-face{
+ font-family:'digital-clock-font';
+ src: url('font/digital-7.ttf');
+}
+</style>
 
 <body >
 
@@ -31,15 +37,15 @@
 
 		
 	</header>
-	<div  class="row container" style="margin-top:20px;">
-	<div  class="col-sm-2">
+	<div  class="row container" id = "rowHide" style="margin-top:20px;">
+	<div  class="col-sm-1">
 <!-- 	 <label for="sel1">Select list (select one):</label> -->
 	 </div>
 	<div  class="col-sm-3">
-	 <label for="sel1">Select type of load cell</label>
+	 <label for="sel1">Select type of load cell : </label>
 	 </div>
 	
-     <div  class="col-sm-7"> 
+     <div  class="col-sm-4"> 
       <select class="form-control" id="typeCell" name="sellist1">
         <option value="0">--- Select type of load cell --- </option>
 	   <option value="15">Column type load cell</option>
@@ -47,8 +53,14 @@
 	   <option value="40" hidden>Ring type load cell</option>
       </select>
       </div>
-
-
+   
+   <div  class="col-sm-2"> 
+      <button type="button" id="delete-btn" class="btn" data-dismiss="modal" style="margin-top:-1px;" hidden>Delete Selected</button>
+     </div>
+     
+     <div  class="col-sm-2"> 
+      <button type="button" id="validateCon" class="btn-info" data-dismiss="modal" data-toggle="modal" data-target="#myModal" style="margin-top:-1px;" hidden>Validate Connection</button>
+     </div>
 
       </div>
 <div  class="row container-fluid" id="main-div" >
@@ -58,9 +70,15 @@
 	      			</div>
 	      			<label  id="counter"></label>
 	      			<div class="panel-body" id="canvas-div" >
+	      			
 	      			<img src="images/loadCellMerge.png " width = 90% class="img-fluid" >
+	      			
 	      			</div>
-					
+					<div class="panel-body" id="canvas-div-sub" >
+	      			
+	      			
+	      			
+	      			</div>
 	      			
 	   			</div>
 	       </div>
@@ -70,7 +88,7 @@
 	      			</div>
 	     			<div class="panel-body" id="main-div-conf" >
 	     			
-	     			<label>Select Type of load sell </label>
+	     			<center><label> Select Type of load sell </label></center>
 	     			</div>
 	     		
 	     		</div>
@@ -108,7 +126,7 @@
 Copyrights &copy; COEP - Virtual Lab
 </footer>
 </body>
-
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script> -->
 <!-- https://code.jquery.com/jquery-3.5.1.js -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -126,10 +144,34 @@ Copyrights &copy; COEP - Virtual Lab
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script type="text/javascript" src="src/questionJson.js"></script>
 <script type="text/javascript" src="src/questions.js"></script>
+<script type="text/javascript" src="src/wheatStoneBuild.js"></script>
+
 <script type="text/javascript" src="src/configLoadCell.js"></script>
+<script type="text/javascript" src="src/canteleverConfig.js"></script>
+<script type="text/javascript" src="src/columnTypeConfig.js"></script>
+
 <script type="text/javascript" src="src/calculation.js"></script>
 <script type="text/javascript" src="src/table.js"></script>
 <script type="text/javascript" src="src/wheatStoneCalculation.js"></script>
+<script type="text/javascript" src="src/graphPage.js"></script>
+<script type="text/javascript" src="src/result.js"></script>
+
+<script>
+function resetDivSize() {  
+    const div = document.getElementById('canvas-div');  
+    
+    // Resetting width and height to auto  
+    div.style.width = 'auto';  
+    div.style.height = 'auto'; 
+    
+ const div1 = document.getElementById('main-div-conf');  
+    
+    // Resetting width and height to auto  
+    div1.style.width = 'auto';  
+    div1.style.height = 'auto';  
+    
+}  
+</script>
 
 
 </html>

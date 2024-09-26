@@ -3,25 +3,40 @@ var eb = 0;
 var secondVal = 0;
 var thirdVal = 0;
 var idCal = 1;
-var flg = 0;
+var flg = 0,loadCheck=0;
 var p1,p2,p3,p4,p5,p11,p22,p33,p44;
 var r1,r2,r3,txt;
+var flgType = 0;
+var selLoadOut = 0;
+graphJson = {};
+arrayJsong = [];
+
+var rendValFlg = 0;
+var firstLoad = 0, secondLoad = 0, thirdLoad = 0, forthLoad = 0, fifthLoad = 0 ;
+var wrongOpCnt = 0;
+
+
 function tableReading(masterJson)
 {
-	
+	rendValFlg = 1;
 	$("#main-div-conf").html('');	
      $("#canvas-div").html('');	
+     $("#canvas-div-sub").html('');
      
       $("#centerText2").html('CALCULATION');
       $("#centerText1").html('WHEATSTONE BRIDGE');
-      
+      flgType = 1;
       let iterator = masterJson.demo.values();
 //      console.log(iterator.next().value);
-      var htm = '<img src="images/wheatStoneBridgeE.png " class="img-fluid" width = 90% height = 90%>'
-      $("#main-div-conf").html(htm);
+//      var htm = '<img src="images/wheatStoneBridgeE.png " class="img-fluid" width = 90% height = 90%>'
+//      $("#main-div-conf").html(htm);
+//      bridgeCalculate();
+
+//       onLoad();
+
 //      console.log("Value of ax1 : "+ax1);
       
-      var firstLoad = 0, secondLoad = 0, thirdLoad = 0, forthLoad = 0, fifthLoad = 0 ;
+      
       
       for(i=0,p=1;i<masterJson.demo.length;i++,p++)
 						{
@@ -49,8 +64,8 @@ function tableReading(masterJson)
 					+ '  <tr style = "BACKGROUND-COLOR: #072647; color:#fff; ">'
 					+ '  <th><center>Sr.No</center></th>'
 					+ '  <th><center>Load Applied (N)</center></th>'
-					+ '   <th><center>Axial </center></th>'
-					+ '  <th><center>Transverse</center> </th>'
+					+ '   <th><center>Tensile Strain </center></th>'
+					+ '  <th><center>Compressive Strain</center> </th>'
 
 					+ '   </tr>'
 					+ '  </thead>'
@@ -100,7 +115,7 @@ function tableReading(masterJson)
 
                   +'<div class="row" id="ebVal" hidden>'
 				   +'<div class="col-sm-5">'
-				   +'<label  id=""  class="" style="font-size:16px;margin:15px 10px ;">Select the value of E<sub>b</sub>:  </label>'
+				   +'<label  id=""  class="" style="font-size:16px;margin:15px 10px ;">Select the value of supply voltage:  </label>'
 				   +'</div>'
 				    +'<div class="col-sm-4">'
 	   +'<select  class="form-control " id="text5" " style="height:auto;  margin-top: 9px;">'
@@ -137,7 +152,7 @@ function tableReading(masterJson)
 				   +'<label  id=""  class="" style="font-size:16px;margin:15px 10px ;">Calculate output voltage (&micro;V):  </label>'
 				   +'</div>'
 				   +'<div class="col-sm-4" id="valueStep2">'
-				   +'<input type="text"  value="" id="text6"  style="height:auto;  margin-top: 15px;" class=" form-control" />'
+				   +'<input type="number"  value="" id="text6"  style="height:auto;  margin-top: 15px;" class=" form-control" />'
 				   +'</div>'
 				   +'<div class="col-sm-3"  id="submitCal">'
 				   +'<br><button type="submit" class="btn btn-danger"  id="submit_selLoad2" data-toggle="modal" data-target="#myModal" style="width:100%;margin-top: -6px;" >Submit</input>'
@@ -153,7 +168,7 @@ function tableReading(masterJson)
 			       +'</div>'				   
 				   +'<div class="row" >'
 				   +'<div class="col-sm-12">'	
-				   +'<button type="button" style="padding: 10px; "  class="btn btn-danger btnStyle" id="finishReading" data-toggle="modal" data-target="#myModal" hidden><b>COMPLETED </b></button>'
+				   +'<button type="button" style="padding: 10px; "  class="btn btn-danger btnStyle" id="finishReading" data-toggle="modal" data-target="#myModal" hidden><b>NEXT LEVEL </b></button>'
 		           +'</div>'	
 			       +'</div>'	
 			           
@@ -172,29 +187,80 @@ function tableReading(masterJson)
 //				console.log(masterJson.demo[0].text1);
 
 				$("#canvas-div").html(tableMainDiv);
-				$("#canvas-div").append(calculatePanel);
+               $("#canvas-div").append(calculatePanel);
+               onLoad();
+               
+            function onLoad(){
+	$("#main-div-conf").html('');
+	 paper = new Raphael(document.getElementById('main-div-conf'));
+
+
+var w = 600;
+var h = 600;
+
+var width = $(window).width();
+
+	if ($(window).width() < 600) {
+		width = $(this).width();
+
+		paper.setViewBox(0, 0, w, h, true);
+		paper.setSize('90%', '90%');
+	} else {
+
+		paper.setViewBox(0, 0, w, h, true);
+		paper.setSize('90%', '90%');
+	}
+
+	var x=100;
+	var y=82;
+	
+	 wheatStone = paper.image("images/wheatStoneBridgeE1.png",(x-40), (y-100),500, 400);
+	 
+	 var wheatBorder = paper.path('M' + (x -30) + ' ' + (y + 220 )  + 'l 400 0 l 0 -300 l -400 0 z')
+		.attr({ 'stroke-dasharray':  "-.", 'stroke-width': '2', 'stroke':'#8a8182' }).toFront();
+		
+     columnType = paper.image("images/columnType1.png",(x), (y+270),250, 150);		
+		
+//	cantiBeam = paper.image("images/cantiBeamW.png",(x), (y+270),250, 150);
+	
+	 var beamBorder = paper.path('M' + (x -30) + ' ' + (y + 260 )  + 'l 400 0 l 0 170 l -400 0 z')
+		.attr({ 'stroke-dasharray':  "-.", 'stroke-width': '2', 'stroke':'#8a8182' }).toFront();
+		
+    var linJoin = paper.path('M' + (x +60) + ' ' + (y + 260 )  + 'l 0 -40')
+		.attr({  'stroke-width': '2', 'stroke':'#000' }).toFront();	
+		
+		var arr = paper.path('M' + (x +60) + ' ' + (y + 230 )  + 'l 8 0 l -8 -8 l -8 8 z')
+		.attr({  'stroke-width': '2', 'stroke':'#000','fill':'#decac8' }).toFront();
+		
+		 p5 =  paper.text(x-10,y+75,"V").attr({'stroke' : '#000' , "font-size":"16px","font-weight": "bold","fill":"red"});
+
+	
+		var linF = paper.path("M"+(x+100+31)+" "+(y+289)+" l 0 -22 ")
+	 .attr({'stroke':'#000','stroke-width': 2});
+ 
+	  var linAr = paper.path("M"+(x+100+31)+" "+(y+289)+"l 5 -5 l -10 0 l 5 5")
+	 .attr({'stroke':'#000','stroke-width': 2,'fill':"#decac8"});
+	
+
+	  ftxt =  paper.text((x+153),(y+272),"F : "+" "+" N").attr({'font-weight': 'bold','font-size':'14px','stroke':'#f20515'});			
+	
+	
+}
 				var loadCheck=0;
 				var loadCheck1=0;
-				
-				
-				
-				var selLoadOut = 0;
-				
+		
 					$("#text4").change(function(){
 					
 					loadCheck1 = $("#text4").val();
 			 loadCheck = parseInt(loadCheck1);	
-			 		 
-			 pressureValue =$("#text4").children(":selected").attr("value");			 
-			 $("#text4").children('option[value="' + pressureValue + '"]').attr('disabled', true);
-					
+			 	
 					    });	
 				
 				
 				$("#submit_selLoad").click(function(){
 						
 //                loadCheck = $("#text4").val();
-				if(loadCheck1==0)	
+				if(loadCheck==0)	
 					{
 						$(".modal-header").html("Error Message");
 			$(".modal-header").css("background","#9c1203b0");
@@ -202,16 +268,19 @@ function tableReading(masterJson)
 			$("#MsgModal").html("Select Appropriate Value");
 					}else{
 						
+				 pressureValue =$("#text4").children(":selected").attr("value");			 
+			 $("#text4").children('option[value="' + pressureValue + '"]').attr('disabled', true);
+				
 						
 //				for(i=0 ,flag=0; i<masterJson.demo.length;i++){
 //					var temp=parseInt(masterJson.demo[i].text1);
-					if(loadCheck1 ==1){
+					if(loadCheck ==1){
 						flag = 1;
 						selLoadOut = firstLoad;
 								secondVal = masterJson.demo[0].text2;
 								thirdVal = masterJson.demo[0].text3;
 //								break;
-					}else if(loadCheck1==2)
+					}else if(loadCheck==2)
 					  {
 						flag = 1;
 						selLoadOut = secondLoad;
@@ -219,20 +288,20 @@ function tableReading(masterJson)
 								thirdVal = masterJson.demo[1].text3;
 //								break;
 						
-					}else if(loadCheck1==3)
+					}else if(loadCheck==3)
 					 {
 						flag = 1;
 						selLoadOut = thirdLoad;
 								secondVal = masterJson.demo[2].text2;
 								thirdVal = masterJson.demo[2].text3;
 //								break;
-					}else if(loadCheck1==4){
+					}else if(loadCheck==4){
 						flag = 1;
 						selLoadOut = forthLoad;
 								secondVal = masterJson.demo[3].text2;
 								thirdVal = masterJson.demo[3].text3;
 //								break;
-					}else if(loadCheck1==5){
+					}else if(loadCheck==5){
 						flag = 1;
 						selLoadOut = fifthLoad;
 								secondVal = masterJson.demo[4].text2;
@@ -250,6 +319,7 @@ function tableReading(masterJson)
 //					}
 //					if(loadCheck!=0)
 //					{
+	                  console.log("selLoadOut : "+selLoadOut);
 						flg = 1;
 					bridgeCalculate();
 						$("#ebVal").prop("hidden",false);
@@ -272,16 +342,19 @@ function tableReading(masterJson)
 				eb = parseInt($("#text5").val())
 				
 				  if(eb!=0){
+
+    $('#text5').prop('disabled', true);    
+    $("#submit_selLoad1").prop("disabled",true);
+    $('#text5 option').prop('disabled', true);
+    $('#text5 option[value="' + eb + '"]').prop('disabled', false);
+					
 					$("#outVal").prop("hidden",false);
 					$("#submit_selLoad1").prop("disabled",true);
 					$("#text5").prop("disabled",true);
 					flg = 2;
 					bridgeCalculate();
 					
-					
-////					alert("Now based on selected values calculate the current and enter its appropriate value in the wheat stone bridge");
-//                 
-//					
+				
 					
 				}else{
 					$("#outVal").prop("hidden",true);
@@ -317,7 +390,7 @@ function tableReading(masterJson)
                      additionToJson();
                      if(iter1<4){
 					 $("#anotherReading").prop("hidden",false);
-                     $("#finishReading").prop("hidden",false);	
+                     $("#finishReading").prop("hidden",true);	
 					}else{
 						$("#anotherReading").prop("disabled",true);
                      $("#finishReading").prop("hidden",false);
@@ -329,7 +402,8 @@ function tableReading(masterJson)
 				 $(".modal-header").html("Error Message");
 			$(".modal-header").css("background","#9c1203b0");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("Entered value is Incorrect.<br>Try again");	
+			$("#MsgModal").html("Entered value is Incorrect.<br>Try again");
+            wrongOpCnt++;
 //				alert("Entered value is incorrect.Try it again.");
 				
 				
@@ -345,6 +419,7 @@ function tableReading(masterJson)
 			$(".modal-header").css("background","#23435c");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
 			$("#MsgModal").html("<b>Output voltage = Eb &times; f[E2+E4-E1-E3]/4</b>");
+			wrongOpCnt++;
 //				alert("formula : Output voltage = Eb*f[E2+E4-E1-E3]/4");
 				
 //				 $("#modelMsg").html("<b class='boldTextBlue'>formula : Area = "+unescape('%u220F')+" r"+unescape('%B2')+"</b> ");
@@ -362,7 +437,7 @@ function tableReading(masterJson)
 					 $("#text6").prop("disabled",true);
 					 if(iter1<4){
 					 $("#anotherReading").prop("hidden",false);
-                     $("#finishReading").prop("hidden",false);	
+                     $("#finishReading").prop("hidden",true);	
 					}else{
 						$("#anotherReading").prop("disabled",true);
                      $("#finishReading").prop("hidden",false);
@@ -379,6 +454,7 @@ function tableReading(masterJson)
 	        $(".modal-header").html("Success Message");
             $(".modal-header").css("background","#5cb85c");
 			$("#MsgModal").html("Correct Answer is " + outVolt);
+			wrongOpCnt++;
 //					alert("correct answer is " + outVolt );
 					
 //					 $("#modelMsg").html("<b class='boldTextRed'>Correct answer is " + axialCal+"</b>");
@@ -391,12 +467,22 @@ function tableReading(masterJson)
 			}	
 				});
 		
-		$("#finishReading").click(function(){
-			complete();
-			$("#anotherReading").prop("disabled",true);	
+			$("#finishReading").click(function(){
+	         
+	                    var tempCountJson ={};
+						tempCountJson.outPut = wrongOpCnt; 						
+						counterMasterJson.outputVoltage = tempCountJson;
+	         
+	         $("#anotherReading").prop("disabled",true);	
 			$("#finishReading").prop("disabled",true);
+//	
+//				$("#btnModal").removeClass("btn-danger").addClass("btn-success");
+//	        $(".modal-header").html("Success Message");
+//            $(".modal-header").css("background","#5cb85c");
+//			$("#MsgModal").html("Correct Answer is " + ax);
+//			
 			
-		
+		    graphReading();
 			
 		});
 			
@@ -412,19 +498,25 @@ function tableReading(masterJson)
 			var iter1 = 0;
 			$("#anotherReading").click(function(){
 				clear();
+				onLoad();
 				idCal = 1;
 				loadCheck1 = 0;
+				loadCheck = 0;
 				$("#text4").val(0);
 				$("#text4").prop("disabled",false);
 				$("#submit_selLoad").prop("disabled",false);
 				$("#guageFact").prop("hidden",true);
 				$("#ebVal").prop("hidden",true);
 				$("#outVal").prop("hidden",true);
-				$("#text5").val(0);
+//				$("#text5").val(eb);
 				$("#text6").val('');
+//				ftxt.remove();
+//				 ftxt =  paper.text((x+130),(y+272),"F : "+" "+" N").attr({'font-weight': 'bold','font-size':'14px','stroke':'#f20515'});
 				$("#anotherReading").prop("hidden",true);
 				$("#finishReading").prop("hidden",true);
-				$("#text5").prop("disabled",false);
+				 $('#text5 option').prop('disabled', true);    
+                 $('#text5 option[value="' + eb + '"]').prop('disabled', false);
+//				$("#text5").prop("disabled",false);
 				$("#submit_selLoad1").prop("disabled",false);
 				$("#submit_selLoad2").prop("disabled",false);
 				$("#text6").prop("disabled",false);
@@ -433,6 +525,7 @@ function tableReading(masterJson)
 			
 			
 			function clear(){
+				
 				p1.remove();
 				p2.remove();
 				p3.remove();
@@ -443,18 +536,23 @@ function tableReading(masterJson)
 				p33.remove();
 				p44.remove();
 				txt.remove();
-//				var txt = paper.text(x+328,y+159," ").attr({'stroke' : '#000' , "font-size":"20px","font-weight": "bold"});
+				ftxt.remove();			
+	  ftxt = paper.text((x+130),(y+272),"F : "+" "+" N").attr({'font-weight': 'bold','font-size':'14px','stroke':'#f20515'});			
+
      r1.attr({"fill":"#fff"});
+		
 			}
 				
 				function additionToJson(){
-					tempJson = {};
+	 tempJson = {};
 	 tempJson.selectedLoad = selLoadOut ;
 	 tempJson.ebValue = eb;
 	 tempJson.outputVoltage = outVolt;
-	 arrayJson.push(tempJson);
-	 masterJson.demo=arrayJson;
-//	 console.log(masterJson);
+	 tempJson.ranOutput = ranOutput;
+	 arrayJsong.push(tempJson);
+	 graphJson.demo=arrayJsong;
+	 
+	 console.log(graphJson);
 				}
 				
 }			
@@ -463,6 +561,9 @@ function tableReadingAdded()
 	
       $("#centerText1").html('OBSERVATIONS');
       
+      masterJson.demo.sort(function(a, b){
+	  		  return a.text1 - b.text1;
+			});
      
       
       var tableMainDiv = '<div class="row ">'
@@ -472,8 +573,8 @@ function tableReadingAdded()
 					+ '  <tr style = "BACKGROUND-COLOR: #072647; color:#fff; ">'
 					+ '  <th><center>Sr.No</center></th>'
 					+ '  <th><center>Load Applied (N)</center></th>'
-					+ '   <th><center>Axial </center></th>'
-					+ '  <th><center>Transverse</center> </th>'
+					+ '   <th><center>Axial Strain </center></th>'
+					+ '  <th><center>Transverse Strain</center> </th>'
 
 					+ '   </tr>'
 					+ '  </thead>'
@@ -485,7 +586,7 @@ function tableReadingAdded()
 				   +'<label  id=""  class="" style="font-size:16px;margin:15px 10px ;">Calculate output voltage:  </label>'
 				   +'</div>'
 				   +'<div class="col-sm-3" id="valueStep1">'
-				   +'<input type="text"  value="" id="text1"  style=margin:15px 10px;width:150%;height:50%;" class=" form-control" />'
+				   +'<input type="number"  value="" id="text1"  style=margin:15px 10px;width:150%;height:50%;" class=" form-control" />'
 				   +'</div>'
 				   +'<div class="col-sm-3"  id="submitCal">'
 				   +'<br><button type="submit" class="btn btn-danger"  id="submit_load1" style="width:100%;height:50%;margin-top: -6px;" >Submit</input>'
@@ -506,7 +607,8 @@ function tableReadingAdded()
 
 
 					 
-				$("#main-div-conf").html(tableMainDiv);
+								$("#canvas-div-sub").html(tableMainDiv);
+
 				//$("#canvas-div").append(calculatePanel);
 }
 
@@ -535,6 +637,22 @@ function calculateOutput(){
 	var outVolt123 = outVolt12*Math.pow(10,6);
 	var outVolt1234 = outVolt123.toFixed(2); 
 	outVolt = parseFloat(outVolt1234);
+	
+	var percentageError = (Math.random() * 2 + 3) / 100; // This generates a random number between 0.03 and 0.05
+
+    // Determine whether to add or subtract the error
+    var isPositive = Math.random() < 0.5; // 50% chance to add or subtract
+
+    // Calculate the error amount
+    var errorAmount = outVolt * percentageError;
+
+    // Apply the error
+    var ranOutput1 = (isPositive ? outVolt + errorAmount : outVolt - errorAmount).toFixed(2);
+      ranOutput = parseFloat(ranOutput1);
+//      ranOutput = ranOutput.tofixed(2);
+    // Log the final output voltage
+//    console.log("Output Voltage with Error: " + outVolt.toFixed(2)); 
+	
 //	outVolt = Math.exp(outVolt123);
 //	console.log("outVolt"+outVolt);
 	
@@ -549,7 +667,11 @@ function tableReadingAdded1(){
       $("#centerText2").html('CALCULATION');
       $("#centerText1").html('OBSERVATIONS');
       
+       masterJson.demo.sort(function(a, b){
+	  		  return a.text1 - b.text1;
+			});
       
+      rendValFlg = 2;
 	var tableMainDiv1 = '<div class="row ">'
 					+'<div class="col-sm-12">'
 			        + '<table class=" table table-bordered " style="margin:10px; text-align: center">'
@@ -577,7 +699,7 @@ function tableReadingAdded1(){
 
 
 					 
-				$("#main-div-conf").html(tableMainDiv1);
+				$("#canvas-div-sub").html(tableMainDiv1);
 				
 }
 
@@ -586,15 +708,17 @@ var oneLoad,twoLoad,threeLoad,fourLoad,fiveLoad;
 function tableWheatStone(){
 	$("#main-div-conf").html('');	
      $("#canvas-div").html('');	
-     
+     $("#canvas-div-sub").html('');
+     	
       $("#centerText2").html('CALCULATION');
       $("#centerText1").html('WHEATSTONE BRIDGE');
-      
+      flgType = 2;
       let iterator = masterJson.demo.values();
 //      console.log(iterator.next().value);
-      var htm = '<img src="images/wheatStoneBridgeE.png " class="img-fluid" width = 90% height = 90%>'
-      $("#main-div-conf").html(htm);
-      
+//      var htm = '<img src="images/wheatStoneBridgeE.png " class="img-fluid" width = 90% height = 90%>'
+//      $("#main-div-conf").html(htm);
+       
+//      wheatStone = paper.image("images/wheatStoneBridgeEraseR1.png",(x-40), (y-100),500, 400);
       
       var tableMainDiv1 = '<div class="row ">'
 					+'<div class="col-sm-12">'
@@ -657,7 +781,7 @@ function tableWheatStone(){
 				   +'</div>'				
 					+'<div class="row" id="ebVal" hidden>'
 				   +'<div class="col-sm-5">'
-				   +'<label  id=""  class="" style="font-size:16px;margin:15px 10px ;">Select the value of E<sub>b</sub>:  </label>'
+				   +'<label  id=""  class="" style="font-size:16px;margin:15px 10px ;">Select the value of supply voltage:  </label>'
 				   +'</div>'
 				    +'<div class="col-sm-4">'
 	   +'<select  class="form-control " id="text5" " style="height:auto;  margin-top: 9px;">'
@@ -682,10 +806,10 @@ function tableWheatStone(){
 				   +'<label  id=""  class="" style="font-size:16px;margin:15px 10px ;">Calculate output voltage (mV):  </label>'
 				   +'</div>'
 				   +'<div class="col-sm-4" id="valueStep2">'
-				   +'<input type="text"  value="" id="text6"  style="height:auto;  margin-top: 15px;" class=" form-control" />'
+				   +'<input type="number"  value="" id="text6"  style="height:auto;  margin-top: 15px;" class=" form-control" />'
 				   +'</div>'
 				   +'<div class="col-sm-3"  id="submitCal">'
-				   +'<br><button type="submit" class="btn btn-danger"  id="submit_selLoad2"  style="width:100%;margin-top: -6px;" >Submit</input>'
+				   +'<br><button type="submit" class="btn btn-danger"  id="submit_selLoad2"  data-toggle="modal" data-target="#myModal" style="width:100%;margin-top: -6px;" >Submit</input>'
 				   +'</div>'
 				   
 				   +'</div>'				   
@@ -698,21 +822,77 @@ function tableWheatStone(){
 			       +'</div>'				   
 				   +'<div class="row" >'
 				   +'<div class="col-sm-12">'	
-				   +'<button type="button" style="padding: 10px; "  class="btn btn-danger btnStyle" id="finishReading" data-toggle="modal" data-target="#myModal" hidden><b>COMPLETED </b></button>'
+				   +'<button type="button" style="padding: 10px; "  class="btn btn-danger btnStyle" id="finishReading" data-toggle="modal" data-target="#myModal" hidden><b>NEXT LEVEL </b></button>'
 		           +'</div>'	
 			       +'</div>'
 	
 				$("#canvas-div").html(tableMainDiv1);
                $("#canvas-div").append(calculatePanel);
+               onLoad();
                
+            function onLoad(){
+	$("#main-div-conf").html('');
+	 paper = new Raphael(document.getElementById('main-div-conf'));
+
+
+var w = 600;
+var h = 600;
+
+var width = $(window).width();
+
+	if ($(window).width() < 600) {
+		width = $(this).width();
+
+		paper.setViewBox(0, 0, w, h, true);
+		paper.setSize('90%', '90%');
+	} else {
+
+		paper.setViewBox(0, 0, w, h, true);
+		paper.setSize('90%', '90%');
+	}
+
+	var x=100;
+	var y=82;
+	
+	 wheatStone = paper.image("images/wheatStoneBridgeE1.png",(x-40), (y-100),500, 400);
+	 
+	 var wheatBorder = paper.path('M' + (x -30) + ' ' + (y + 220 )  + 'l 400 0 l 0 -300 l -400 0 z')
+		.attr({ 'stroke-dasharray':  "-.", 'stroke-width': '2', 'stroke':'#8a8182' }).toFront();
+		
+	cantiBeam = paper.image("images/cantiBeamW1.png",(x), (y+270),250, 150);
+	
+	 var beamBorder = paper.path('M' + (x -30) + ' ' + (y + 260 )  + 'l 400 0 l 0 170 l -400 0 z')
+		.attr({ 'stroke-dasharray':  "-.", 'stroke-width': '2', 'stroke':'#8a8182' }).toFront();
+		
+    var linJoin = paper.path('M' + (x +60) + ' ' + (y + 260 )  + 'l 0 -40')
+		.attr({  'stroke-width': '2', 'stroke':'#000' }).toFront();	
+		
+	var arr = paper.path('M' + (x +60) + ' ' + (y + 230 )  + 'l 8 0 l -8 -8 l -8 8 z')
+		.attr({  'stroke-width': '2', 'stroke':'#000','fill':'#decac8' }).toFront();
+		
+		 var linF = paper.path("M"+(x+210)+" "+(y+285)+" l 0 -18 ")
+	 .attr({'stroke':'#000','stroke-width': 2});
+	 
+	  var linAr = paper.path("M"+(x+210)+" "+(y+285)+"l 5 -5 l -10 0 l 5 5")
+	 .attr({'stroke':'#000','stroke-width': 2,'fill':"#decac8"});
+	 
+	 		 p5 =  paper.text(x-10,y+75,"V").attr({'stroke' : '#000' , "font-size":"16px","font-weight": "bold","fill":"red"});
+
+	 
+//	 var arr = paper.path("M"+(x+50+lenVal-40)+" "+(y-21)+" l 10 -10 l -20 0 l 10 10 ")
+//	 .attr({'stroke':'#000','stroke-width': 2,'fill':"#decac8"});
+	 
+	  ftxt = paper.text((x+240),(y+272),"F : "+" "+" N").attr({'font-weight': 'bold','font-size':'14px','stroke':'#f20515'});			
+	
+	
+}   
+
       $("#text4").change(function(){
 					
 					loadCheck1 = $("#text4").val();
 			 loadCheck = parseInt(loadCheck1);	
 			 		 
-			 pressureValue =$("#text4").children(":selected").attr("value");			 
-			 $("#text4").children('option[value="' + pressureValue + '"]').attr('disabled', true);
-					
+			 	
 					    });	
       
     $("#submit_selLoad").click(function(){
@@ -726,7 +906,9 @@ function tableWheatStone(){
 			$("#MsgModal").html("Select Appropriate Value");
 					}else{
 						
-						
+					pressureValue =$("#text4").children(":selected").attr("value");			 
+			 $("#text4").children('option[value="' + pressureValue + '"]').attr('disabled', true);
+					
 
 					if(loadCheck1 ==1){
 						flag = 1;
@@ -781,13 +963,19 @@ function tableWheatStone(){
 				eb = parseInt($("#text5").val())
 				
 				  if(eb!=0){
+					
+					$('#text5').prop('disabled', true);    
+    $("#submit_selLoad1").prop("disabled",true);
+    $('#text5 option').prop('disabled', true);
+    $('#text5 option[value="' + eb + '"]').prop('disabled', false);
+					
 					$("#outVal").prop("hidden",false);
 					$("#submit_selLoad1").prop("disabled",true);
 					$("#text5").prop("disabled",true);
 					flg = 2;
 					bridgeCalculate();
 					
-				
+
 					
 				}else{
 					$("#outVal").prop("hidden",true);
@@ -823,7 +1011,7 @@ function tableWheatStone(){
                      additionToJson1();
                      if(iter1<4){
 					 $("#anotherReading").prop("hidden",false);
-                     $("#finishReading").prop("hidden",false);	
+                     $("#finishReading").prop("hidden",true);	
 					}else{
 						$("#anotherReading").prop("disabled",true);
                      $("#finishReading").prop("hidden",false);
@@ -832,11 +1020,12 @@ function tableWheatStone(){
                       
 	
 				} else if (corrOut != outVolt) {
-//				 $(".modal-header").html("Error Message");
-//			$(".modal-header").css("background","#9c1203b0");
-//			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-//			$("#MsgModal").html("Entered value is Incorrect.<br>Try again");	
-				alert("Entered value is incorrect.Try it again.");
+				 $(".modal-header").html("Error Message");
+			$(".modal-header").css("background","#9c1203b0");
+			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
+			$("#MsgModal").html("Entered value is Incorrect.<br>Try again");	
+			wrongOpCnt++;
+//				alert("Entered value is incorrect.Try it again.");
 				
 				
 //				 $("#modelMsg").html("<b class='boldTextRed'>Entered value is incorrect.Try again . </b>");
@@ -847,11 +1036,12 @@ function tableWheatStone(){
 	
 	
 			} else if (idCal == 4) {
-//				$(".modal-header").html("Error Message");
-//			$(".modal-header").css("background","#23435c");
-//			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-//			$("#MsgModal").html("<b>Output voltage = Eb &times; f[E2+E4-E1-E3]/4</b>");
-				alert("formula : Output voltage = Eb*f[E2+E4-E1-E3]/4");
+				$(".modal-header").html("Error Message");
+			$(".modal-header").css("background","#23435c");
+			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
+			$("#MsgModal").html("<b>Output voltage = Eb &times; f[E2+E4-E1-E3]/4</b>");
+			wrongOpCnt++;
+//				alert("formula : Output voltage = Eb*f[E2+E4-E1-E3]/4");
 				
 //				 $("#modelMsg").html("<b class='boldTextBlue'>formula : Area = "+unescape('%u220F')+" r"+unescape('%B2')+"</b> ");
 //				 $("body").css("padding","0px 0px 0px 0px");
@@ -868,7 +1058,7 @@ function tableWheatStone(){
 					 $("#text6").prop("disabled",true);
 					 if(iter1<4){
 					 $("#anotherReading").prop("hidden",false);
-                     $("#finishReading").prop("hidden",false);	
+                     $("#finishReading").prop("hidden",true);	
 					}else{
 						$("#anotherReading").prop("disabled",true);
                      $("#finishReading").prop("hidden",false);
@@ -878,14 +1068,13 @@ function tableWheatStone(){
 	
 				} else {
 					checkAns = 0;
-//					$("#btnModal").removeClass("btn-danger").addClass("btn-success");
-//	        $(".modal-header").html("Success Message");
-//            $(".modal-header").css("background","#5cb85c");
-//			$("#MsgModal").html("Correct Answer is " + outVolt);
-					alert("correct answer is " + outVolt );
-					
-
-	
+					$("#btnModal").removeClass("btn-danger").addClass("btn-success");
+	        $(".modal-header").html("Success Message");
+            $(".modal-header").css("background","#5cb85c");
+			$("#MsgModal").html("Correct Answer is " + outVolt);
+			wrongOpCnt++;
+//					alert("correct answer is " + outVolt );
+			
 				}
 			}
 			idCal++;
@@ -893,6 +1082,8 @@ function tableWheatStone(){
     
                 });
       
+      
+      var ranOutput;
       function calculateOutput1(){
 	var axialConvert = secondVal*Math.pow(10,-6);
 	var transConvert = thirdVal*Math.pow(10,-6);
@@ -909,37 +1100,64 @@ function tableWheatStone(){
 	var outVolt1234 = outVolt123.toFixed(2); 
 	var outp12 = (outVolt1234/1000).toFixed(2);
 	outVolt = parseFloat(outp12);
+	
+	var percentageError = (Math.random() * 2 + 3) / 100; // This generates a random number between 0.03 and 0.05
+
+    // Determine whether to add or subtract the error
+    var isPositive = Math.random() < 0.5; // 50% chance to add or subtract
+
+    // Calculate the error amount
+    var errorAmount = outVolt * percentageError;
+
+    // Apply the error
+   var ranOutput1 = (isPositive ? outVolt + errorAmount : outVolt - errorAmount).toFixed(2);
+      ranOutput = parseFloat(ranOutput1);
+//      ranOutput = ranOutput.tofixed(2);
+    // Log the final output voltage
+//    console.log("Output Voltage with Error: " + outVolt.toFixed(2)); 
+	
 
 }
 
 	function additionToJson1(){
-					tempJson = {};
+	 tempJson = {};
 	 tempJson.selectedLoad = selLoadOut ;
 	 tempJson.ebValue = eb;
 	 tempJson.outputVoltage = outVolt;
-	 arrayJson.push(tempJson);
-	 masterJson.demo=arrayJson;
-//	 console.log(masterJson);
+	 tempJson.ranOutput=ranOutput;
+	 arrayJsong.push(tempJson);
+	 graphJson.demo=arrayJsong;
+	 console.log(graphJson);
 				}
       
       
       	$("#finishReading").click(function(){
-			complete();
-			$("#anotherReading").prop("disabled",true);	
+	         
+	         $("#anotherReading").prop("disabled",true);	
 			$("#finishReading").prop("disabled",true);
-			
-		
-			
-		});
-			
-			function complete(){
-				
-				alert("Experiment Completed Successfully!");
+	
+	                    var tempCountJson ={};
+						tempCountJson.outPut = wrongOpCnt; 						
+						counterMasterJson.outputVoltage = tempCountJson;
+	
 //				$("#btnModal").removeClass("btn-danger").addClass("btn-success");
 //	        $(".modal-header").html("Success Message");
 //            $(".modal-header").css("background","#5cb85c");
-//			$("#MsgModal").html("Experiment Completed Successfully!");
-			}
+//			$("#MsgModal").html("Correct Answer is " + ax);
+//			
+			
+		    graphReading();
+			
+		});
+			
+//			function complete(){
+//				
+//				alert("Experiment Completed Successfully!");
+////				$("#btnModal").removeClass("btn-danger").addClass("btn-success");
+////	        $(".modal-header").html("Success Message");
+////            $(".modal-header").css("background","#5cb85c");
+////			$("#MsgModal").html("Experiment Completed Successfully!");
+//			}
 			
 			var iter1 = 0;
 			$("#anotherReading").click(function(){
@@ -952,11 +1170,15 @@ function tableWheatStone(){
 				$("#guageFact").prop("hidden",true);
 				$("#ebVal").prop("hidden",true);
 				$("#outVal").prop("hidden",true);
-				$("#text5").val(0);
+//				$("#text5").val(0);
 				$("#text6").val('');
+				
+				 $('#text5 option').prop('disabled', true);    
+                 $('#text5 option[value="' + eb + '"]').prop('disabled', false);
+				
 				$("#anotherReading").prop("hidden",true);
 				$("#finishReading").prop("hidden",true);
-				$("#text5").prop("disabled",false);
+//				$("#text5").prop("disabled",false);
 				$("#submit_selLoad1").prop("disabled",false);
 				$("#submit_selLoad2").prop("disabled",false);
 				$("#text6").prop("disabled",false);
@@ -975,6 +1197,9 @@ function tableWheatStone(){
 				p33.remove();
 				p44.remove();
 				txt.remove();
+				ftxt.remove();			
+	  ftxt = paper.text((x+240),(y+255),"F : "+" "+" N").attr({'font-weight': 'bold','font-size':'14px','stroke':'#f20515'});			
+
      r1.attr({"fill":"#fff"});
 			}
       
