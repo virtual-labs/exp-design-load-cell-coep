@@ -67,6 +67,7 @@ const sortedXdata = combinedData.map(data => data.x);
 const sortedGraphData1 = combinedData.map(data => data.graphData1);  
 const sortedGraphData2 = combinedData.map(data => data.graphData2);  
 
+
 Highcharts.chart('main-div-conf', {
     chart: {
         type: 'line'
@@ -78,7 +79,6 @@ Highcharts.chart('main-div-conf', {
         title: {
             text: 'Selected Load'
         },
-        // No need to specify categories if using x and y objects
     },
     yAxis: {
         title: {
@@ -92,7 +92,7 @@ Highcharts.chart('main-div-conf', {
             },
             enableMouseTracking: true,
             marker: {
-                enabled: true,
+                enabled: false,
                 radius: 4
             }
         }
@@ -119,9 +119,68 @@ Highcharts.chart('main-div-conf', {
             enabled: true,
             radius: 4,
             symbol: 'circle'
-        }
+        },
+        lineWidth: 0  // This removes the purple line
     }]
 });
+
+
+
+//Highcharts.chart('main-div-conf', {
+//    chart: {
+//        type: 'line'
+//    },
+//    title: {
+//        text: 'Observations'
+//    },
+//    xAxis: {
+//        title: {
+//            text: 'Selected Load'
+//        },
+//        // No need to specify categories if using x and y objects
+//    },
+//    yAxis: {
+//        title: {
+//            text: 'Output Voltage'
+//        }
+//    },
+//    plotOptions: {
+//        line: {
+//            dataLabels: {
+//                enabled: true
+//            },
+//            enableMouseTracking: true,
+//            marker: {
+//                enabled: false,
+//                radius: 4
+//            }
+//        }
+//    },
+//    tooltip: {
+//        enabled: true,
+//        shared: true,
+//        valueDecimals: 2
+//    },
+//    series: [{
+//        name: 'Standard',
+//        data: sortedGraphData1,  // First series data
+//        color: '#50c7d9',
+//        marker: {
+//            enabled: true,
+//            radius: 4,
+//            symbol: 'circle'
+//        }
+//    }, {
+//        name: 'Observed',
+//        data: sortedGraphData2,  // Second series data
+//        color: '#8250d9',
+//        marker: {
+//            enabled: true,
+//            radius: 4,
+//            symbol: 'circle'
+//        }
+//    }]
+//});
 
 
 
@@ -205,7 +264,7 @@ tableMainDiv =	'<div class="col-sm-12">'
 	               + '<div class="col-sm-1">'	               
 	               +'</div>'
 	               + '<div class="col-sm-5" id="labelSelected">'
-	    	       +'<label class="labelstyle" style="margin-left:10px;"><center>Guage Factor (f) : 2</center> </label>'
+	    	       +'<label class="labelstyle" style="margin-left:10px;"><center>Gauge Factor (f) : 2</center> </label>'
 	               +'</div>'
 	               + '<div class="col-sm-5" id="labelSelected">'
 	    	       +'<label class="labelstyle" style="margin-left:10px;"><center>Supply Voltage : '+eb+' V</center> </label>'
@@ -282,7 +341,7 @@ tableMainDiv =	'<div class="col-sm-12">'
 				   +'<div class="col-sm-2">'
 				   +'</div>'
 				   +'<div class="col-sm-8">'
-				   +'<br><button type="submit" class="btn btn-danger"  id="resultCheck"  style="width:100%;margin-top: -18px;"  data-toggle="modal" data-target="#myModalError" hidden>Result</input>'
+				   +'<br><button type="submit" class="btn btn-danger"  id="resultCheck"  style="width:100%;margin-top: -18px;margin-bottom:20px;"  data-toggle="modal" data-target="#myModalError" hidden>Result</input>'
 				   +'</div>'
 				   +'<div class="col-sm-2">'
 				   +'</div>'
@@ -298,6 +357,7 @@ tableMainDiv =	'<div class="col-sm-12">'
 	});
 	        
 	        $("#submitLoadToErrorCheck").click(function(){
+		$("body").css("padding","0px 0px 0px 0px");
 		          loadErrVal = parseInt($("#loadErr").val());
 		          if(loadErrVal==0){
 			$(".modal-header").html("Error Message");
@@ -332,7 +392,7 @@ tableMainDiv =	'<div class="col-sm-12">'
 	      
 	      var foundObject;
 	     $("#submitErrorCheck").click(function(){
-		 
+		 $("body").css("padding","0px 0px 0px 0px");
 		     if(errorCheck==""){
 			$(".modal-header").html("Error Message");
 			$(".modal-header").css("background","#9c1203b0");
@@ -429,6 +489,7 @@ tableMainDiv =	'<div class="col-sm-12">'
 	    var sensitivityCal = 0;
 	    var idd1=1;   
 	 $("#submitSensitivityCheck").click(function(){
+		$("body").css("padding","0px 0px 0px 0px");
 		sensitivityCal = (ranVal1/selValue).toFixed(2);
 //		sensitivityCal = sensitivityCal.toFixed(2);
 		sensitivityCal = parseFloat(sensitivityCal);
@@ -501,6 +562,7 @@ tableMainDiv =	'<div class="col-sm-12">'
 	});
 	              
 	    $("#resultCheck").click(function(){
+		$("body").css("padding","0px 0px 0px 0px");
 		result();
 //		alert("clicked");
 	});               
@@ -554,7 +616,7 @@ tableMainDiv =	'<div class="col-sm-12">'
 	               + '<div class="col-sm-1">'	               
 	               +'</div>'
 	               + '<div class="col-sm-5" id="labelSelected">'
-	    	       +'<label class="labelstyle" style="margin-left:10px;"><center>Guage Factor (f) : 2</center> </label>'
+	    	       +'<label class="labelstyle" style="margin-left:10px;"><center>Gauge Factor (f) : 2</center> </label>'
 	               +'</div>'
 	               + '<div class="col-sm-5" id="labelSelected">'
 	    	       +'<label class="labelstyle" style="margin-left:10px;"><center>Supply Voltage : '+eb+' V</center> </label>'
@@ -646,6 +708,7 @@ tableMainDiv =	'<div class="col-sm-12">'
 	});
 	        
 	        $("#submitLoadToErrorCheck").click(function(){
+		$("body").css("padding","0px 0px 0px 0px");
 		          loadErrVal = parseInt($("#loadErr").val());
 		          if(loadErrVal==0){
 			$(".modal-header").html("Error Message");
@@ -682,7 +745,7 @@ tableMainDiv =	'<div class="col-sm-12">'
 	      
 	      
 	     $("#submitErrorCheck").click(function(){
-		 
+		 $("body").css("padding","0px 0px 0px 0px");
 		     if(errorCheck==""){
 			$(".modal-header").html("Error Message");
 			$(".modal-header").css("background","#9c1203b0");
@@ -773,6 +836,7 @@ tableMainDiv =	'<div class="col-sm-12">'
 	    var sensitivityCal = 0;
 	    var idd1=1;   
 	 $("#submitSensitivityCheck").click(function(){
+		$("body").css("padding","0px 0px 0px 0px");
 		sensitivityCal = (ranVal1/selValue).toFixed(2);
 //		sensitivityCal = sensitivityCal.toFixed(2);
 		sensitivityCal = parseFloat(sensitivityCal);
@@ -848,6 +912,7 @@ tableMainDiv =	'<div class="col-sm-12">'
 	             
 				   
 	    $("#resultCheck").click(function(){
+		$("body").css("padding","0px 0px 0px 0px");
 		result();
 	});          
 	        

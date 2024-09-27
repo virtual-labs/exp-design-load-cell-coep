@@ -6,7 +6,7 @@
 
 ### Configuration :
 - Select the configuration parameters.
-- Calculate area and enter its value if the value is correct, click on Configure. If the entered value is incorrect then formula followed by correct answer will be displayed after 3 attempts. 
+- If column type load cell selected then, calculate area and enter its value if the value is correct, click on Configure. If the entered value is incorrect then formula followed by correct answer will be displayed after 3 attempts. 
 - Click on Next Level.
 
 ### Construction of Wheatstone bridge:-

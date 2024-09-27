@@ -46,15 +46,15 @@ function columnType(){
 	               
 	               +'</div>'
                    + '<div class="col-sm-3" id="labelSelected">'
-	               +'<label class="labelstyle" style="margin-left:10px;"> <center>Area : '+areaSelect+'</center> </label>'
+	               +'<label class="labelstyle" style="margin-left:10px;"> <center>Area : '+areaSelect+' sq mm</center> </label>'
 	               +'</div>'
 	              
 	               + '<div class="col-sm-3" id="labelSelected">'
-	               +'<label class="labelstyle" style="margin-left:10px;"> <center>Modulus : 2.07 &times 10 &#x2075 </center> </label>'
+	               +'<label class="labelstyle" style="margin-left:10px;"> <center>Modulus : 2.07 &times 10 &#x2075  (N/mm<sup>2</sup>)</center> </label>'
 	               +'</div>'
 	              
 	               + '<div class="col-sm-3" id="labelSelected">'
-	    	       +'<label class="labelstyle" style="margin-left:10px;"><center>Poison Ratio : '+poisonSelect+'</center> </label>'
+	    	       +'<label class="labelstyle" style="margin-left:10px;"><center>Poisson'+"'"+'s Ratio : '+poisonSelect+'</center> </label>'
 	               +'</div>'
 	               + '<div class="col-sm-1">'
 	               
@@ -113,6 +113,7 @@ function columnType(){
 		 var axialC = 0;
 		 var arrWeight = [];
 					 $("#submit_load1").click(function(){
+						$("body").css("padding","0px 0px 0px 0px");
 						id1 = 1;
                         id2 = 1;
                         axial=$("#text1").val();
@@ -126,7 +127,7 @@ function columnType(){
 						}else{	
 						if(ax1 >=1000 && ax1<=10000)
 						 {
-						   if(ax1%2==0){
+						   if(Number.isInteger(ax1)){
                         const index = arrWeight.indexOf(ax1);
                    arrWeight.push(ax1);
 					var hasDuplicate = arrWeight.some((ax1, i) => arrWeight.indexOf(ax1) !== i);
@@ -179,6 +180,7 @@ function columnType(){
 						var axConvert = 0;
 						
 						 $("#submit_load2").click(function(){
+							$("body").css("padding","0px 0px 0px 0px");
 							text2 = $("#text2").val();
 							
 					           if(text2==""){
@@ -229,10 +231,10 @@ function columnType(){
 	
 			} else if (id1 == 4) {
 				
-			$(".modal-header").html("Error Message");
+			$(".modal-header").html("Formula");
 			$(".modal-header").css("background","#23435c");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("<b> Formula : Axial Strain = P / AE where,<br> P = Applied load, A = area and E = Young's Modulus");
+			$("#MsgModal").html("<b> Axial Strain = P / A &times; E where,<br> P = Applied load, A = area and E = Young's Modulus");
 			wrongAxialCnt++;
 //				alert("formula :Axial Strain = P / AE");
 				
@@ -283,6 +285,7 @@ function columnType(){
 				var transCal1 = 0;	          
 				var transCal12 = 0;		
 						 $("#submit_load3").click(function(){
+							$("body").css("padding","0px 0px 0px 0px");
 							pos = parseFloat(poisonSelect);
 							trans=$("#text1").val();
 							text3 = $("#text3").val();
@@ -352,10 +355,10 @@ function columnType(){
 	
 			} else if (id2 == 4) {
 				
-				$(".modal-header").html("Error Message");
+				$(".modal-header").html("Formula");
 			$(".modal-header").css("background","#23435c");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("<b>Formula : Transverse Strain = -P &times; Pos / AE where, <br> Pos = Poison's Ratio</b>");
+			$("#MsgModal").html("<b>Transverse Strain = (-P &times; &nu;) / (A &times; E) where, <br> &nu; = Poisson's Ratio</b>");
 			wrongTransCnt++;
 //				alert("formula : Transverse Strain = -P*Pos / AE");
 				
@@ -415,6 +418,7 @@ function columnType(){
 						});
 						
 							$("#nextReading").click(function(){
+								$("body").css("padding","0px 0px 0px 0px");
 								 $("#nextReading").prop('hidden',true);
                              if(itr<=5){
 	                           $("#text1").prop('disabled',false);
@@ -461,7 +465,7 @@ function columnType(){
 			
 	
 $("#nextLevel").click(function(){
-	                 
+	                 $("body").css("padding","0px 0px 0px 0px");
 					addFun();
 					tableReading(masterJson);
 				  })	
@@ -562,6 +566,7 @@ function cantilever(){
 
       
       $("#submit_load1").click(function(){
+	$("body").css("padding","0px 0px 0px 0px");
 						id1 = 1;
                         id2 = 1;
                         tensile=$("#text1").val();
@@ -576,7 +581,7 @@ function cantilever(){
 						}else{	
 						if(tx1 >=10 && tx1<=100)
 						 {
-						   if(ax1%2==0){
+						    if(Number.isInteger(tx1)){
                         const index = arrWeight.indexOf(tx1);
                    arrWeight.push(tx1);
 					var hasDuplicate = arrWeight.some((tx1, i) => arrWeight.indexOf(tx1) !== i);
@@ -630,6 +635,7 @@ function cantilever(){
 var finalDiv,finalVal, finalAns;
 
 $("#submit_load2").click(function(){
+	$("body").css("padding","0px 0px 0px 0px");
   var tenStrain = $("#text2").val();
 	
 	if(tenStrain==""){
@@ -659,10 +665,10 @@ $("#submit_load2").click(function(){
 			wrongAxialCnt++;
 	}
 	 }else if (id1 == 4){
-		    $(".modal-header").html("Error Message");
+		    $(".modal-header").html("Formula");
 			$(".modal-header").css("background","#23435c");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("<b>Formula : Tensile Strain = 6 &times; P<sub>x</sub> / Ewh &times; h</b>");
+			$("#MsgModal").html("<b>Tensile Strain = 6 &times; P<sub>x</sub> / Ewh<sub>2</sub><br>where, Px = Applied load, E = young's modulus, w = width and h = height.</b>");
 			wrongAxialCnt++;
 //	    alert("formula :Tensile Strain = 6.Px / Ewh*h");
 
@@ -692,6 +698,7 @@ $("#submit_load2").click(function(){
    var compresEnter;
    
 $("#submit_load3").click(function(){
+	$("body").css("padding","0px 0px 0px 0px");
 	compresVal = -finalAns;
 	compresEnter = $("#text3").val();
 	
@@ -734,10 +741,10 @@ $("#submit_load3").click(function(){
 	}
 	 }else if (id2 == 4){
 		
-		 $(".modal-header").html("Error Message");
+		 $(".modal-header").html("Formula");
 			$(".modal-header").css("background","#23435c");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("<b>Formula : Tensile Strain = -6 &times; P<sub>x</sub> / Ewh &times; h</b>");
+			$("#MsgModal").html("<b> Comressive Strain = -6 &times; P<sub>x</sub> / Ewh<sup>2</sup>where, Px = Applied load, E = young's modulus, w = width and h = height. </b>");
 			wrongTransCnt++;
 //	    alert("formula :Tensile Strain = -6.Px / Ewh*h");
 
@@ -774,6 +781,7 @@ $("#submit_load3").click(function(){
 });
      
    $("#nextReading").click(function(){ 
+	$("body").css("padding","0px 0px 0px 0px");
 	        id1 =1;
 	        id2 = 1;
 	        $("#text1").prop('disabled',false);
@@ -791,6 +799,7 @@ $("#submit_load3").click(function(){
    
    
    $("#nextLevel").click(function(){
+	$("body").css("padding","0px 0px 0px 0px");
 	addFun(); 
 	tableWheatStone();
 	   

@@ -68,7 +68,7 @@ function columnTypeConfig(){
 	    
 	     +'<div class="row">'
 	   +'<div class="col-sm-6">'
-	   +'<label class="labelstyle">Select Poisons Ratio: </label>'
+	   +'<label class="labelstyle">Select Poisson'+"'"+'s Ratio: </label>'
 	   +'</div>'
 	   
 	   +'<div class="col-sm-6">'
@@ -176,7 +176,7 @@ function columnTypeConfig(){
      var mulPower = 0;
      
       $("#checkArea").click(function() {
-       
+       $("body").css("padding","0px 0px 0px 0px");
        areaSelect = parseFloat($("#areaSel").val());
 	diam = parseInt($("#diaSel").val());
      modSelelect = parseInt($("#modSel").val());
@@ -254,7 +254,7 @@ function columnTypeConfig(){
 			} else if (id == 4) {
 				
 //				alert("formula :Axial Strain = P / AE");
-				 $(".modal-header").html("Error Message");
+				 $(".modal-header").html("Formula");
 			$(".modal-header").css("background","#23435c");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
 			$("#MsgModal").html("<b>Formula : Area = &prod;&times; r <sup>2</sup> </b>");
@@ -322,7 +322,7 @@ function columnTypeConfig(){
      });
      
      $("#checkConfg").click(function() {
-	
+	$("body").css("padding","0px 0px 0px 0px");
 //	$("#modelMsg").html("<b class='boldTextGreen'>Configured Successfully</b>");
 //					 $("body").css("padding","0px 0px 0px 0px");
 	
@@ -375,8 +375,10 @@ function columnTypeConfig(){
 	}); 
 	
 	$("#nextLevelForConfig").click(function() {
+		$("body").css("padding","0px 0px 0px 0px");
 //		if(flgSec==1){
 	    wheatStoneCon();
+	    
 //			columnType();
 //		}else{
 //			$("#modelMsg").html("<b class='boldTextRed'>Select appropriate values</b>");
@@ -548,6 +550,7 @@ function cantileverConfig(){
 	    });
       
       $("#checkConfgCanti").click(function() {
+	$("body").css("padding","0px 0px 0px 0px");
 //      if(lengthVal==0 || widthVal==0 || heightVal==0 || modSelcantiVal==0){
 //	        $("#modelMsg").html("<b class='boldTextRed'>Select Appropriate Values</b>");
 //			$("body").css("padding","0px 0px 0px 0px");
@@ -588,12 +591,14 @@ function cantileverConfig(){
      }); 
      
       $("#nextPage1").click(function() {
+	$("body").css("padding","0px 0px 0px 0px");
 	if(cantiFlg == 1){
 	
 	}
 });
 
    $("#nextLevelForConfigCanti").click(function() {
+	$("body").css("padding","0px 0px 0px 0px");
 	   wheatStoneCon();
 //	  cantilever();
 	});
