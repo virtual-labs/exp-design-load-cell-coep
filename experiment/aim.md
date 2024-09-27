@@ -1,7 +1,7 @@
 # Aim 
 Design of Load cell and its characterization.
 
-## Objective  
+## Objectives  
 - Understand operation of load cell
 - Configuration of load cell
 - Validate stress and strain for change in pressure.
