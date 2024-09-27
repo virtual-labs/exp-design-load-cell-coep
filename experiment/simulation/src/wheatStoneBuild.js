@@ -14,18 +14,41 @@ $("#validateCon").prop("hidden",false);
 $("#centerText2").html('SELECT THE COMPONENTS');
 $("#centerText1").html('CONNECT THE PORTS OF WHEATSTONE BRIDGE');
 
+ 
+    
+
+    // Call the function on window resize
+//    window.addEventListener('resize', resizeDivs);
 
 const myDiv = document.getElementById('canvas-div'); // Or use querySelector if needed
+
+// Step 3: Change the size of the div
+myDiv.style.width = '100%';   // Set the width to 90% of the parent
+myDiv.style.height = '50vh'; // Set the height to 30% of the viewport height
+myDiv.style.color = "lightgrey";
+myDiv.style.margin = "20px auto"; // Center horizontally with auto margins
+myDiv.style.position = "relative";
+
+const myDiv1 = document.getElementById('main-div-conf'); // Or use querySelector if needed
+
+// Step 3: Change the size of the div
+myDiv1.style.width = '100%';   // Set the width to 90% of the parent
+myDiv1.style.height = '80vh'; // Set the height to 60% of the viewport height
+
+
+/**const myDiv = document.getElementById('canvas-div'); // Or use querySelector if needed
     
     // Step 3: Change the size of the div
     myDiv.style.width = '900px';  // Set the width
     myDiv.style.height = '300px'; // Set the height
-    
+//    myDiv.style.color="lightgrey";
+      myDiv.style.margin= "20px";
+           myDiv.style.position = "relative";
 const myDiv1 = document.getElementById('main-div-conf'); // Or use querySelector if needed
     
     // Step 3: Change the size of the div
     myDiv1.style.width = '900px';  // Set the width
-    myDiv1.style.height = '600px'; // Set the height    
+    myDiv1.style.height = '600px'; // Set the height **/   
     
 
 // Add a global mouseup event listener to remove the shadow line
@@ -76,7 +99,7 @@ const images = [
             { id: "dot7", xOffset: 77, yOffset: 20 },
             { id: "dot8", xOffset: 2, yOffset: 20 }
         ],
-        width: 80, height: 40, x: 560, y: 115
+        width: 80, height: 40, x: 160, y: 240
     }
 ];
 

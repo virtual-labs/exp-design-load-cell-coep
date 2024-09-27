@@ -103,7 +103,7 @@ var width = $(window).width();
 	 .attr({'stroke':'#000','stroke-width': 2});
 	 
 
-	 var l1Txt = paper.text((x+50-widDiv-20+(lenVal/2)),(y-20-widDiv-24-8),"L : "+lenVal+" mm").attr({'font-weight': 'bold','font-size':'14px','stroke':'#f20515'});
+	 var l1Txt = paper.text((x+50-widDiv-20+(lenVal/2)),(y-20-widDiv-24-8),"L : "+lVal+" mm").attr({'font-weight': 'bold','font-size':'14px','stroke':'#f20515'});
 	
 
 
@@ -247,7 +247,7 @@ var width = $(window).width();
 	 .attr({'stroke':'#000','stroke-width': 2});
 	 
 
-	 var l1Txt = paper.text((x+50-widDiv-20+(lenVal/2)),(y-20-widDiv-24-8),"L : "+lenVal+" mm").attr({'font-weight': 'bold','font-size':'14px','stroke':'#f20515'});
+	 var l1Txt = paper.text((x+50-widDiv-20+(lenVal/2)),(y-20-widDiv-24-8),"L : "+lVal+" mm").attr({'font-weight': 'bold','font-size':'14px','stroke':'#f20515'});
 	
 	 var l2Txt = paper.text((x+50-widDiv+lenVal+50),(y+250-20-widDiv-250+widDiv),"W : "+widVal+" mm").attr({'font-weight': 'bold','font-size':'14px','stroke':'#f20515'});
 	 
@@ -381,7 +381,7 @@ var width = $(window).width();
 	 .attr({'stroke':'#000','stroke-width': 2});
 	 
 
-	 var l1Txt = paper.text((x+50-widDiv-20+(lenVal/2)),(y-20-widDiv-24-8),"L : "+lenVal+" mm").attr({'font-weight': 'bold','font-size':'14px','stroke':'#f20515'});
+	 var l1Txt = paper.text((x+50-widDiv-20+(lenVal/2)),(y-20-widDiv-24-8),"L : "+lVal+" mm").attr({'font-weight': 'bold','font-size':'14px','stroke':'#f20515'});
 	
 	 var l2Txt = paper.text((x+50-widDiv+lenVal+50),(y+250-20-widDiv-250+widDiv),"W : "+widVal+" mm").attr({'font-weight': 'bold','font-size':'14px','stroke':'#f20515'});
     
