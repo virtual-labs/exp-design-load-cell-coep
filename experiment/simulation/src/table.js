@@ -97,7 +97,7 @@ function tableReading(masterJson)
 				   
 				   +'<div class="row" id="guageFact" hidden>'
 				   +'<div class="col-sm-12">'
-				   +'<label  id=""  class="" style="font-size:16px;margin:15px 10px ;"> Guage factor (f) : 2  </label>'
+				   +'<label  id=""  class="" style="font-size:16px;margin:15px 10px ;"> Gauge factor (f) : 2  </label>'
 				   +'</div>'
 				   +'</div>'
 //	               +'<div class="row" id="calVoltage" >'
@@ -115,7 +115,7 @@ function tableReading(masterJson)
 
                   +'<div class="row" id="ebVal" hidden>'
 				   +'<div class="col-sm-5">'
-				   +'<label  id=""  class="" style="font-size:16px;margin:15px 10px ;">Select the value of supply voltage:  </label>'
+				   +'<label  id=""  class="" style="font-size:16px;margin:15px 10px ;">Select the value of supply voltage E<sub>b</sub> :  </label>'
 				   +'</div>'
 				    +'<div class="col-sm-4">'
 	   +'<select  class="form-control " id="text5" " style="height:auto;  margin-top: 9px;">'
@@ -258,7 +258,7 @@ var width = $(window).width();
 				
 				
 				$("#submit_selLoad").click(function(){
-						
+						$("body").css("padding","0px 0px 0px 0px");
 //                loadCheck = $("#text4").val();
 				if(loadCheck==0)	
 					{
@@ -338,7 +338,7 @@ var width = $(window).width();
 			
 			$("#submit_selLoad1").click(function(){	
 				
-				
+				$("body").css("padding","0px 0px 0px 0px");
 				eb = parseInt($("#text5").val())
 				
 				  if(eb!=0){
@@ -368,6 +368,7 @@ var width = $(window).width();
 				
 				
 				$("#submit_selLoad2").click(function(){	
+					$("body").css("padding","0px 0px 0px 0px");
 					corrOut = $("#text6").val();
 					flg = 3;
 				calculateOutput();
@@ -415,10 +416,10 @@ var width = $(window).width();
 	
 	
 			} else if (idCal == 4) {
-				$(".modal-header").html("Error Message");
+				$(".modal-header").html("Formula");
 			$(".modal-header").css("background","#23435c");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("<b>Output voltage = Eb &times; f[E2+E4-E1-E3]/4</b>");
+			$("#MsgModal").html("<b>Output voltage = Eb &times; f[&epsilon;<sub>2</sub>+&epsilon;<sub>4</sub>-&epsilon;<sub>1</sub>-&epsilon;<sub>3</sub>/4</b>");
 			wrongOpCnt++;
 //				alert("formula : Output voltage = Eb*f[E2+E4-E1-E3]/4");
 				
@@ -468,6 +469,7 @@ var width = $(window).width();
 				});
 		
 			$("#finishReading").click(function(){
+				$("body").css("padding","0px 0px 0px 0px");
 	         
 	                    var tempCountJson ={};
 						tempCountJson.outPut = wrongOpCnt; 						
@@ -497,6 +499,7 @@ var width = $(window).width();
 			
 			var iter1 = 0;
 			$("#anotherReading").click(function(){
+				$("body").css("padding","0px 0px 0px 0px");
 				clear();
 				onLoad();
 				idCal = 1;
@@ -638,7 +641,7 @@ function calculateOutput(){
 	var outVolt1234 = outVolt123.toFixed(2); 
 	outVolt = parseFloat(outVolt1234);
 	
-	var percentageError = (Math.random() * 2 + 3) / 100; // This generates a random number between 0.03 and 0.05
+	var percentageError = (Math.random() * 2 + 2) / 100; // This generates a random number between 0.03 and 0.05
 
     // Determine whether to add or subtract the error
     var isPositive = Math.random() < 0.5; // 50% chance to add or subtract
@@ -776,12 +779,12 @@ function tableWheatStone(){
 				   
 				   +'<div class="row" id="guageFact" hidden>'
 				   +'<div class="col-sm-12">'
-				   +'<label  id=""  class="" style="font-size:16px;margin:15px 10px ;"> Guage factor (f) : 2  </label>'
+				   +'<label  id=""  class="" style="font-size:16px;margin:15px 10px ;"> Gauge factor (f) : 2  </label>'
 				   +'</div>'
 				   +'</div>'				
 					+'<div class="row" id="ebVal" hidden>'
 				   +'<div class="col-sm-5">'
-				   +'<label  id=""  class="" style="font-size:16px;margin:15px 10px ;">Select the value of supply voltage:  </label>'
+				   +'<label  id=""  class="" style="font-size:16px;margin:15px 10px ;">Select the value of supply voltage E<sub>b</sub>:  </label>'
 				   +'</div>'
 				    +'<div class="col-sm-4">'
 	   +'<select  class="form-control " id="text5" " style="height:auto;  margin-top: 9px;">'
@@ -897,7 +900,7 @@ var width = $(window).width();
       
     $("#submit_selLoad").click(function(){
 						
-
+$("body").css("padding","0px 0px 0px 0px");
 				if(loadCheck1==0)	
 					{
 						$(".modal-header").html("Error Message");
@@ -958,7 +961,7 @@ var width = $(window).width();
 				});
 			
 			$("#submit_selLoad1").click(function(){	
-				
+				$("body").css("padding","0px 0px 0px 0px");
 				
 				eb = parseInt($("#text5").val())
 				
@@ -989,6 +992,7 @@ var width = $(window).width();
 				
 				
 				$("#submit_selLoad2").click(function(){	
+					$("body").css("padding","0px 0px 0px 0px");
                 corrOut = $("#text6").val();
 					flg = 3;
 				calculateOutput1();
@@ -1036,10 +1040,10 @@ var width = $(window).width();
 	
 	
 			} else if (idCal == 4) {
-				$(".modal-header").html("Error Message");
+				$(".modal-header").html("Formula");
 			$(".modal-header").css("background","#23435c");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("<b>Output voltage = Eb &times; f[E2+E4-E1-E3]/4</b>");
+			$("#MsgModal").html("<b>Output voltage = Eb &times; f[&epsilon;<sub>2</sub>+&epsilon;<sub>4</sub>-&epsilon;<sub>1</sub>-&epsilon;<sub>3</sub>]/4</b>");
 			wrongOpCnt++;
 //				alert("formula : Output voltage = Eb*f[E2+E4-E1-E3]/4");
 				
@@ -1132,7 +1136,7 @@ var width = $(window).width();
       
       
       	$("#finishReading").click(function(){
-	         
+	         $("body").css("padding","0px 0px 0px 0px");
 	         $("#anotherReading").prop("disabled",true);	
 			$("#finishReading").prop("disabled",true);
 	
@@ -1161,6 +1165,7 @@ var width = $(window).width();
 			
 			var iter1 = 0;
 			$("#anotherReading").click(function(){
+				$("body").css("padding","0px 0px 0px 0px");
 				clear();
 				idCal = 1;
 				loadCheck1 = 0;

@@ -26,7 +26,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "In which unit is force typically measured by a load cell?",
+      "question": "What is the unit of force measured by load cell?",
       "answers": {
         "a": "Newtons (N)",
         "b": "Volts (V)",
