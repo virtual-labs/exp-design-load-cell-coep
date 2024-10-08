@@ -19,6 +19,9 @@ var wrongTransCnt = 0;
 
 function columnType(){
 	
+	$("#delete-btn").prop("hidden",true);
+	$("#validateCon").prop("hidden",true);
+	
 	var area = parseInt(areaSelect);
 //	console.log("areaSelect"+areaSelect);
 	var mod = parseInt(modSelelect);
@@ -480,7 +483,8 @@ function cantilever(){
      resetDivSize();
      $("#centerText2").html('CALCULATION');
       $("#centerText1").html('CANTILEVER LOAD CELL');
-      
+      $("#delete-btn").prop("hidden",true);
+	$("#validateCon").prop("hidden",true);
 //      var htm = '<img src="images/cantiForCalculate.png" class="img-fluid"  width=95% height=100% ">'
 //      $("#main-div-conf").html(htm);
       finalConfigCanti();

@@ -529,15 +529,15 @@ var width = $(window).width();
 			
 			function clear(){
 				
-				p1.remove();
-				p2.remove();
-				p3.remove();
-				p4.remove();
+//				p1.remove();
+//				p2.remove();
+//				p3.remove();
+//				p4.remove();
 				p5.remove();
-				p11.remove();
-				p22.remove();
-				p33.remove();
-				p44.remove();
+//				p11.remove();
+//				p22.remove();
+//				p33.remove();
+//				p44.remove();
 				txt.remove();
 				ftxt.remove();			
 	  ftxt = paper.text((x+130),(y+272),"F : "+" "+" N").attr({'font-weight': 'bold','font-size':'14px','stroke':'#f20515'});			
@@ -641,7 +641,9 @@ function calculateOutput(){
 	var outVolt1234 = outVolt123.toFixed(2); 
 	outVolt = parseFloat(outVolt1234);
 	
-	var percentageError = (Math.random() * 2 + 2) / 100; // This generates a random number between 0.03 and 0.05
+//	var percentageError = (Math.random() * 2 + 2) / 100; // This generates a random number between 0.03 and 0.05
+
+     var percentageError = (Math.random() * 1 + 2) / 100;
 
     // Determine whether to add or subtract the error
     var isPositive = Math.random() < 0.5; // 50% chance to add or subtract
@@ -1192,15 +1194,15 @@ $("body").css("padding","0px 0px 0px 0px");
 			
 			
 			function clear(){
-				p1.remove();
-				p2.remove();
-				p3.remove();
-				p4.remove();
+//				p1.remove();
+//				p2.remove();
+//				p3.remove();
+//				p4.remove();
 				p5.remove();
-				p11.remove();
-				p22.remove();
-				p33.remove();
-				p44.remove();
+//				p11.remove();
+//				p22.remove();
+//				p33.remove();
+//				p44.remove();
 				txt.remove();
 				ftxt.remove();			
 	  ftxt = paper.text((x+240),(y+255),"F : "+" "+" N").attr({'font-weight': 'bold','font-size':'14px','stroke':'#f20515'});			
