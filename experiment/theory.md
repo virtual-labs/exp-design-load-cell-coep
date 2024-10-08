@@ -37,15 +37,16 @@ When the metallic member to which the strain gauges are attached, is stressed by
 These load cells have been in use for many decades now, and can provide very accurate readings but require many tedious steps during the manufacturing process.
 
 #### Formulae required for column type load cell:
-- Area = π × r²  where π = 3.14
-- Axial Strain = P / (A×E) where, P = Applied load, A = area and E = Young's Modulus 
-- Transverse Strain = (-P × ν) / (A×E) where, ν = Poisson's Ratio
-- Output voltage = Eb × f[ε2+ε4-ε1-ε3/4] where, Eb = supply voltage, f = gauge factor
+- Cross sectional area = π × r²  where π = 3.14.
+- Axial Strain εa = P / (A×E) = &epsilon;<sub>1</sub> = &epsilon;<sub>3</sub> where, P = Applied load, A = area and E = Young's Modulus.  
+- Transverse Strain εt = (-P × ν) / (A×E) = &epsilon;<sub>2</sub> = &epsilon;<sub>4</sub> where, ν = Poisson's Ratio
+- ΔR1/R1 = ΔR3/R3 = f×&epsilon;<sub>a</sub>.
+- ΔR2/R2 = ΔR4/R4 = f×&epsilon;<sub>t</sub>. 
+- Output voltage = Eb × f[ε<sub>2</sub>+ε<sub>4</sub>-ε<sub>1</sub>-ε<sub>3</sub>/4] where, Eb = supply voltage, f = gauge factor
 
 #### Formulae required for cantilever type load cell:
-- Tensile Strain = 6 × Px / Ewh² where, Px = Applied load, E = young's modulus, w = width and h = height.
-- Compressive Strain = -6 × Px / Ewh² where, Px = Applied load, E = young's modulus, w = width and h = height.
-- Output voltage = Eb × f[ε2+ε4-ε1-ε3/4] where, Eb = supply voltage, f = gauge factor
+- Strain developed at the gauges, &epsilon;<sub>1</sub> = -&epsilon;<sub>2</sub> = &epsilon;<sub>3</sub> = -&epsilon;<sub>4</sub> = 6 × Px / Ewh² where, P = Applied load, E = young's modulus, w = width ,x = length, h = height.
+- Output voltage = Eb × f[&epsilon;<sub>2</sub>+&epsilon;<sub>4</sub>-&epsilon;<sub>1</sub>-&epsilon;<sub>3</sub>/4] where, Eb = supply voltage, f = gauge factor
 
 #### Uses :
 The type of instruments used in the geotechnical field depends on the scope of work. Load cells can be used at the initial stage i.e. during the research and development or even at a later stage while monitoring a structure.
