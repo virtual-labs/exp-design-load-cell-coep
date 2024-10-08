@@ -350,6 +350,10 @@ tableMainDiv =	'<div class="col-sm-12">'
 	              
 	              $("#canvas-div-sub").html(htm);
 	        
+	        var htm11 = '<img src="images/amplifier.png"  class="img-responsive">'
+	        $("#main-div-conf11").append(htm11);
+	        
+	        
 	        var loadErrVal=0;
 	        var selValue = 0;
 	        $("#loadErr").change(function(){
@@ -490,9 +494,13 @@ tableMainDiv =	'<div class="col-sm-12">'
 	    var idd1=1;   
 	 $("#submitSensitivityCheck").click(function(){
 		$("body").css("padding","0px 0px 0px 0px");
-		sensitivityCal = (ranVal1/selValue).toFixed(2);
+//		sensitivityCal = (ranVal1/selValue).toFixed(2);
 //		sensitivityCal = sensitivityCal.toFixed(2);
-		sensitivityCal = parseFloat(sensitivityCal);
+
+        var sensitivityCal1 = (ranVal1/selValue).toFixed(4);
+		var sensitivityCal2 = (sensitivityCal1*1000).toFixed(4);
+
+		sensitivityCal = parseFloat(sensitivityCal2);
 		
 		var senseEnter = $("#sensitivity").val();
 		
@@ -677,7 +685,7 @@ tableMainDiv =	'<div class="col-sm-12">'
 				   
 				   +'<div class="row" id="senCheck" hidden>'
 				   +'<div class="col-sm-5">'
-				   +'<label  id=""  class="" style="font-size:16px;margin:15px 10px ;">Calculate Sensitivity of load mV/N :  </label>'
+				   +'<label  id=""  class="" style="font-size:16px;margin:15px 10px ;">Calculate Sensitivity of load V/N :  </label>'
 				   +'</div>'
 				   +'<div class="col-sm-4">'
 				   +'<input type="number" value="" id="sensitivity"  style="margin:10px;margin-left:1px;width:100%;"  class=" form-control" />'
@@ -700,6 +708,9 @@ tableMainDiv =	'<div class="col-sm-12">'
 		           
 		      
 		      $("#canvas-div-sub").html(htm);
+	        
+	         var htm11 = '<img src="images/amplifier.png"  class="img-responsive">'
+	        $("#main-div-conf11").append(htm11);
 	        
 	        var loadErrVal=0;
 	        var selValue = 0;
@@ -837,9 +848,10 @@ tableMainDiv =	'<div class="col-sm-12">'
 	    var idd1=1;   
 	 $("#submitSensitivityCheck").click(function(){
 		$("body").css("padding","0px 0px 0px 0px");
-		sensitivityCal = (ranVal1/selValue).toFixed(2);
+		var sensitivityCal1 = (ranVal1/selValue).toFixed(4);
+		var sensitivityCal2 = (sensitivityCal1*1000).toFixed(4);
 //		sensitivityCal = sensitivityCal.toFixed(2);
-		sensitivityCal = parseFloat(sensitivityCal);
+		sensitivityCal = parseFloat(sensitivityCal2);
 		
 		var senseEnter = $("#sensitivity").val();
 		

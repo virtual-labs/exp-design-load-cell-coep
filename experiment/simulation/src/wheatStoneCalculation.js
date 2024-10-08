@@ -104,20 +104,13 @@ var width = $(window).width();
 	 if(flg==1){
 		ftxt.remove();
 	 
-	    paper.text(x+105,y+10,""+thirdVal+" X 10").attr({'stroke' : '#084373' , "font-size":"14px","fill":"#0ee8e5"});
-	 paper.text(x+158,y+3,"- 6").attr({'stroke' : '#084373' , "font-size":"12px","fill":"#0ee8e5"});
-
-	  paper.text(x+345,y+140,""+thirdVal+" X 10").attr({'stroke' : '#084373' , "font-size":"14px","fill":"#0ee8e5"});
-	 paper.text(x+398,y+132,"- 6").attr({'stroke' : '#084373' , "font-size":"12px","fill":"#0ee8e5"});
-
- 	 paper.text(x+345,y+10,secondVal+" X 10").attr({'stroke' : '#084373' , "font-size":"14px","fill":"#0ee8e5"});
- 	 paper.text(x+398,y+3,"- 6").attr({'stroke' : '#084373' , "font-size":"12px","fill":"#0ee8e5"});
-      
-     paper.text(x+105,y+140,secondVal+" X 10").attr({'stroke' : '#084373' , "font-size":"14px","fill":"#0ee8e5"});
-     paper.text(x+158,y+132,"- 6").attr({'stroke' : '#084373' , "font-size":"12px","fill":"#0ee8e5"});
-
 	 
-	 
+	     paper.image("images/rChangeStatic.png",(x+115), (y+10),50, 25);
+	      paper.image("images/rChangeStatic.png",(x+300), (y+140),50, 25);
+	       paper.image("images/rChangeStatic.png",(x+300), (y+10),50, 25);
+	        paper.image("images/rChangeStatic.png",(x+115), (y+140),50, 25);
+
+
           if(flgType==1){
 	
 		  ftxt =  paper.text((x+167),(y+272),"F : "+selLoadOut+" N").attr({'font-weight': 'bold','font-size':'14px','stroke':'#f20515',});			
@@ -131,19 +124,12 @@ var width = $(window).width();
 	 if(flg==2){
 		ftxt.remove();
 	    p5.remove();
-	    paper.text(x+105,y+10,""+thirdVal+" X 10").attr({'stroke' : '#084373' , "font-size":"14px","fill":"#0ee8e5"});
-	 paper.text(x+158,y+3,"- 6").attr({'stroke' : '#084373' , "font-size":"12px","fill":"#0ee8e5"});
-
-	 paper.text(x+345,y+140,""+thirdVal+" X 10").attr({'stroke' : '#084373' , "font-size":"14px","fill":"#0ee8e5"});
-	   paper.text(x+398,y+132,"- 6").attr({'stroke' : '#084373' , "font-size":"12px","fill":"#0ee8e5"});
-
- 	 paper.text(x+345,y+10,secondVal+" X 10").attr({'stroke' : '#084373' , "font-size":"14px","fill":"#0ee8e5"});
- 	  paper.text(x+398,y+3,"- 6").attr({'stroke' : '#084373' , "font-size":"12px","fill":"#0ee8e5"});
-      
-      paper.text(x+105,y+140,secondVal+" X 10").attr({'stroke' : '#084373' , "font-size":"14px","fill":"#0ee8e5"});
-      paper.text(x+158,y+132,"- 6").attr({'stroke' : '#084373' , "font-size":"12px","fill":"#0ee8e5"});
-
-	   
+	    
+	  paper.image("images/rChangeStatic.png",(x+115), (y+10),50, 25);
+	      paper.image("images/rChangeStatic.png",(x+300), (y+140),50, 25);
+	       paper.image("images/rChangeStatic.png",(x+300), (y+10),50, 25);
+	        paper.image("images/rChangeStatic.png",(x+115), (y+140),50, 25);
+	        
       paper.text(x-10,y+75,eb+"V").attr({'stroke' : '#000' , "font-size":"16px","font-weight": "bold","fill":"red"});
         if(flgType==1){
 	
@@ -159,18 +145,12 @@ var width = $(window).width();
      if(flg == 3){
 	ftxt.remove();
 	p5.remove();
-	 p1 =  paper.text(x+105,y+10,""+thirdVal+" X 10").attr({'stroke' : '#084373' , "font-size":"14px","fill":"#0ee8e5"});
-	 p11 =  paper.text(x+158,y+3,"- 6").attr({'stroke' : '#084373' , "font-size":"12px","fill":"#0ee8e5"});
-
-	 p2 = paper.text(x+345,y+140,""+thirdVal+" X 10").attr({'stroke' : '#084373' , "font-size":"14px","fill":"#0ee8e5"});
-	 p22 =  paper.text(x+398,y+132,"- 6").attr({'stroke' : '#084373' , "font-size":"12px","fill":"#0ee8e5"});
-
- 	 p3 = paper.text(x+345,y+10,secondVal+" X 10").attr({'stroke' : '#084373' , "font-size":"14px","fill":"#0ee8e5"});
- 	 p33 = paper.text(x+398,y+3,"- 6").attr({'stroke' : '#084373' , "font-size":"12px","fill":"#0ee8e5"});
-      
-     p4 = paper.text(x+105,y+140,secondVal+" X 10").attr({'stroke' : '#084373' , "font-size":"14px","fill":"#0ee8e5"});
-     p44 = paper.text(x+158,y+132,"- 6").attr({'stroke' : '#084373' , "font-size":"12px","fill":"#0ee8e5"});
-
+	
+	paper.image("images/rChangeStatic.png",(x+115), (y+10),50, 25);
+	      paper.image("images/rChangeStatic.png",(x+300), (y+140),50, 25);
+	       paper.image("images/rChangeStatic.png",(x+300), (y+10),50, 25);
+	        paper.image("images/rChangeStatic.png",(x+115), (y+140),50, 25);
+     
      p5 = paper.text(x-10,y+75,eb+"V").attr({'stroke' : '#000' , "font-size":"16px","font-weight": "bold","fill":"red"});
     
     if(flgType==1){

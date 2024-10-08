@@ -71,8 +71,8 @@ var htm = ''
 
 	+ '<div class="col-md-12">'
 	+ ' <div class="panel remarkBground" >'
-	+ ' <div class="panel-body remark" ><center style="font-size: 20px;">Congratulations!!! <br> <b>Load cell experiment is completed successfully!!</b>'
-	+ '<br> <b>Satisfactory performance</b></center></div>'
+	+ ' <div class="panel-body remark" ><center>Congratulations!!! <br> <b>Load cell experiment is completed successfully!!</b>'
+//	+ '<br> <b>Satisfactory performance</b></center></div>'
 	+ '</div>'
 	+ '</div>'
 
@@ -91,31 +91,59 @@ var htm = ''
 		   +'  <tbody>'
 		   +'   <tr>'
 		   +'     <td class=""><center>Basic knowledge</center></td>'
-		   +'     <td class=""><center class="attained"> Attained</center></td>'
-		  
-		   +'  </tr>'
+		   
+		   if(quesPercent>=60){
+		   htm +='<td class=""><center class="attained"> Attained</center></td>'
+		  }else{
+			htm+= ' <td class=""><center class="NotAttained"> Not Attained</center></td>'
+		}
+		   htm+='  </tr>'
 		    +'  <tr>'
 		   +'     <td class=""><center>Configuration</center></td>'
-		   +'     <td class=""><center class="attained"> Attained</center></td>'
-		   +' </tr>'
+           if(typeCell == 15){
+			if(config>=60){
+				 htm +='<td class=""><center class="attained"> Attained</center></td>'
+			}else{
+				htm+= ' <td class=""><center class="NotAttained"> Not Attained</center></td>'
+			}
+			}else{
+				 htm +='<td class=""><center class="attained"> Attained</center></td>'
+			}
+
+		
+		  htm  +=' </tr>'
 		   +'  <tr>'
 		   +'     <td class=""><center>Construct wheat stone bridge circuit</center></td>'
-		   +'     <td class=""><center class="attained"> Attained</center></td>'
-		   +' </tr>'
+		   if(wheatStone >= 60){ 
+		  htm +='<td class=""><center class="attained"> Attained</center></td>'
+		   }else{
+			htm+= ' <td class=""><center class="NotAttained"> Not Attained</center></td>'
+		}
+		 htm  +=' </tr>'
 		   +'   <tr>'
 		  +'     <td class=""><center>Standard Calculations</center></td>'
-		   +'     <td class=""><center class="attained">Attained</center></td>'
-		  
-		   +'  </tr>'
+		  if(loadCal>=60){
+		   htm +='<td class=""><center class="attained"> Attained</center></td>'
+		  }else{
+		   htm+= ' <td class=""><center class="NotAttained"> Not Attained</center></td>'
+		}
+		htm += '  </tr>'
 		   +'  <tr>'
-		+'<td class=""><center>Calculation of Output Voltage using a Wheatstone Bridge</center></td>'
-		   +'<td class=""><center class="attained">Attained</center></td>'
-		   +' </tr>'
+		   +'<td class=""><center>Calculation of Output Voltage using a Wheatstone Bridge</center></td>'
+		   if(outputPer>=60){
+			htm +='<td class=""><center class="attained"> Attained</center></td>'
+		}else{
+			htm+= ' <td class=""><center class="NotAttained"> Not Attained</center></td>'
+		}
+		  htm +='</tr>'
 		   +'<tr>'
-		  +' <td class=""><center>Observations and Charectarization</center></td>'
-		   +'<td class=""><center class="attained"> Attained</center></td>'
-		  
-		   +'  </tr>'
+		   +' <td class=""><center>Observations and Charectarization</center></td>'
+		    if(characterVal>=60){
+			htm +='<td class=""><center class="attained"> Attained</center></td>'
+		}else{
+			htm+= ' <td class=""><center class="NotAttained"> Not Attained</center></td>'
+		}
+		  htm +='</tr>'
 		
 		   +' </tbody>'
 		  +' </table>'
@@ -126,9 +154,9 @@ var htm = ''
 		+' </div>'
 		
 		+'<div class="col-md-4">'
-		+' <div class="panel panel-danger headingPanel" style = "margin-top:80px;">'
+		+' <div class="panel panel-danger headingPanel">'
 		+' <div class="panel-body" id="panelbody">'
-		+'<center><span class="heading1"><b>BASIC KNOWLEDGE </b></span></center>'		
+		+'<center><span class="heading1"><b>Basic Knowledge </b></span></center>'		
 		+'</div>'
 		+'</div>'
 		
@@ -149,14 +177,10 @@ var htm = ''
 		+' </div>'		
 		+'</div>'		
 		+' </div>'
-		+' </div>'
 		
-		+' </div>'//closing of col 4
-//      
-        
-        +' <div class="row">'
+		
 		+'<div class="col-md-12">'
-		+'<div class="col-md-4">'
+//		+'<div class="col-md-4">'
 		+' <div class="panel panel-danger headingPanel" >'
 		+' <div class="panel-body" id="panelbody">'
 		+'<center><span class="heading1"><b>Wheatstone Construction</b></span></center>'
@@ -190,7 +214,20 @@ var htm = ''
 		
 		
 		+'</div>'
-//
+		
+
+		
+		
+		
+		+' </div>'
+		
+		
+		
+		
+		
+		
+		+' </div>'//closing of col 4
+
 		+'<div class="col-sm-4">'
 		+' <div class="panel panel-danger headingPanel">'
 		+' <div class="panel-body" id="panelbody"><center><span class="heading1"><b>Standard Calculations</b></span></center></div>'
@@ -247,15 +284,10 @@ var htm = ''
 		+'</div>'
 		
 		+' </div>'
-		+' </div>'
-		+' </div>'
-
-		+' <div class="row">'
-		+'<div class="col-md-12">'
-		+'<div class="col-md-4">'		
-		+'</div>'
-		+'<div class="col-md-4">'
 		
+		
+		
+		+'<div class="col-sm-4">'
 		+' <div class="panel panel-danger headingPanel" >'
 		+' <div class="panel-body" id="panelbody"><center><span class="heading1"><b>Charectarization</b></span></center></div>'
 		+'</div>'
@@ -278,12 +310,17 @@ var htm = ''
 		+'<center><span class="valueBox"><b>2</b></span></center>'
 		+'</div>'
 		+'</div>'
+
+		+'</div>'
 		
-		+'</div>'
-		+'<div class="col-md-4">'		
-		+'</div>'		
-		+'</div>'
-		+'</div>'	
+		+' </div>'
+		
+		
+		
+		
+		+' </div>'
+		+' </div>'
+
 
 $("#main-div").html(htm);
 
