@@ -1,6 +1,6 @@
 ## Load cell
 #### Theory : 
-  A load cell is a transducer which converts force into a measurable electrical output. Although there are many varieties of load cells, strain gage based load cells are the most commonly used type.
+  A load cell is a transducer which converts force into a measurable electrical output. Although there are many varieties of load cells, strain gauge based load cells are the most commonly used type.
 Load cells are sensors that detect force (mass, torque, etc.).
 When force is applied to a load cell, it converts the force into an electrical signal. Load cells are also known as "load transducers," because they convert a load (force) into electrical signals.
 There are many different kinds of load cells.
@@ -77,8 +77,8 @@ Load cells find their application in the geotechnical field and, they are common
 - They are specially designed to suit the harsh & severe industrial environment.
 - Load Cells are temperature compensated.
 - They have a stable system with no moving parts and linkages.
-- A few of them have multiple strain gages incorporated to reduce positioning effect.
-- Any standard strain gage bridge measuring read-out device can be used with the load cells.
+- A few of them have multiple strain gauges incorporated to reduce positioning effect.
+- Any standard strain gauge bridge measuring read-out device can be used with the load cells.
 - The load cells have negligible side and eccentric load effect.
 
 #### Limitations :

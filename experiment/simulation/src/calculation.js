@@ -672,7 +672,7 @@ $("#submit_load2").click(function(){
 		    $(".modal-header").html("Formula");
 			$(".modal-header").css("background","#23435c");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("<b>Tensile Strain = 6 &times; P<sub>x</sub> / Ewh<sub>2</sub><br>where, Px = Applied load, E = young's modulus, w = width and h = height.</b>");
+			$("#MsgModal").html("<b>Tensile Strain = 6 &times; P<sub>x</sub> / Ewh<sup>2</sup><br>where, Px = Applied load, E = young's modulus, w = width and h = height.</b>");
 			wrongAxialCnt++;
 //	    alert("formula :Tensile Strain = 6.Px / Ewh*h");
 
