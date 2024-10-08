@@ -71,7 +71,7 @@ var htm = ''
 
 	+ '<div class="col-md-12">'
 	+ ' <div class="panel remarkBground" >'
-	+ ' <div class="panel-body remark" ><center>Congratulations!!! <br> <b>Load cell experiment is completed successfully!!</b>'
+	+ ' <div class="panel-body remark" ><center>Congratulations!!! <br> <b>Load cell simulation is completed !!</b>'
 //	+ '<br> <b>Satisfactory performance</b></center></div>'
 	+ '</div>'
 	+ '</div>'
@@ -113,7 +113,7 @@ var htm = ''
 		
 		  htm  +=' </tr>'
 		   +'  <tr>'
-		   +'     <td class=""><center>Construct wheat stone bridge circuit</center></td>'
+		   +'     <td class=""><center>Construct Wheatstone bridge circuit</center></td>'
 		   if(wheatStone >= 60){ 
 		  htm +='<td class=""><center class="attained"> Attained</center></td>'
 		   }else{
@@ -137,7 +137,7 @@ var htm = ''
 		}
 		  htm +='</tr>'
 		   +'<tr>'
-		   +' <td class=""><center>Observations and Charectarization</center></td>'
+		   +' <td class=""><center>Observations and Characterization</center></td>'
 		    if(characterVal>=60){
 			htm +='<td class=""><center class="attained"> Attained</center></td>'
 		}else{
@@ -334,7 +334,7 @@ if(typeCell==15){
     { name: 'Construction of WheatStone Bridge', y: wheatStone },
     { name: 'Standard Calculations', y: loadCal },
     { name: 'Output Voltage', y: outputPer },
-    { name: 'Charectarization', y: characterVal } 
+    { name: 'Characterization', y: characterVal } 
   
 ];
 }else if(typeCell==25){
@@ -344,7 +344,7 @@ if(typeCell==15){
     { name: 'Construction of WheatStone Bridge', y: wheatStone },
     { name: 'Standard Calculations', y: loadCal },
     { name: 'Output Voltage', y: outputPer },
-    { name: 'Charectarization', y: characterVal } 
+    { name: 'Characterization', y: characterVal } 
     ];
 }
 //

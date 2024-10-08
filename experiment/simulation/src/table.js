@@ -419,7 +419,7 @@ var width = $(window).width();
 				$(".modal-header").html("Formula");
 			$(".modal-header").css("background","#23435c");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("<b>Output voltage = Eb &times; f[&epsilon;<sub>2</sub>+&epsilon;<sub>4</sub>-&epsilon;<sub>1</sub>-&epsilon;<sub>3</sub>/4</b>");
+			$("#MsgModal").html("<b>Output voltage = Eb &times; f[&epsilon;<sub>2</sub>+&epsilon;<sub>4</sub>-&epsilon;<sub>1</sub>-&epsilon;<sub>3</sub>]/4</b>");
 			wrongOpCnt++;
 //				alert("formula : Output voltage = Eb*f[E2+E4-E1-E3]/4");
 				
