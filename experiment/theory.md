@@ -38,8 +38,8 @@ These load cells have been in use for many decades now, and can provide very acc
 
 #### Formulae required for column type load cell:
 - Cross sectional area = π × r²  where π = 3.14.
-- Axial Strain εa = P / (A×E) = &epsilon;<sub>1</sub> = &epsilon;<sub>3</sub> where, P = Applied load, A = area and E = Young's Modulus.  
-- Transverse Strain εt = (-P × ν) / (A×E) = &epsilon;<sub>2</sub> = &epsilon;<sub>4</sub> where, ν = Poisson's Ratio
+- Axial Strain ε<sub>a</sub> = P / (A×E) = &epsilon;<sub>1</sub> = &epsilon;<sub>3</sub> where, P = Applied load, A = area and E = Young's Modulus.  
+- Transverse Strain ε<sub>t</sub> = (-P × ν) / (A×E) = &epsilon;<sub>2</sub> = &epsilon;<sub>4</sub> where, ν = Poisson's Ratio
 - ΔR1/R1 = ΔR3/R3 = f×&epsilon;<sub>a</sub>.
 - ΔR2/R2 = ΔR4/R4 = f×&epsilon;<sub>t</sub>. 
 - Output voltage = Eb × f[ε<sub>2</sub>+ε<sub>4</sub>-ε<sub>1</sub>-ε<sub>3</sub>/4] where, Eb = supply voltage, f = gauge factor
