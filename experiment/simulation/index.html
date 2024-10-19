@@ -28,6 +28,14 @@
  font-family:'digital-clock-font';
  src: url('font/digital-7.ttf');
 }
+.modal-header1{
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+     background-color: #001f3f; /* Navy blue background */
+    color: white; /* White text color */
+   
+    }
 </style>
 
 <body style="padding: 0px 0px 0px 0px;">
@@ -41,17 +49,12 @@
 
 		
 	</header>
-	<div  class="row container" id = "rowHide" style="margin-top:20px;">
-	<div  class="col-sm-2">
-	  
-	  <button type="button" class="btn btn-primary btnMarin" data-toggle="modal" style="margin-bottom:15px;" data-target="#exampleModal" id = "btnForModal">
-	  Procedure
-	</button>
-	  
-<!-- 	 <label for="sel1">Select list (select one):</label> -->
-	 </div>
+	<div  class="row container" id = "rowHide" style="margin-top:10px;">
+	
+	<div  class="col-sm-1">
+	</div>
 	<div  class="col-sm-3">
-	 <label for="sel1">Select type of load cell : </label>
+	 <label for="sel1" style="margin-top:5px;">Select type of load cell : </label>
 	 </div>
 	
      <div  class="col-sm-3"> 
@@ -63,27 +66,36 @@
       </select>
       </div>
    
+   <div  class="col-sm-1">
+	  
+	   <button type="button" class="btn btn-primary btnMarin" data-toggle="modal" style="margin-bottom:10px;" data-target="#exampleModal1" id = "btnForModal">
+	  Procedure
+	</button>
+	  
+<!-- 	 <label for="sel1">Select list (select one):</label> -->
+	 </div>
+   
    <div  class="col-sm-2"> 
-      <button type="button" id="delete-btn" class="btn" data-dismiss="modal" style="margin-top:-1px;margin-bottom:10px;" hidden>Delete Selected</button>
+      <button type="button" id="delete-btn" class="btn btn-danger" data-dismiss="modal" style="margin-bottom:10px;" hidden>Delete Selected</button>
      </div>
      
      <div  class="col-sm-2"> 
-      <button type="button" id="validateCon" class="btn-info" data-dismiss="modal" data-toggle="modal" data-target="#myModal" style="margin-top:-1px;margin-bottom:10px;" hidden>Validate Connection</button>
+      <button type="button" id="validateCon" class="btn-info" data-dismiss="modal" data-toggle="modal" data-target="#myModal" style="margin-bottom:10px;" hidden>Validate Connection</button>
      </div>
    
       </div>
       
       
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">PROCEDURE</h5>
+      <div class="modal-header1" >
+        <h3 class="modal-title1" id="exampleModalLabel">Procedure</h3>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body1" style="    overflow-y: scroll;height:600px;margin-left:10px;margin-top:10px; ">
+      <div class="modal-body11" style="    overflow-y: scroll;height:600px;margin-left:10px; ">
         ...
       </div>
       <div class="modal-footer">
@@ -92,7 +104,29 @@
       </div>
     </div>
   </div>
-  </div>
+</div>
+      
+      
+      
+<!--       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"> -->
+<!--   <div class="modal-dialog modal-lg" role="document"> -->
+<!--     <div class="modal-content"> -->
+<!--       <div class="modal-header"> -->
+<!--         <h5 class="modal-title" id="exampleModalLabel">PROCEDURE</h5> -->
+<!--         <button type="button" class="close" data-dismiss="modal" aria-label="Close"> -->
+<!--           <span aria-hidden="true">&times;</span> -->
+<!--         </button> -->
+<!--       </div> -->
+<!--       <div class="modal-body1" style="    overflow-y: scroll;height:600px;margin-left:10px;margin-top:10px; "> -->
+<!--         ... -->
+<!--       </div> -->
+<!--       <div class="modal-footer"> -->
+<!--         <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button> -->
+<!-- <!--         <button type="button" class="btn btn-primary">OK</button> -->
+<!--       </div> -->
+<!--     </div> -->
+<!--   </div> -->
+<!--   </div> -->
       
       
 <div  class="row container-fluid" id="main-div" >
@@ -208,7 +242,8 @@ function resetDivSize() {
 
 var ht = '';
 
-ht += '<li>'
+ht += '<br>'
+	 +'<li>'
 +'<strong>BASIC KNOWLEDGE:</strong>'
 +'<ol>'
 +'<li>Select the type of load cell from the options at the top.</li>'
@@ -257,8 +292,10 @@ ht += '<li>'
 +'</ol>'
 +'</li>'
 +'</ol>'
-$(".modal-body1").html(ht);
 
+
+$(".modal-body11").html(ht);
+$(".modal-title1").html("Procedure");
 
 </script>
 

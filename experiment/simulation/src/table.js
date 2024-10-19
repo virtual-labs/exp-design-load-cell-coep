@@ -319,7 +319,7 @@ var width = $(window).width();
 //					}
 //					if(loadCheck!=0)
 //					{
-	                  console.log("selLoadOut : "+selLoadOut);
+//	                  console.log("selLoadOut : "+selLoadOut);
 						flg = 1;
 					bridgeCalculate();
 						$("#ebVal").prop("hidden",false);
@@ -1133,7 +1133,7 @@ $("body").css("padding","0px 0px 0px 0px");
 	 tempJson.ranOutput=ranOutput;
 	 arrayJsong.push(tempJson);
 	 graphJson.demo=arrayJsong;
-	 console.log(graphJson);
+//	 console.log(graphJson);
 				}
       
       

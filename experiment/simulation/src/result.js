@@ -8,36 +8,36 @@ if(typeCell==15){
 	var correctVal = (counterMasterJson.questionary.correctAnswer/6).toFixed(2);
 	 quesPercent = (correctVal*100).toFixed(1);
 	quesPercent = parseFloat(quesPercent);
-    console.log(quesPercent);
+//    console.log(quesPercent);
     
    
     var config = ((1/(counterMasterJson.columnTypeConfig.wrongAreaConfig+1))*100).toFixed(1);
     config = parseFloat(config);
-    console.log(config);
+//    console.log(config);
     
     var wheatStone = ((1/(counterMasterJson.constLib.invalidCnt+1))*100).toFixed(1);
 	wheatStone = parseFloat(wheatStone);
-	console.log(wheatStone);
+//	console.log(wheatStone);
 	
 	var loadCellCal1 = parseInt(counterMasterJson.stdCalculations.inValidForce)+parseInt(counterMasterJson.stdCalculations.axialCalculate)+parseInt(counterMasterJson.stdCalculations.transverseCal);
 	var loadCal = ((15/(loadCellCal1+15))*100).toFixed(1);
 	loadCal = parseFloat(loadCal);
-	console.log(loadCal);
+//	console.log(loadCal);
 	
 	var outputPer = ((5/(counterMasterJson.outputVoltage.outPut+5))*100).toFixed(1);
 	outputPer = parseFloat(outputPer);
-	console.log(outputPer);
+//	console.log(outputPer);
 	
 	var character = parseInt(counterMasterJson.charectarization.errorCount)+parseInt(counterMasterJson.charectarization.sensitivityCount);
 	var characterVal = ((2/(character+2))*100).toFixed(1);
 	characterVal = parseFloat(characterVal);
-	console.log(characterVal);
+//	console.log(characterVal);
 }if(typeCell==25){
 	
 	var correctVal = (counterMasterJson.questionary.correctAnswer/6).toFixed(2);
 	var quesPercent = (correctVal*100).toFixed(1);
 	quesPercent = parseFloat(quesPercent);
-    console.log(quesPercent);
+//    console.log(quesPercent);
     
    
 //    var config = ((1/(counterMasterJson.columnTypeConfig.wrongAreaConfig+1))*100).toFixed(1);
@@ -46,21 +46,21 @@ if(typeCell==15){
     
     var wheatStone = ((1/(counterMasterJson.constLib.invalidCnt+1))*100).toFixed(1);
 	wheatStone = parseFloat(wheatStone);
-	console.log(wheatStone);
+//	console.log(wheatStone);
 	
 	var loadCellCal1 = parseInt(counterMasterJson.stdCalculations.inValidForce)+parseInt(counterMasterJson.stdCalculations.axialCalculate)+parseInt(counterMasterJson.stdCalculations.transverseCal);
 	var loadCal = ((15/(loadCellCal1+15))*100).toFixed(1);
 	loadCal = parseFloat(loadCal);
-	console.log(loadCal);
+//	console.log(loadCal);
 	
 	var outputPer = ((5/(counterMasterJson.outputVoltage.outPut+5))*100).toFixed(1);
 	outputPer = parseFloat(outputPer);
-	console.log(outputPer);
+//	console.log(outputPer);
 	
 	var character = parseInt(counterMasterJson.charectarization.errorCount)+parseInt(counterMasterJson.charectarization.sensitivityCount);
 	var characterVal = ((2/(character+2))*100).toFixed(1);
 	characterVal = parseFloat(characterVal);
-	console.log(characterVal);
+//	console.log(characterVal);
 	
 }	
 
