@@ -1,1 +1,1 @@
-# Design of load cell and its applications
+# Design of load cell and its characterization

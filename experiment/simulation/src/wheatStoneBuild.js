@@ -579,7 +579,7 @@ function checkAllConnections() {
     }  
     }
     idd++;
-    console.log("idd : "+idd);
+//    console.log("idd : "+idd);
 }
 
 
@@ -602,7 +602,7 @@ function setPointerPosition(x, y) {
         clientY: y  
     });  
     const position = getCursorPosition(event);  
-    console.log(position); // This will log the new cursor position  
+//    console.log(position); // This will log the new cursor position  
 }  
 
 function handleDotDragStart(event, dot) {  
