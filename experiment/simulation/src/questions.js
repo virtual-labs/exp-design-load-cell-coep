@@ -135,7 +135,7 @@ $( "#typeCell" ).on( "change", function() {
 						tempCountJson.correctAnswer = ansCount; 
 						tempCountJson.wrongAnswer = wrongAns; 
 						counterMasterJson.questionary = tempCountJson;
-						 console.log(counterMasterJson);
+//						 console.log(counterMasterJson);
 //						 console.log(data);
 						 
 						 $("#btnModal").removeClass("btn-danger").addClass("btn-success");

@@ -819,7 +819,7 @@ $("#submit_load3").click(function(){
 //							   console.log(arrayJson);
 							   masterJson.demo=arrayJson;							    
 							   tableReadingAdded1();
-							   console.log(masterJson);
+//							   console.log(masterJson);
 							   							   
 			}
      
