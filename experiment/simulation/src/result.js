@@ -1,6 +1,75 @@
 function result(){
 
 $("#rowHide").prop("hidden",true);
+	$("#pdfDownload").prop("hidden",false);
+	
+	
+  function generatePDF() {
+    // Select the div by its ID
+    const element = document.querySelector("#main-div");
+
+    // Use html2canvas to capture the element as a canvas
+    html2canvas(element, {
+        scale: 3,  // Increase the scale for better resolution (adjustable)
+        useCORS: true // In case of cross-origin issues with external resources like images
+    }).then(function (canvas) {
+        // Convert the canvas to image data in PNG format
+        const imgData = canvas.toDataURL("image/png", 1.0); // No compression
+
+        // Initialize the PDF document in landscape mode ('l') and A4 size
+        const pdf = new jspdf.jsPDF('l', 'mm', 'a4');
+        
+        // Define the width and height for the image to fit in the landscape A4 page
+        const pdfWidth = pdf.internal.pageSize.getWidth();
+        const pdfHeight = (canvas.height * pdfWidth) / canvas.width; // Keep aspect ratio
+
+        // Check if the image height exceeds the landscape page height
+        if (pdfHeight > pdf.internal.pageSize.getHeight()) {
+            let position = 0;
+            const pageHeight = pdf.internal.pageSize.getHeight();
+
+            // Loop over the content to fit into multiple pages in landscape
+            while (position < canvas.height) {
+                const pageData = canvas.getContext('2d').getImageData(0, position, canvas.width, canvas.height - position);
+
+                // Create a new image element from the slice
+                const pageCanvas = document.createElement('canvas');
+                pageCanvas.width = canvas.width;
+                pageCanvas.height = canvas.height - position < pageHeight ? canvas.height - position : pageHeight;
+                pageCanvas.getContext('2d').putImageData(pageData, 0, 0);
+
+                const imgData = pageCanvas.toDataURL('image/png', 1.0);  // Avoid compression
+                
+                pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, (pdfWidth * pageCanvas.height) / pageCanvas.width);
+
+                position += pageHeight;
+
+                if (position < canvas.height) {
+                    pdf.addPage();
+                }
+            }
+        } else {
+            // If it fits on one page, simply add the image to the PDF in landscape
+            pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+        }
+
+        // Save the generated PDF
+        pdf.save("load_cell_Report.pdf");
+    });
+}
+
+// Set up the button click event to generate the PDF
+//document.addEventListener("DOMContentLoaded", function () {
+//    document.getElementById("pdfDownload").addEventListener("click", generatePDF);
+//});
+
+
+$("#pdfDownload").on("click", function(){
+//	console.log("click event generated");
+	generatePDF();
+})		
+	
+	
 	
 var quesPercent=0;
 var config=0, wheatStone=0,loadCal=0,loadCellCal1=0,outputPer=0,character=0,characterVal=0;
@@ -71,7 +140,7 @@ var htm = ''
 
 	+ '<div class="col-md-12">'
 	+ ' <div class="panel remarkBground" >'
-	+ ' <div class="panel-body remark" ><center>Congratulations!!! <br> <b>Load cell simulation is completed !!</b>'
+	+ ' <div class="panel-body remark" style="font-size:18px;"><center> <b>Load cell experiment is completed successfully!!</b>'
 //	+ '<br> <b>Satisfactory performance</b></center></div>'
 	+ '</div>'
 	+ '</div>'
@@ -350,6 +419,8 @@ if(typeCell==15){
 //
 //// Create the pie chart
 let chart = Highcharts.chart('graph-div', {
+	exporting: { enabled: false },
+				credits: { enabled: false},
     chart: {
         type: 'pie'
     },

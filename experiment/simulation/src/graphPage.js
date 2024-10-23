@@ -69,6 +69,8 @@ const sortedGraphData2 = combinedData.map(data => data.graphData2);
 
 
 Highcharts.chart('main-div-conf', {
+//	exporting: { enabled: false },
+				credits: { enabled: false},
     chart: {
         type: 'line'
     },
