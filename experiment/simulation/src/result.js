@@ -23,10 +23,13 @@ $("#rowHide").prop("hidden",true);
         const pdfWidth = pdf.internal.pageSize.getWidth();
         const pdfHeight = (canvas.height * pdfWidth) / canvas.width; // Keep aspect ratio
 
-        // Check if the image height exceeds the landscape page height
-        if (pdfHeight > pdf.internal.pageSize.getHeight()) {
+        // Define the top margin (in mm)
+        const topMargin = 10;
+
+        // Check if the image height exceeds the landscape page height minus the top margin
+        if (pdfHeight > pdf.internal.pageSize.getHeight() - topMargin) {
             let position = 0;
-            const pageHeight = pdf.internal.pageSize.getHeight();
+            const pageHeight = pdf.internal.pageSize.getHeight() - topMargin;
 
             // Loop over the content to fit into multiple pages in landscape
             while (position < canvas.height) {
@@ -40,7 +43,7 @@ $("#rowHide").prop("hidden",true);
 
                 const imgData = pageCanvas.toDataURL('image/png', 1.0);  // Avoid compression
                 
-                pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, (pdfWidth * pageCanvas.height) / pageCanvas.width);
+                pdf.addImage(imgData, 'PNG', 0, topMargin, pdfWidth, (pdfWidth * pageCanvas.height) / pageCanvas.width);
 
                 position += pageHeight;
 
@@ -49,25 +52,19 @@ $("#rowHide").prop("hidden",true);
                 }
             }
         } else {
-            // If it fits on one page, simply add the image to the PDF in landscape
-            pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+            // If it fits on one page, simply add the image to the PDF in landscape with the top margin
+            pdf.addImage(imgData, 'PNG', 0, topMargin, pdfWidth, pdfHeight);
         }
 
         // Save the generated PDF
-        pdf.save("load_cell_Report.pdf");
+        pdf.save("load_cell_report.pdf");
     });
 }
 
 // Set up the button click event to generate the PDF
-//document.addEventListener("DOMContentLoaded", function () {
-//    document.getElementById("pdfDownload").addEventListener("click", generatePDF);
-//});
-
-
 $("#pdfDownload").on("click", function(){
-//	console.log("click event generated");
-	generatePDF();
-})		
+    generatePDF();
+});
 	
 	
 	
