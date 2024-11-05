@@ -33,9 +33,52 @@
     font-size: 22px;
     font-weight: 600;
      background-color: #001f3f; /* Navy blue background */
-    color: white; /* White text color */
+    color: red; /* White text color */
    
     }
+    
+  .button1 {
+  background-color: #004A7F;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  border: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Arial;
+  font-size: 15px;
+ padding: 5px 10px; 
+  text-align: center;
+  text-decoration: none;
+  -webkit-animation: glowing 1500ms infinite;
+  -moz-animation: glowing 1500ms infinite;
+  -o-animation: glowing 1500ms infinite;
+  animation: glowing 1500ms infinite;
+}
+@-webkit-keyframes glowing {
+  0% { background-color: #B20000; -webkit-box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #FF0000; -webkit-box-shadow: 0 0 20px #FF0000; }
+  100% { background-color: #B20000; -webkit-box-shadow: 0 0 3px #B20000; }
+}
+
+@-moz-keyframes glowing {
+  0% { background-color: #B20000; -moz-box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #FF0000; -moz-box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #B20000; -moz-box-shadow: 0 0 3px #B20000; }
+}
+
+@-o-keyframes glowing {
+  0% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+}
+
+@keyframes glowing {
+  0% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+}
+    
 </style>
 
 <body style="padding: 0px 0px 0px 0px;">
@@ -81,14 +124,12 @@
       </select>
       </div>
    
-   <div  class="col-sm-1">
+   
 	  
-	   <button type="button" class="btn btn-primary btnMarin" data-toggle="modal" style="margin-bottom:10px;" data-target="#exampleModal1" id = "btnForModal">
-	  Procedure
-	</button>
+	  
 	  
 <!-- 	 <label for="sel1">Select list (select one):</label> -->
-	 </div>
+	 
    
    <div  class="col-sm-2"> 
       <button type="button" id="delete-btn" class="btn btn-danger" data-dismiss="modal" style="margin-bottom:10px;" hidden>Delete Selected</button>
@@ -97,8 +138,15 @@
      <div  class="col-sm-2"> 
       <button type="button" id="validateCon" class="btn-info" data-dismiss="modal" data-toggle="modal" data-target="#myModal" style="margin-bottom:10px;" hidden>Validate Connection</button>
      </div>
-   
+  
+   <div  class="col-sm-1">
+       <button type="button" class="btn btn-danger btnMarin button1" data-toggle="modal" style="margin-bottom:10px;" data-target="#exampleModal1" id = "btnForModal">
+	  Procedure
+	</button>
+   </div>
       </div>
+      
+      
       
       
       <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
