@@ -153,7 +153,7 @@ $( "#typeCell" ).on( "change", function() {
 					var typeCell;
 					$('#nextLevelConfig').on('click', function() {	
 						 
-	      if(ansCount != 0){
+//	      if(ansCount != 0){
 		$("#main-div-conf").html("");
 
 				   typeCell = $("#typeCell").val();
@@ -167,7 +167,7 @@ $( "#typeCell" ).on( "change", function() {
 					ringCellConfig();
 				}
 				  
-	} 
+//	} 
 	});	
 					
 });
