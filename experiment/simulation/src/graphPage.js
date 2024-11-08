@@ -351,9 +351,21 @@ tableMainDiv =	'<div class="col-sm-12">'
 	               
 	              
 	              $("#canvas-div-sub").html(htm);
-	        
-	        var htm11 = '<img src="images/amplifier.png"  class="img-responsive">'
-	        $("#main-div-conf11").append(htm11);
+	               typeCell = $("#typeCell").val();
+	        var htm11 = '';
+	         if(typeCell==15){
+//					wheatStoneCon();
+					htm11 = '<img src="images/amplifier.png"  class="img-responsive">'
+					 $("#main-div-conf11").append(htm11);
+					console.log("columnType");
+				}else if(typeCell==25){
+//					wheatStoneCon();
+					htm11 = '<img src="images/amplifier1.png"  class="img-responsive">'
+					console.log("cantilever");
+					 $("#main-div-conf11").append(htm11);
+				}
+	         
+//	        $("#main-div-conf11").append(htm11);
 	        
 	        
 	        var loadErrVal=0;
@@ -500,9 +512,20 @@ tableMainDiv =	'<div class="col-sm-12">'
 //		sensitivityCal = sensitivityCal.toFixed(2);
 
         var sensitivityCal1 = (ranVal1/selValue).toFixed(4);
-		var sensitivityCal2 = (sensitivityCal1*1000).toFixed(4);
+		var sensitivityCal2 = 0;
+		 typeCell = $("#typeCell").val();
+		 if(typeCell==15){
+//					wheatStoneCon();
+					sensitivityCal2 = (sensitivityCal1*1000).toFixed(4);
+					sensitivityCal = parseFloat(sensitivityCal2);
+				}else if(typeCell==25){
+//					wheatStoneCon();
+					sensitivityCal2 = (sensitivityCal1*10).toFixed(4);
+					sensitivityCal = parseFloat(sensitivityCal2);
+				}
+		
 
-		sensitivityCal = parseFloat(sensitivityCal2);
+		
 		
 		var senseEnter = $("#sensitivity").val();
 		
@@ -711,8 +734,19 @@ tableMainDiv =	'<div class="col-sm-12">'
 		      
 		      $("#canvas-div-sub").html(htm);
 	        
-	         var htm11 = '<img src="images/amplifier.png"  class="img-responsive">'
-	        $("#main-div-conf11").append(htm11);
+	        typeCell = $("#typeCell").val();
+	        var htm11 = '';
+	         if(typeCell==15){
+//					wheatStoneCon();
+					htm11 = '<img src="images/amplifier.png"  class="img-responsive">'
+					 $("#main-div-conf11").append(htm11);
+					console.log("columnType");
+				}else if(typeCell==25){
+//					wheatStoneCon();
+					htm11 = '<img src="images/amplifier1.png"  class="img-responsive">'
+					console.log("cantilever");
+					 $("#main-div-conf11").append(htm11);
+				}
 	        
 	        var loadErrVal=0;
 	        var selValue = 0;
@@ -851,7 +885,20 @@ tableMainDiv =	'<div class="col-sm-12">'
 	 $("#submitSensitivityCheck").click(function(){
 		$("body").css("padding","0px 0px 0px 0px");
 		var sensitivityCal1 = (ranVal1/selValue).toFixed(4);
-		var sensitivityCal2 = (sensitivityCal1*1000).toFixed(4);
+		var sensitivityCal2;
+		 typeCell = $("#typeCell").val();
+		 if(typeCell==15){
+//					wheatStoneCon();
+					sensitivityCal2 = (sensitivityCal1*1000).toFixed(4);
+					sensitivityCal = parseFloat(sensitivityCal2);
+				}else if(typeCell==25){
+//					wheatStoneCon();
+					sensitivityCal2 = (sensitivityCal1*10).toFixed(4);
+					sensitivityCal = parseFloat(sensitivityCal2);
+				}
+		
+		
+		
 //		sensitivityCal = sensitivityCal.toFixed(2);
 		sensitivityCal = parseFloat(sensitivityCal2);
 		

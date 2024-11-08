@@ -28,9 +28,9 @@
             stroke: red !important;
             stroke-width: 4 !important;
         }
-        #delete-btn {
-            display: block;
-           margin: 1px auto 1px 20px;
+        #delete-btn   {
+            
+           
 /*             padding: 10px; */
             background-color: red;
             color: white;
@@ -38,7 +38,13 @@
             cursor: pointer;
         }
         
-        
+     #btnVideo {    	
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+     
+     }   
         
         .dot {
             fill: blue;
