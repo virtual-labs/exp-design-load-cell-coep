@@ -422,7 +422,7 @@ let chart = Highcharts.chart('graph-div', {
         type: 'pie'
     },
     title: {
-        text: 'Observations'
+        text: ''
     },
     series: [{
         name: 'Observed',

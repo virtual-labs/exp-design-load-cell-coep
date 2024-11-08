@@ -1,7 +1,7 @@
 	
    counterMasterJson = {};
    var ansCount = 0;	
-	
+	var typeCell = 0;
 	
 $( "#typeCell" ).on( "change", function() {
  $("#typeCell").prop('disabled', true);
@@ -150,7 +150,7 @@ $( "#typeCell" ).on( "change", function() {
 
 		   			
 					}
-					var typeCell;
+					
 					$('#nextLevelConfig').on('click', function() {	
 						 
 //	      if(ansCount != 0){
