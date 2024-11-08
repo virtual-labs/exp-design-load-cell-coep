@@ -1,6 +1,7 @@
 function result(){
 
 $("#rowHide").prop("hidden",true);
+$("#simDemo").prop("hidden",true);
 	$("#pdfDownload").prop("hidden",false);
 	
 	
