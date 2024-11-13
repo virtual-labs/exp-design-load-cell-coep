@@ -26,7 +26,7 @@ var width = $(window).width();
     
     var diameter = parseInt(areaSelect);
     
-       console.log("areaSelect : "+areaSelect);
+       //console.log("areaSelect : "+areaSelect);
             
         var l1 = paper.path("M "+(x+150-(diameter))+" "+(y+200)+ " l 0 200 ");
         
@@ -114,7 +114,7 @@ var width = $(window).width();
     
     var diameter = parseInt(diam);
     
-       console.log("areaSelect : "+areaSelect);
+       //console.log("areaSelect : "+areaSelect);
             
         var l1 = paper.path("M "+(x+150-(diameter))+" "+(y+200)+ " l 0 200 ");
         
@@ -205,7 +205,7 @@ var width = $(window).width();
     
     var diameter = parseInt(diam);
     
-       console.log("areaSelect : "+areaSelect);
+      // console.log("areaSelect : "+areaSelect);
             
         var l1 = paper.path("M "+(x+150-(diameter))+" "+(y+200)+ " l 0 200 ");
         
@@ -306,7 +306,7 @@ var width = $(window).width();
     
     var diameter = parseInt(diam);
     
-       console.log("areaSelect : "+areaSelect);
+       //console.log("areaSelect : "+areaSelect);
             
         var l1 = paper.path("M "+(x+150-(diameter))+" "+(y+200)+ " l 0 200 ");
         
