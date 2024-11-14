@@ -1,7 +1,11 @@
 function result(){
 
-$("#rowHide").prop("hidden",true);
+//$("#rowHide").prop("hidden",true);
 $("#simDemo").prop("hidden",true);
+$("#loadLabel").prop("hidden",true);
+$("#btnForModal").prop("hidden",true);
+$("#typeCell").prop("hidden",true);
+
 	$("#pdfDownload").prop("hidden",false);
 	
 	
@@ -151,7 +155,7 @@ var htm = ''
 		 +'<br><table class="table table-bordered ">'
 		   +'  <thead class="thead-dark">'
 		   +'    <tr class="">'
-		   +'      <th><center class="">COMPETENCY(LOAD CELL)</center></th>'
+		   +'      <th><center class="">COMPETENCY (LOAD CELL)</center></th>'
 		   +'     <th><center class="">STATUS</center></th>'
 		   +'    </tr>'
 		   +' </thead>'
@@ -326,7 +330,7 @@ var htm = ''
 		+' </div>'
 		+'<div class="col-sm-4">'
 		+' <div class="panel panel-danger headingPanel" >'
-		+' <div class="panel-body" id="panelbody"><center><span class="heading1"><b>Output Voltage Calculate</b></span></center></div>'
+		+' <div class="panel-body" id="panelbody"><center><span class="heading1"><b>Output Voltage Calculations</b></span></center></div>'
 		+'</div>'
 		
 		+'<div class="col-sm-6">'

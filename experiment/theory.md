@@ -1,5 +1,6 @@
 ## Load cell
 #### Theory : 
+
   A load cell is a transducer which converts force into a measurable electrical output. Although there are many varieties of load cells, strain gauge based load cells are the most commonly used type.
 Load cells are sensors that detect force (mass, torque, etc.).
 When force is applied to a load cell, it converts the force into an electrical signal. Load cells are also known as "load transducers," because they convert a load (force) into electrical signals.
@@ -36,17 +37,17 @@ An excitation voltage - usually 10V is applied to one set of corners and the vol
 When the metallic member to which the strain gauges are attached, is stressed by the application of a force, the resulting strain - leads to a change in resistance in one (or more) of the resistors. This change in resistance results in a change in output voltage. This small change in output voltage (usually about 20 mVolt of total change in response to full load) can be measured and digitized after careful amplification of the small milli-volt level signals to a higher amplitude 0-5V or 0-10V signal.
 These load cells have been in use for many decades now, and can provide very accurate readings but require many tedious steps during the manufacturing process.
 
-#### Formulae required for column type load cell:
-- Cross sectional area = π × r²  where π = 3.14.
-- Axial Strain ε<sub>a</sub> = P / (A×E) = &epsilon;<sub>1</sub> = &epsilon;<sub>3</sub> where, P = Applied load, A = area and E = Young's Modulus.  
-- Transverse Strain ε<sub>t</sub> = (-P × ν) / (A×E) = &epsilon;<sub>2</sub> = &epsilon;<sub>4</sub> where, ν = Poisson's Ratio
-- ΔR1/R1 = ΔR3/R3 = f×&epsilon;<sub>a</sub>.
-- ΔR2/R2 = ΔR4/R4 = f×&epsilon;<sub>t</sub>. 
-- Output voltage = Eb × f[ε<sub>2</sub>+ε<sub>4</sub>-ε<sub>1</sub>-ε<sub>3</sub>/4] where, Eb = supply voltage, f = gauge factor
+#### Formulae required for column type load cell :
+- Cross sectional area = π × r²  where, <br> π = 3.14
+- Axial Strain ε<sub>a</sub> = P / (A×E) = &epsilon;<sub>1</sub> = &epsilon;<sub>3</sub> where, <br> P = Applied load, A = area and E = Young's Modulus  
+- Transverse Strain ε<sub>t</sub> = (-P × ν) / (A×E) = &epsilon;<sub>2</sub> = &epsilon;<sub>4</sub> where, <br> ν = Poisson's Ratio
+- ΔR<sub>1</sub>/R<sub>1</sub> = ΔR<sub>3</sub>/R<sub>3</sub> = f×&epsilon;<sub>a</sub>
+- ΔR<sub>2</sub>/R<sub>2</sub> = ΔR<sub>4</sub>/R<sub>4</sub> = f×&epsilon;<sub>t</sub> 
+- Output voltage = Eb × f[ε<sub>2</sub>+ε<sub>4</sub>-ε<sub>1</sub>-ε<sub>3</sub>/4] where, <br> Eb = supply voltage, f = gauge factor
 
-#### Formulae required for cantilever type load cell:
-- Strain developed at the gauges, &epsilon;<sub>1</sub> = -&epsilon;<sub>2</sub> = &epsilon;<sub>3</sub> = -&epsilon;<sub>4</sub> = 6 × Px / Ewh² where, P = Applied load, E = young's modulus, w = width ,x = length, h = height.
-- Output voltage = Eb × f[&epsilon;<sub>2</sub>+&epsilon;<sub>4</sub>-&epsilon;<sub>1</sub>-&epsilon;<sub>3</sub>/4] where, Eb = supply voltage, f = gauge factor
+#### Formulae required for cantilever type load cell :
+- Strain developed at the gauges, &epsilon;<sub>1</sub> = -&epsilon;<sub>2</sub> = &epsilon;<sub>3</sub> = -&epsilon;<sub>4</sub> = 6 × Px / Ewh² where, <br> P = Applied load, E = young's modulus, w = width , x = length, h = height.
+- Output voltage = Eb × f[&epsilon;<sub>2</sub>+&epsilon;<sub>4</sub>-&epsilon;<sub>1</sub>-&epsilon;<sub>3</sub>/4] where, <br> Eb = supply voltage, f = gauge factor
 
 #### Uses :
 The type of instruments used in the geotechnical field depends on the scope of work. Load cells can be used at the initial stage i.e. during the research and development or even at a later stage while monitoring a structure.
