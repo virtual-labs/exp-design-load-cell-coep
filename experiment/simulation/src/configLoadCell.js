@@ -86,7 +86,7 @@ function columnTypeConfig(){
 	    
        +'<div class="row">'
 	   +'<div class="col-sm-6">'
-	   +'<label class="labelstyle">Calculate cross Sectional area (sq mm): </label>'
+	   +'<label class="labelstyle">Calculate cross-sectional area (sq mm): </label>'
 	   +'</div>'
 		+'<div class="col-sm-3">'
 	+'<input type="text" id="areaSel" style= 10px;width:100%;"  class=" form-control" />'
@@ -236,13 +236,13 @@ function columnTypeConfig(){
 	     $("#btnModal").removeClass("btn-danger").addClass("btn-success");
 	        $(".modal-header").html("Success Message");
             $(".modal-header").css("background","#5cb85c");
-			$("#MsgModal").html("Configured Successfully");
+			$("#MsgModal").html("Configured successfully");
 				} else if (areaSelect != areaVal) {
 					wrongAreaCnt++;
 					$(".modal-header").html("Error Message");
 			$(".modal-header").css("background","#9c1203b0");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("Entered value is Incorrect.<br>Try again");
+			$("#MsgModal").html("Entered value is incorrect.<br>Try again");
 //				alert("Entered value is incorrect.Try it again.");
 //				 $("#modelMsg").html("<b class='boldTextRed'>Entered value is incorrect.Try again . </b>");
 //				 $("body").css("padding","0px 0px 0px 0px");
@@ -257,7 +257,7 @@ function columnTypeConfig(){
 				 $(".modal-header").html("Formula");
 			$(".modal-header").css("background","#23435c");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("<b>Formula : Area = &prod;&times; r <sup>2</sup> </b>");
+			$("#MsgModal").html("<b>Formula :<br/> Area = &prod;&times; r <sup>2</sup> </b>");
 			wrongAreaCnt++;
 //				 $("#modelMsg").html("<b class='boldTextBlue'>formula : Area = (radius &times; 10<sup>-3</sup>)<sup>2</sup> &times; &prod;</b> ");
 //				 $("body").css("padding","0px 0px 0px 0px");
@@ -285,7 +285,7 @@ function columnTypeConfig(){
 			$("#btnModal").removeClass("btn-danger").addClass("btn-success");
 	        $(".modal-header").html("Success Message");
             $(".modal-header").css("background","#5cb85c");
-			$("#MsgModal").html("Configured Successfully");		
+			$("#MsgModal").html("Configured successfully");		
 ////					correct_cnt++;
 //		$("#errorPanel").prop("hidden",true);
 ////		$("#nextLevelForConfig").prop('hidden',false);
@@ -304,7 +304,7 @@ function columnTypeConfig(){
 					$("#btnModal").removeClass("btn-danger").addClass("btn-success");
 	        $(".modal-header").html("Success Message");
             $(".modal-header").css("background","#5cb85c");
-			$("#MsgModal").html("Correct Answer is " + areaVal);
+			$("#MsgModal").html("Correct answer is " + areaVal);
 					
 //					 $("#modelMsg").html("<b class='boldTextGreen'>Correct answer is " + areaVal+"</b>");
 //					 $("body").css("padding","0px 0px 0px 0px");
@@ -569,12 +569,12 @@ function cantileverConfig(){
 		if(lengthVal==0 || widthVal==0 || heightVal==0 || modSelcantiVal==0){
 	        $(".modal-title").html("Error Message");
 			$(".modal-header").css("background","#d9534f");
-			$("#MsgModal").html("Select Appropriate Values");
+			$("#MsgModal").html("Select appropriate values");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
         }else{
 	        $(".modal-title").html("Success Message");
             $(".modal-header").css("background","#5cb85c");
-			$("#MsgModal").html("Configured Successfully");
+			$("#MsgModal").html("Configured successfully");
 			$("#btnModal").removeClass("btn-danger").addClass("btn-success");
 			
             $("#lengthSel").prop("disabled",true);

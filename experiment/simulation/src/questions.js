@@ -141,7 +141,7 @@ $( "#typeCell" ).on( "change", function() {
 						 $("#btnModal").removeClass("btn-danger").addClass("btn-success");
 	        $(".modal-header").html("Success Message");
             $(".modal-header").css("background","#5cb85c");
-			$("#MsgModal").html("Test Submitted Successfully .<br> Number of Correct Answers  : " + ansCount);
+			$("#MsgModal").html("Test submitted successfully .<br> Number of correct answers  : " + ansCount);
 						 
 //						 $("#modelMsg").html("<b class='boldTextGreen'>Test Submitted Successfully .<br> Number of Correct Answers  : " + ansCount+"</b>");
                          $('#nextLevelConfig').prop('hidden',false);

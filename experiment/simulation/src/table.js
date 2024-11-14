@@ -265,7 +265,7 @@ var width = $(window).width();
 						$(".modal-header").html("Error Message");
 			$(".modal-header").css("background","#9c1203b0");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("Select Appropriate Value");
+			$("#MsgModal").html("Select appropriate value");
 					}else{
 						
 				 pressureValue =$("#text4").children(":selected").attr("value");			 
@@ -361,7 +361,7 @@ var width = $(window).width();
 					$(".modal-header").html("Error Message");
 			$(".modal-header").css("background","#9c1203b0");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("Select Appropriate Value");
+			$("#MsgModal").html("Select appropriate value");
 //					alert("Select the appropriate value.");
 				}
 				});
@@ -403,7 +403,7 @@ var width = $(window).width();
 				 $(".modal-header").html("Error Message");
 			$(".modal-header").css("background","#9c1203b0");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("Entered value is Incorrect.<br>Try again");
+			$("#MsgModal").html("Entered value is incorrect.<br>Try again");
             wrongOpCnt++;
 //				alert("Entered value is incorrect.Try it again.");
 				
@@ -454,7 +454,7 @@ var width = $(window).width();
 					$("#btnModal").removeClass("btn-danger").addClass("btn-success");
 	        $(".modal-header").html("Success Message");
             $(".modal-header").css("background","#5cb85c");
-			$("#MsgModal").html("Correct Answer is " + outVolt);
+			$("#MsgModal").html("Correct answer is " + outVolt);
 			wrongOpCnt++;
 //					alert("correct answer is " + outVolt );
 					
@@ -490,7 +490,7 @@ var width = $(window).width();
 			
 			function complete(){
 				
-				alert("Experiment Completed Successfully!");
+				alert("Experiment completed successfully!");
 //				$("#btnModal").removeClass("btn-danger").addClass("btn-success");
 //	        $(".modal-header").html("Success Message");
 //            $(".modal-header").css("background","#5cb85c");
@@ -908,7 +908,7 @@ $("body").css("padding","0px 0px 0px 0px");
 						$(".modal-header").html("Error Message");
 			$(".modal-header").css("background","#9c1203b0");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("Select Appropriate Value");
+			$("#MsgModal").html("Select appropriate value");
 					}else{
 						
 					pressureValue =$("#text4").children(":selected").attr("value");			 
@@ -987,7 +987,7 @@ $("body").css("padding","0px 0px 0px 0px");
 					$(".modal-header").html("Error Message");
 			$(".modal-header").css("background","#9c1203b0");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("Select Appropriate Value");
+			$("#MsgModal").html("Select appropriate value");
 //					alert("Select the appropriate value.");
 				}
 				});
@@ -1029,7 +1029,7 @@ $("body").css("padding","0px 0px 0px 0px");
 				 $(".modal-header").html("Error Message");
 			$(".modal-header").css("background","#9c1203b0");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("Entered value is Incorrect.<br>Try again");	
+			$("#MsgModal").html("Entered value is incorrect.<br>Try again");	
 			wrongOpCnt++;
 //				alert("Entered value is incorrect.Try it again.");
 				
@@ -1077,7 +1077,7 @@ $("body").css("padding","0px 0px 0px 0px");
 					$("#btnModal").removeClass("btn-danger").addClass("btn-success");
 	        $(".modal-header").html("Success Message");
             $(".modal-header").css("background","#5cb85c");
-			$("#MsgModal").html("Correct Answer is " + outVolt);
+			$("#MsgModal").html("Correct answer is " + outVolt);
 			wrongOpCnt++;
 //					alert("correct answer is " + outVolt );
 			
