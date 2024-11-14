@@ -242,7 +242,7 @@ tableMainDiv =	'<div class="col-sm-12">'
 	               +'</div>'
 	              
 	               + '<div class="col-sm-5" id="labelSelected">'
-	               +'<label class="labelstyle" style="margin-left:10px;"> <center>Cross Sectional area : '+areaSelect+' sq mm</center> </label>'
+	               +'<label class="labelstyle" style="margin-left:10px;"> <center>Cross-sectional area : '+areaSelect+' sq mm</center> </label>'
 	               +'</div>'
 	              
 	               + '<div class="col-sm-1">'	               
@@ -256,7 +256,7 @@ tableMainDiv =	'<div class="col-sm-12">'
 	    	       +'<label class="labelstyle" style="margin-left:10px;"><center>Young'+"'"+'s Modulus : 2.07 &times 10 &#x2075 N/mm<sup>2</sup></center> </label>'
 	               +'</div>'
 	               + '<div class="col-sm-5" id="labelSelected">'
-	    	       +'<label class="labelstyle" style="margin-left:10px;"><center>Poisson'+"''"+' Ratio : '+poisonSelect+'</center> </label>'
+	    	       +'<label class="labelstyle" style="margin-left:10px;"><center>Poisson'+"'"+'s Ratio : '+poisonSelect+'</center> </label>'
 	               +'</div>'
 	               + '<div class="col-sm-1">'	               
 	               +'</div>'	               
@@ -381,7 +381,7 @@ tableMainDiv =	'<div class="col-sm-12">'
 			$(".modal-header").html("Error Message");
 			$(".modal-header").css("background","#9c1203b0");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("Select Appropriate Value");
+			$("#MsgModal").html("Select appropriate value");
 		}else{
 			
 			if(loadErrVal==1){
@@ -415,7 +415,7 @@ tableMainDiv =	'<div class="col-sm-12">'
 			$(".modal-header").html("Error Message");
 			$(".modal-header").css("background","#9c1203b0");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("Enter Appropriate Value");
+			$("#MsgModal").html("Enter appropriate value");
 		}else{ 
 			
 			
@@ -459,7 +459,7 @@ tableMainDiv =	'<div class="col-sm-12">'
 					 $(".modal-header").html("Error Message");
 			$(".modal-header").css("background","#9c1203b0");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("Entered value is Incorrect.<br>Try again");
+			$("#MsgModal").html("Entered value is incorrect.<br>Try again");
             errorCnt++;
 				}
 	
@@ -469,7 +469,7 @@ tableMainDiv =	'<div class="col-sm-12">'
 			$(".modal-header").html("Error Message");
 			$(".modal-header").css("background","#23435c");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("<b> Formula : Error = Standard value - Observed value");
+			$("#MsgModal").html("<b> Formula : <br/>Error = Standard value - Observed value</b>");
             errorCnt++;
 				
 			} else {
@@ -489,7 +489,7 @@ tableMainDiv =	'<div class="col-sm-12">'
 			$("#btnModal").removeClass("btn-danger").addClass("btn-success");
 	        $(".modal-header").html("Success Message");
             $(".modal-header").css("background","#5cb85c");
-			$("#MsgModal").html("Correct Answer is " + errCal);
+			$("#MsgModal").html("Correct answer is " + errCal);
 	        errorCnt++;
 				}
 			}
@@ -554,7 +554,7 @@ tableMainDiv =	'<div class="col-sm-12">'
 					 $(".modal-header").html("Error Message");
 			$(".modal-header").css("background","#9c1203b0");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("Entered value is Incorrect.<br>Try again");
+			$("#MsgModal").html("Entered value is incorrect.<br>Try again");
              sensitivityCnt++;
 				}
 	
@@ -564,7 +564,7 @@ tableMainDiv =	'<div class="col-sm-12">'
 			$(".modal-header").html("Error Message");
 			$(".modal-header").css("background","#23435c");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("<b> Formula : Sensitivity = Output/Input");
+			$("#MsgModal").html("<b> Formula : <br>Sensitivity = Output/Input</b>");
              sensitivityCnt++;
 				
 			} else {
@@ -584,7 +584,7 @@ tableMainDiv =	'<div class="col-sm-12">'
 			$("#btnModal").removeClass("btn-danger").addClass("btn-success");
 	        $(".modal-header").html("Success Message");
             $(".modal-header").css("background","#5cb85c");
-			$("#MsgModal").html("Correct Answer is " + sensitivityCal);
+			$("#MsgModal").html("Correct answer is " + sensitivityCal);
 	         sensitivityCnt++;
 				}
 			}
@@ -761,7 +761,7 @@ tableMainDiv =	'<div class="col-sm-12">'
 			$(".modal-header").html("Error Message");
 			$(".modal-header").css("background","#9c1203b0");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("Select Appropriate Value");
+			$("#MsgModal").html("Select appropriate value");
 		}else{
 			
 			
@@ -797,7 +797,7 @@ tableMainDiv =	'<div class="col-sm-12">'
 			$(".modal-header").html("Error Message");
 			$(".modal-header").css("background","#9c1203b0");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("Enter Appropriate Value");
+			$("#MsgModal").html("Enter appropriate value");
 		}else{
 			
 			let userSelectedLoad = selValue;
@@ -835,7 +835,7 @@ tableMainDiv =	'<div class="col-sm-12">'
 					 $(".modal-header").html("Error Message");
 			$(".modal-header").css("background","#9c1203b0");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("Entered value is Incorrect.<br>Try again");
+			$("#MsgModal").html("Entered value is incorrect.<br>Try again");
             errorCnt++;
 				}
 	
@@ -845,7 +845,7 @@ tableMainDiv =	'<div class="col-sm-12">'
 			$(".modal-header").html("Error Message");
 			$(".modal-header").css("background","#23435c");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("<b> Formula : Error = Standard value - Observed value");
+			$("#MsgModal").html("<b> Formula : <br>Error = Standard value - Observed value</b>");
           errorCnt++;
 				
 			} else {
@@ -865,7 +865,7 @@ tableMainDiv =	'<div class="col-sm-12">'
 			$("#btnModal").removeClass("btn-danger").addClass("btn-success");
 	        $(".modal-header").html("Success Message");
             $(".modal-header").css("background","#5cb85c");
-			$("#MsgModal").html("Correct Answer is " + errCal);
+			$("#MsgModal").html("Correct answer is " + errCal);
 	         errorCnt++;
 				}
 			}
@@ -928,7 +928,7 @@ tableMainDiv =	'<div class="col-sm-12">'
 					 $(".modal-header").html("Error Message");
 			$(".modal-header").css("background","#9c1203b0");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("Entered value is Incorrect.<br>Try again");
+			$("#MsgModal").html("Entered value is incorrect.<br>Try again");
               sensitivityCnt++;
 				}
 	
@@ -938,7 +938,7 @@ tableMainDiv =	'<div class="col-sm-12">'
 			$(".modal-header").html("Error Message");
 			$(".modal-header").css("background","#23435c");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("<b> Formula : Sensitivity = Output/Input");
+			$("#MsgModal").html("<b> Formula : <br>Sensitivity = Output/Input</b>");
               sensitivityCnt++;
 				
 			} else {
@@ -959,7 +959,7 @@ tableMainDiv =	'<div class="col-sm-12">'
 			$("#btnModal").removeClass("btn-danger").addClass("btn-success");
 	        $(".modal-header").html("Success Message");
             $(".modal-header").css("background","#5cb85c");
-			$("#MsgModal").html("Correct Answer is " + sensitivityCal);
+			$("#MsgModal").html("Correct answer is " + sensitivityCal);
 	        sensitivityCnt++;
 				}
 			}

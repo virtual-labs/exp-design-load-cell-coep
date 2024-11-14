@@ -78,7 +78,7 @@ var width = $(window).width();
                    
           
     
-               var areaTxt = paper.text((x+150+(diameter/1.5)+100),(y+150)," Cross sectional Area  ")
+               var areaTxt = paper.text((x+150+(diameter/1.5)+100),(y+150)," Cross-sectional area")
                .attr({'font-weight': 'bold','font-size':'16px','stroke':'#f20515'});  
                
                

@@ -161,7 +161,7 @@ var htm = ''
 		   +' </thead>'
 		   +'  <tbody>'
 		   +'   <tr>'
-		   +'     <td class=""><center>Basic knowledge</center></td>'
+		   +'     <td class=""><center>Basic Knowledge</center></td>'
 		   
 		   if(quesPercent>=60){
 		   htm +='<td class=""><center class="attained"> Attained</center></td>'
@@ -184,7 +184,7 @@ var htm = ''
 		
 		  htm  +=' </tr>'
 		   +'  <tr>'
-		   +'     <td class=""><center>Construct Wheatstone bridge circuit</center></td>'
+		   +'     <td class=""><center>Construct wheatstone bridge circuit</center></td>'
 		   if(wheatStone >= 60){ 
 		  htm +='<td class=""><center class="attained"> Attained</center></td>'
 		   }else{
@@ -200,7 +200,7 @@ var htm = ''
 		}
 		htm += '  </tr>'
 		   +'  <tr>'
-		   +'<td class=""><center>Calculation of Output Voltage using a Wheatstone Bridge</center></td>'
+		   +'<td class=""><center>Calculation of output voltage using a wheatstone bridge</center></td>'
 		   if(outputPer>=60){
 			htm +='<td class=""><center class="attained"> Attained</center></td>'
 		}else{
@@ -402,7 +402,7 @@ if(typeCell==15){
  initialData = [
     { name: 'Questionaries', y: quesPercent },
     { name: 'Configuration', y: config },
-    { name: 'Construction of WheatStone Bridge', y: wheatStone },
+    { name: 'Construction of wheatStone bridge', y: wheatStone },
     { name: 'Standard Calculations', y: loadCal },
     { name: 'Output Voltage', y: outputPer },
     { name: 'Characterization', y: characterVal } 
@@ -412,7 +412,7 @@ if(typeCell==15){
 	initialData = [
 	{ name: 'Questionaries', y: quesPercent },
 
-    { name: 'Construction of WheatStone Bridge', y: wheatStone },
+    { name: 'Construction of wheatStone bridge', y: wheatStone },
     { name: 'Standard Calculations', y: loadCal },
     { name: 'Output Voltage', y: outputPer },
     { name: 'Characterization', y: characterVal } 
