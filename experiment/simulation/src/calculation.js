@@ -143,7 +143,7 @@ function columnType(){
 						$(".modal-header").html("Error Message");
 			$(".modal-header").css("background","#9c1203b0");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("Avoid Duplicates");
+			$("#MsgModal").html("Avoid duplicates");
 //					   alert("Avoid Duplicates");
 					  arrWeight.splice(index,1);
 					  $("#submit_load1").prop('disabled',false);
@@ -162,7 +162,7 @@ function columnType(){
 						$(".modal-header").html("Error Message");
 			$(".modal-header").css("background","#9c1203b0");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("Enter Integer Value");
+			$("#MsgModal").html("Enter integer value");
 			wrongLoadCnt++;
 //							alert("Enter Integer Value");
 						}
@@ -221,7 +221,7 @@ function columnType(){
 					 $(".modal-header").html("Error Message");
 			$(".modal-header").css("background","#9c1203b0");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("Entered value is Incorrect.<br>Try again");
+			$("#MsgModal").html("Entered value is incorrect.<br>Try again");
 			wrongAxialCnt++;
 			
 //				alert("Entered value is incorrect.Try it again.");
@@ -237,7 +237,7 @@ function columnType(){
 			$(".modal-header").html("Formula");
 			$(".modal-header").css("background","#23435c");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("<b> Axial Strain = P / A &times; E where,<br> P = Applied load, A = area and E = Young's Modulus");
+			$("#MsgModal").html("<b> Axial Strain = P / A &times; E where,<br> P = Applied load, A = Area and E = Young's Modulus");
 			wrongAxialCnt++;
 //				alert("formula :Axial Strain = P / AE");
 				
@@ -264,7 +264,7 @@ function columnType(){
 					$("#btnModal").removeClass("btn-danger").addClass("btn-success");
 	        $(".modal-header").html("Success Message");
             $(".modal-header").css("background","#5cb85c");
-			$("#MsgModal").html("Correct Answer is " + ax);
+			$("#MsgModal").html("Correct answer is " + ax);
 			wrongAxialCnt++;
 //					alert("correct answer is " + ax );
 					
@@ -346,7 +346,7 @@ function columnType(){
 			$(".modal-header").html("Error Message");
 			$(".modal-header").css("background","#9c1203b0");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("Entered value is Incorrect.<br>Try again");	
+			$("#MsgModal").html("Entered value is incorrect.<br>Try again");	
 				wrongTransCnt++;	
 //				alert("Entered value is incorrect.Try it again.");
 //				 $("#modelMsg").html("<b class='boldTextRed'>Entered value is incorrect.Try again . </b>");
@@ -405,7 +405,7 @@ function columnType(){
 					$("#btnModal").removeClass("btn-danger").addClass("btn-success");
 	        $(".modal-header").html("Success Message");
             $(".modal-header").css("background","#5cb85c");
-			$("#MsgModal").html("Correct Answer is " + transCal);
+			$("#MsgModal").html("Correct answer is " + transCal);
 			wrongTransCnt++;
 //					alert("correct answer is " + transCal );
 //					 $("#modelMsg").html("<b class='boldTextRed'>Correct answer is " + axialCal+"</b>");
@@ -597,7 +597,7 @@ function cantilever(){
 						$(".modal-header").html("Error Message");
 			$(".modal-header").css("background","#9c1203b0");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("Avoid Duplicates");
+			$("#MsgModal").html("Avoid duplicates");
 //					   alert("Avoid Duplicates");
 					  arrWeight.splice(index,1);
 					  $("#submit_load1").prop('disabled',false);
@@ -617,7 +617,7 @@ function cantilever(){
 						$(".modal-header").html("Error Message");
 			$(".modal-header").css("background","#9c1203b0");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("Enter Integer Value");
+			$("#MsgModal").html("Enter integer value");
 			wrongLoadCnt++;
 //							alert("Enter Integer Value");
 						}
@@ -646,7 +646,7 @@ $("#submit_load2").click(function(){
 		$(".modal-header").html("Error Message");
 			$(".modal-header").css("background","#9c1203b0");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("Enter the Value");
+			$("#MsgModal").html("Enter the value");
 	}else{
 	var numMul = 6*tx1*lengthVal;
 	var denoMul = 207000*widthVal*heightVal*heightVal;
@@ -665,7 +665,7 @@ $("#submit_load2").click(function(){
 		    $(".modal-header").html("Error Message");
 			$(".modal-header").css("background","#9c1203b0");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("Entered value is Incorrect.<br>Try again");
+			$("#MsgModal").html("Entered value is incorrect.<br>Try again");
 			wrongAxialCnt++;
 	}
 	 }else if (id1 == 4){
@@ -687,7 +687,7 @@ $("#submit_load2").click(function(){
 			$("#btnModal").removeClass("btn-danger").addClass("btn-success");
 	        $(".modal-header").html("Success Message");
             $(".modal-header").css("background","#5cb85c");
-			$("#MsgModal").html("Correct Answer is " + finalAns);
+			$("#MsgModal").html("Correct answer is " + finalAns);
 			wrongAxialCnt++;
 //			alert("Correct Answer is "+finalAns);
 		}
@@ -711,7 +711,7 @@ $("#submit_load3").click(function(){
 		$(".modal-header").html("Error Message");
 			$(".modal-header").css("background","#9c1203b0");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("Enter the Value");
+			$("#MsgModal").html("Enter the value");
 		
 //		alert("Enter the Value");
 	}else{
@@ -740,7 +740,7 @@ $("#submit_load3").click(function(){
 		$(".modal-header").html("Error Message");
 			$(".modal-header").css("background","#9c1203b0");
 			$("#btnModal").removeClass("btn-success").addClass("btn-danger");
-			$("#MsgModal").html("Entered value is Incorrect.<br>Try again");
+			$("#MsgModal").html("Entered value is incorrect.<br>Try again");
 			wrongTransCnt++;
 	}
 	 }else if (id2 == 4){
@@ -774,7 +774,7 @@ $("#submit_load3").click(function(){
 			$("#btnModal").removeClass("btn-danger").addClass("btn-success");
 	        $(".modal-header").html("Success Message");
             $(".modal-header").css("background","#5cb85c");
-			$("#MsgModal").html("Correct Answer is " + compresVal);
+			$("#MsgModal").html("Correct answer is " + compresVal);
 			wrongTransCnt++;
 //			alert("Correct Answer is "+compresVal);
 		}
