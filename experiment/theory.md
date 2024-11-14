@@ -1,4 +1,5 @@
 ## Load cell
+
 #### Theory : 
 
   A load cell is a transducer which converts force into a measurable electrical output. Although there are many varieties of load cells, strain gauge based load cells are the most commonly used type.
@@ -38,16 +39,16 @@ When the metallic member to which the strain gauges are attached, is stressed by
 These load cells have been in use for many decades now, and can provide very accurate readings but require many tedious steps during the manufacturing process.
 
 #### Formulae required for column type load cell :
-- Cross sectional area = π × r²  where, <br> π = 3.14
-- Axial Strain ε<sub>a</sub> = P / (A×E) = &epsilon;<sub>1</sub> = &epsilon;<sub>3</sub> where, <br> P = Applied load, A = area and E = Young's Modulus  
-- Transverse Strain ε<sub>t</sub> = (-P × ν) / (A×E) = &epsilon;<sub>2</sub> = &epsilon;<sub>4</sub> where, <br> ν = Poisson's Ratio
+- Cross sectional area = π × r²  <br> where,  π = 3.14
+- Axial Strain ε<sub>a</sub> = P / (A×E) = &epsilon;<sub>1</sub> = &epsilon;<sub>3</sub> <br> where, <br> P = Applied load, <br> A = area, <br> E = Young's Modulus  
+- Transverse Strain ε<sub>t</sub> = (-P × ν) / (A×E) = &epsilon;<sub>2</sub> = &epsilon;<sub>4</sub> <br> where,  ν = Poisson's Ratio
 - ΔR<sub>1</sub>/R<sub>1</sub> = ΔR<sub>3</sub>/R<sub>3</sub> = f×&epsilon;<sub>a</sub>
 - ΔR<sub>2</sub>/R<sub>2</sub> = ΔR<sub>4</sub>/R<sub>4</sub> = f×&epsilon;<sub>t</sub> 
-- Output voltage = Eb × f[ε<sub>2</sub>+ε<sub>4</sub>-ε<sub>1</sub>-ε<sub>3</sub>/4] where, <br> Eb = supply voltage, f = gauge factor
+- Output voltage = Eb × f[ε<sub>2</sub>+ε<sub>4</sub>-ε<sub>1</sub>-ε<sub>3</sub>/4] <br> where, <br>  Eb = supply voltage, <br> f = gauge factor
 
 #### Formulae required for cantilever type load cell :
-- Strain developed at the gauges, &epsilon;<sub>1</sub> = -&epsilon;<sub>2</sub> = &epsilon;<sub>3</sub> = -&epsilon;<sub>4</sub> = 6 × Px / Ewh² where, <br> P = Applied load, E = young's modulus, w = width , x = length, h = height.
-- Output voltage = Eb × f[&epsilon;<sub>2</sub>+&epsilon;<sub>4</sub>-&epsilon;<sub>1</sub>-&epsilon;<sub>3</sub>/4] where, <br> Eb = supply voltage, f = gauge factor
+- Strain developed at the gauges, &epsilon;<sub>1</sub> = -&epsilon;<sub>2</sub> = &epsilon;<sub>3</sub> = -&epsilon;<sub>4</sub> = 6 × Px / Ewh² <br> where, <br> P = Applied load, <br> E = young's modulus, <br> w = width , <br> x = length, <br>h = height
+- Output voltage = Eb × f[&epsilon;<sub>2</sub>+&epsilon;<sub>4</sub>-&epsilon;<sub>1</sub>-&epsilon;<sub>3</sub>/4] <br> where, <br> Eb = supply voltage, <br> f = gauge factor
 
 #### Uses :
 The type of instruments used in the geotechnical field depends on the scope of work. Load cells can be used at the initial stage i.e. during the research and development or even at a later stage while monitoring a structure.
@@ -57,37 +58,37 @@ Load cells find their application in the geotechnical field and, they are common
 - Deep foundations: excavation bracing like struts, soldier pile; tiebacks or anchors; retaining walls
 - Tunnels and shafts: Steel liner plate, cast-in-place concrete, segmented precast concrete, shotcrete
 - Dams: Concrete Dams, Underground Power House
-- Piles: Pile load test.
+- Piles: Pile load test
 
 
 #### Applictaions :
 
-- To determine the load in rock bolts, tiebacks, foundation anchors, cables or struts.
-- Proof testing and long term performance monitoring of different kinds of anchor systems.
-- Compressive load measurement between structural members i.e. tunnel supports or at the junction between a beam and the top of a pile strut.
-- Used extensively for correlating data obtained from borehole extensometers.
-- To determine the load in experimental research, pile testing and measurement of the thrust of rocks.
-- Compressive load measurement between structural members.
-- Measurement of compressive load and axial forces in struts.
-- Load testing in piles.
-- Determination of roof convergence in underground mines.
+- To determine the load in rock bolts, tiebacks, foundation anchors, cables or struts
+- Proof testing and long term performance monitoring of different kinds of anchor systems
+- Compressive load measurement between structural members i.e. tunnel supports or at the junction between a beam and the top of a pile strut
+- Used extensively for correlating data obtained from borehole extensometers
+- To determine the load in experimental research, pile testing and measurement of the thrust of rocks
+- Compressive load measurement between structural members
+- Measurement of compressive load and axial forces in struts
+- Load testing in piles
+- Determination of roof convergence in underground mines
 
 #### Advantages : 
 
 - Load Cells have rugged & robust construction along with outstanding reliability and long term stability
-- They are specially designed to suit the harsh & severe industrial environment.
-- Load Cells are temperature compensated.
-- They have a stable system with no moving parts and linkages.
-- A few of them have multiple strain gauges incorporated to reduce positioning effect.
-- Any standard strain gauge bridge measuring read-out device can be used with the load cells.
-- The load cells have negligible side and eccentric load effect.
+- They are specially designed to suit the harsh & severe industrial environment
+- Load Cells are temperature compensated
+- They have a stable system with no moving parts and linkages
+- A few of them have multiple strain gauges incorporated to reduce positioning effect
+- Any standard strain gauge bridge measuring read-out device can be used with the load cells
+- The load cells have negligible side and eccentric load effect
 
 #### Limitations :
 
-- It requires continuous electric energy for the production and display of signals.
-- It also requires an amplification circuit for the generation of output display because the signals produced by the gauge itself are of very much low voltage almost in milli volts.
-- It cannot be used for the pressure measurement of highly reactive or corrosive materials because they can damage the gauge.
-- It cannot be used for the measurement of very high pressure if the diaphragm use is of plastic.
+- It requires continuous electric energy for the production and display of signals
+- It also requires an amplification circuit for the generation of output display because the signals produced by the gauge itself are of very much low voltage almost in milli volts
+- It cannot be used for the pressure measurement of highly reactive or corrosive materials because they can damage the gauge
+- It cannot be used for the measurement of very high pressure if the diaphragm use is of plastic
 
 
 
