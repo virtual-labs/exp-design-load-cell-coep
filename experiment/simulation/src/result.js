@@ -142,7 +142,7 @@ var htm = ''
 
 	+ '<div class="col-md-12">'
 	+ ' <div class="panel remarkBground" >'
-	+ ' <div class="panel-body remark" style="font-size:18px;"><center> <b>Load cell experiment is completed successfully!!</b>'
+	+ ' <div class="panel-body remark" style="font-size:18px;"><center> <b>Load cell experiment completed successfully!!</b>'
 //	+ '<br> <b>Satisfactory performance</b></center></div>'
 	+ '</div>'
 	+ '</div>'
