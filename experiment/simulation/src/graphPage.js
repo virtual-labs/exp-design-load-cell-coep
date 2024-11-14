@@ -357,11 +357,11 @@ tableMainDiv =	'<div class="col-sm-12">'
 //					wheatStoneCon();
 					htm11 = '<img src="images/amplifier.png"  class="img-responsive">'
 					 $("#main-div-conf11").append(htm11);
-				//	console.log("columnType");
+//					console.log("columnType");
 				}else if(typeCell==25){
 //					wheatStoneCon();
 					htm11 = '<img src="images/amplifier1.png"  class="img-responsive">'
-					//console.log("cantilever");
+//					console.log("cantilever");
 					 $("#main-div-conf11").append(htm11);
 				}
 	         
@@ -740,11 +740,11 @@ tableMainDiv =	'<div class="col-sm-12">'
 //					wheatStoneCon();
 					htm11 = '<img src="images/amplifier.png"  class="img-responsive">'
 					 $("#main-div-conf11").append(htm11);
-				//	console.log("columnType");
+//					console.log("columnType");
 				}else if(typeCell==25){
 //					wheatStoneCon();
 					htm11 = '<img src="images/amplifier1.png"  class="img-responsive">'
-				//	console.log("cantilever");
+//					console.log("cantilever");
 					 $("#main-div-conf11").append(htm11);
 				}
 	        
