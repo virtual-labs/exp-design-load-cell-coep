@@ -4,7 +4,7 @@
 
   A load cell is a transducer that converts force into a measurable electrical output. Although there are many varieties of load cells, strain gauge-based load cells are the most commonly used type.
 Load cells are sensors that detect force (mass, torque, etc.).
-When force is applied to a load cell, it converts the force into an electrical signal. Load cells are also known as "load transducers", because they convert a load (force) into electrical signals.
+When force is applied to a load cell, it converts the force into an electrical signal. Load cells are also known as "load transducers" because they convert a load (force) into electrical signals.
 There are many different kinds of load cells.
 
 - Resistive load cells 
@@ -30,7 +30,7 @@ During a measurement, weight acts on the load cell’s metal spring element and 
 
 This strain (positive or negative) is converted into an electrical signal by a strain gauge (SG) installed on the spring element. The simplest type of load cell is a bending beam with a strain gauge.
 
-We use wheatstone bridge circuit to convert this change in strain/resistance into voltage, which is proportional to the load.
+We use a Wheatstone bridge circuit to convert this change in strain/resistance into voltage, which is proportional to the load.
 
 ##### Wheatstone Bridge
 
@@ -39,33 +39,33 @@ An excitation voltage - usually 10V is applied to one set of corners and the vol
 
 ![*Turbine_constr2*](images/loadcell3.png)
 
-When the metallic member to which the strain gauges are attached, is stressed by the application of a force, the resulting strain leads to a change in resistance in one (or more) of the resistors. This change in resistance results in a change in output voltage. This small change in output voltage (usually about 20 mVolt of total change in response to full load) can be measured and digitized after careful amplification of the small milli-volt level signals to a higher amplitude 0-5V or 0-10V signal.
-These load cells have been in use for many decades now, and can provide very accurate readings but require many tedious steps during the manufacturing process.
+When the metallic member to which the strain gauges are attached is stressed by the application of a force, the resulting strain leads to a change in resistance in one (or more) of the resistors. This change in resistance results in a change in output voltage. This small change in output voltage (usually about 20 mV of total change in response to full load) can be measured and digitized after careful amplification of the small milli-volt level signals to a higher amplitude 0-5V or 0-10V signal.
+These load cells have been in use for many decades now and can provide very accurate readings but require many tedious steps during the manufacturing process.
 
-#### Formulae required for column type load cells
-- Cross-sectional area = π × r²  <br> where,  π = 3.14
-- Axial Strain ε<sub>a</sub> = P / (A×E) = &epsilon;<sub>1</sub> = &epsilon;<sub>3</sub> <br> where, <br> P = Applied load, <br> A = Area, <br> E = Young's modulus  
-- Transverse Strain ε<sub>t</sub> = (-P × ν) / (A×E) = &epsilon;<sub>2</sub> = &epsilon;<sub>4</sub> <br> where,  ν = Poisson's Ratio
+#### Formulae required for column-type load cells
+- Cross-sectional area = π × r²  <br> where, <br> π = 3.14 (sq mm)
+- Axial strain ε<sub>a</sub> = P / (A × E) = &epsilon;<sub>1</sub> = &epsilon;<sub>3</sub> <br> where, <br> P = Applied load (N), <br> A = Area (sq mm), <br> E = Young's modulus (N/mm<sup>2</sup>)  
+- Transverse strain ε<sub>t</sub> = (-P × ν) / (A × E) = &epsilon;<sub>2</sub> = &epsilon;<sub>4</sub> <br> where,  ν = Poisson's Ratio
 - ΔR<sub>1</sub>/R<sub>1</sub> = ΔR<sub>3</sub>/R<sub>3</sub> = f×&epsilon;<sub>a</sub>
 - ΔR<sub>2</sub>/R<sub>2</sub> = ΔR<sub>4</sub>/R<sub>4</sub> = f×&epsilon;<sub>t</sub> 
-- Output voltage = Eb × f[ε<sub>2</sub>+ε<sub>4</sub>-ε<sub>1</sub>-ε<sub>3</sub>/4] <br> where, <br>  Eb = Supply voltage, <br> f = Gauge factor
+- Output voltage = Eb × f[ε<sub>2</sub>+ε<sub>4</sub>-ε<sub>1</sub>-ε<sub>3</sub>/4] , where output voltage in &micro;V <br> where, <br>  Eb = Supply voltage, <br> f = Gauge factor (f)
 
-#### Formulae required for cantilever type load cells
-- Strain developed at the gauges, &epsilon;<sub>1</sub> = -&epsilon;<sub>2</sub> = &epsilon;<sub>3</sub> = -&epsilon;<sub>4</sub> = 6 × Px / Ewh² <br> where, <br> P = Applied load, <br> E = Young's modulus, <br> w = Width , <br> x = Length, <br>h = Height
-- Output voltage = Eb × f[&epsilon;<sub>2</sub>+&epsilon;<sub>4</sub>-&epsilon;<sub>1</sub>-&epsilon;<sub>3</sub>/4] <br> where, <br> Eb = Supply voltage, <br> f = Gauge factor
+#### Formulae required for cantilever-type load cells
+- Strain developed at the gauges, &epsilon;<sub>1</sub> = -&epsilon;<sub>2</sub> = &epsilon;<sub>3</sub> = -&epsilon;<sub>4</sub> = 6 × Px / Ewh² <br> where, <br> P = Applied load (N), <br> E = Young's modulus (N/mm<sup>2</sup>), <br> w = Width (mm), <br> x = Length (mm), <br>h = Height (mm)
+- Output voltage = Eb × f[&epsilon;<sub>2</sub>+&epsilon;<sub>4</sub>-&epsilon;<sub>1</sub>-&epsilon;<sub>3</sub>/4] , where output voltage in mV<br> where, <br> Eb = Supply voltage, <br> f = Gauge factor (f)
 
 #### Uses
 The type of instruments used in the geotechnical field depends on the scope of work. Load cells can be used at the initial stage i.e. during the research and development or even at a later stage while monitoring a structure.
 Geotechnical instruments are used both pre and post-construction to ensure the safety of structures, dams, tunnels, bridges, etc. Proper geotechnical monitoring ensures the long-term safety of these structures.
 Load cells find their application in the geotechnical field and they are commonly used to monitor:
 
-- Deep foundations: excavation bracing like struts, soldier pile; tiebacks or anchors; retaining walls
+- Deep foundations: excavation bracing like struts, soldier piles; tiebacks or anchors; retaining walls
 - Tunnels and shafts: steel liner plate, cast-in-place concrete, segmented precast concrete, shotcrete
 - Dams: Concrete Dams, Underground Power House
 - Piles: Pile load test
 
 
-#### Applictaions
+#### Applications
 
 - To determine the load in rock bolts, tiebacks, foundation anchors, cables or struts
 - Proof testing and long-term performance monitoring of different kinds of anchor systems
@@ -84,7 +84,7 @@ Load cells find their application in the geotechnical field and they are commonl
 - Load cells are temperature compensated
 - They have a stable system with no moving parts and linkages
 - A few of them have multiple strain gauges incorporated to reduce positioning effects
-- Any standard strain gauge bridge measuring read-out device can be used with the load cells
+- Any standard strain gauge bridge measuring readout device can be used with the load cells
 - The load cells have negligible side and eccentric load effect
 
 #### Limitations
