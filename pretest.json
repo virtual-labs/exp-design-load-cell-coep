@@ -1,0 +1,67 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "What is the primary purpose of a load cell?",
+      "answers": {
+         "a": "Measure temperature",
+        "b": "Weigh objects",
+        "c": "Control voltage",
+        "d": "Detect light"
+      },
+      
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which principle is NOT commonly used in load cells for force measurement?",
+      "answers": {
+        "a": "Piezoelectric",
+        "b": "Thermoelectric",
+        "c": "Photoelectric",
+        "d": "Strain gauge"
+      },
+     
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What is the unit of force measured by load cell?",
+      "answers": {
+        "a": "Newtons (N)",
+        "b": "Volts (V)",
+        "c": "Watts (W)",
+        "d": "Hertz (Hz)"
+      },
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+	{
+      "question": "What is the primary material used for strain gauges in load cells?",
+      "answers": {
+        "a": "Copper",
+        "b": "Aluminium",
+        "c": "Silicon",
+        "d": "Constantan"
+      },
+     
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+	
+	{
+      "question": "What is the typical output signal of a load cell?",
+      "answers": {
+        "a": "Analog voltage",
+        "b": "Digital signal",
+        "c": "Radio waves",
+        "d": "Magnetic field"
+      },
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    }
+  
+  ]
+}

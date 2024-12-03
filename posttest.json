@@ -1,0 +1,69 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "What does the tare function in a load cell system primarily do?",
+      "answers": {
+         "a": "Measure temperature",
+        "b": "Zero out container weight",
+        "c": "Control voltage",
+        "d": "Illuminate a display"
+      },
+      
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What is the purpose of a load cell amplifier in a measurement system?",
+      "answers": {
+        "a": "Increase weight capacity",
+        "b": "Convert analog to digital signal",
+        "c": "Generate heat",
+        "d": "Change color"
+      },
+     
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which type of load cell is known for high precision and sensitivity?",
+      "answers": {
+        "a": "Compression load cell",
+        "b": "Tension load cell",
+        "c": "Shear beam load cell",
+        "d": "Ring torsion load cell"
+      },
+     
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+	{
+      "question": "In which environment is NOT suitable for a load cell application?",
+      "answers": {
+        "a": "Laboratory",
+        "b": "Industrial",
+        "c": "Underwater",
+        "d": "Outer space"
+      },
+     
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+	
+	{
+      "question": "What is the primary advantage of a hydraulic load cell?",
+      "answers": {
+        "a": "Compact size",
+        "b": "High accuracy",
+        "c": "Wireless communication",
+        "d": "Low cost"
+      },
+     
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    }
+  
+  ]
+}
+
+ 
