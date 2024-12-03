@@ -196,7 +196,8 @@ function checkAllConnections() {
         dot1ToDot5: false,
         dot2ToDot3: false
     };  
-
+    
+     let validConnectionCount = 0; 
     // Check each connection  
     connections.forEach(({ start, end }) => {  
         const startId = start.data("id");  
@@ -210,7 +211,7 @@ function checkAllConnections() {
 //            console.log(`Invalid connection between ${startId} and ${endId}`);  
         } else {  
 //            console.log(`Valid connection between ${startId} and ${endId}`);  
-
+              validConnectionCount++;
             // Track required specific connections  
             if ((startId === 'dot1' && endId === 'dot4') || (startId === 'dot4' && endId === 'dot1')) {  
                 requiredConditionsMet.dot1ToDot4 = true;  // dot1 is connected to dot4  
@@ -257,6 +258,15 @@ function checkAllConnections() {
             }  
         }  
     });  
+
+      if (validConnectionCount > 4) {
+        allValid = false;
+        $(".modal-header").html("Error Message");
+        $(".modal-header").css("background", "#9c1203b0");
+        $("#btnModal").removeClass("btn-success").addClass("btn-danger");
+        $("#MsgModal").html("Remove extra connections.");
+        return; // Exit the function here
+    }
 
     // Check if the first combination is valid  
     const isFirstCombinationValid = requiredConditionsMet.dot1ToDot4 && requiredConditionsMet.dot2ToDot6;  
@@ -896,12 +906,7 @@ const validConnections = {
         dot7: ['dot3','dot4','dot5','dot6'],
         dot8: ['dot3','dot4','dot5','dot6']
       
-//        dot2: ["dot4"],
-//        dot4: ["dot2"],
-//        dot5: ["dot8"],
-//        dot8: ["dot5"],
-//        dot6: ["dot7"],
-//        dot7: ["dot6"]
+
     };
 
 // }   
